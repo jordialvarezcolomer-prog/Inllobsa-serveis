@@ -76,6 +76,8 @@
       <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></symbol>
       <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
       <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/></symbol>
+      <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.9 1.8-1.8 0-1.2-1-1.6-1-2.6 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7.3" r="1.2"/><circle cx="14.5" cy="7.3" r="1.2"/></symbol>
+      <symbol id="i-soccer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m12 7.5 4 2.9-1.5 4.6h-5L8 10.4z"/><path d="M12 3v4.5M16 10.4l4.3-1.4M14.5 15l2.6 3.6M9.5 15l-2.6 3.6M8 10.4 3.7 9"/></symbol>
       <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
       <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
       <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
@@ -1360,30 +1362,70 @@
         </div>
         <div class="territory-grid">
           
-          <article class="territory-col" data-reveal>
-            <p class="kicker">Cultura i patrimoni</p>
-            <h3 class="territory-title">Àmbit de la cultura</h3>
-            <ul class="territory-list">
-              
-              <li><strong>Abadal Music Fest</strong><span>Festival musical i enogastronòmic que uneix cultura, paisatge i patrimoni vinícola al cor del Bages.</span></li>
-              
-              <li><strong>FABA</strong><span>Festival d&#39;Arts Visuals i Escèniques de Manresa, plataforma de creació contemporània i emergent.</span></li>
-              
-            </ul>
-            <p class="territory-foot">Compromesos amb el dinamisme cultural de Manresa</p>
+          <article class="territory-col territory-col--culture" data-reveal>
+            <div class="territory-band" aria-hidden="true">
+              <div class="band-eq">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="band-note band-note--1"><svg class="icon"><use href="#i-music"/></svg></span>
+              <span class="band-note band-note--2"><svg class="icon"><use href="#i-music"/></svg></span>
+              <svg class="band-court" viewBox="0 0 400 160" preserveAspectRatio="xMidYMax slice">
+                <path d="M0 150h400M200 150V40M120 150a80 80 0 0 1 160 0M150 150v-55h100v55M168 95a32 32 0 0 1 64 0"/>
+              </svg>
+              <div class="band-ball"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M1.5 12h21M12 1.5v21M4.6 4.6c3.8 4 3.8 10.8 0 14.8M19.4 4.6c-3.8 4-3.8 10.8 0 14.8"/></svg></div>
+              <span class="band-shadow"></span>
+            </div>
+            <div class="territory-body">
+              <p class="kicker">Cultura i patrimoni</p>
+              <h3 class="territory-title">Àmbit de la cultura</h3>
+              <ul class="territory-list">
+                
+                <li style="--i: 0">
+                  <span class="territory-icon"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg></span>
+                  <div><strong>Abadal Music Fest</strong><span>Festival musical i enogastronòmic que uneix cultura, paisatge i patrimoni vinícola al cor del Bages.</span></div>
+                </li>
+                
+                <li style="--i: 0">
+                  <span class="territory-icon"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg></span>
+                  <div><strong>FABA</strong><span>Festival d&#39;Arts Visuals i Escèniques de Manresa, plataforma de creació contemporània i emergent.</span></div>
+                </li>
+                
+              </ul>
+              <p class="territory-foot">Compromesos amb el dinamisme cultural de Manresa</p>
+            </div>
           </article>
           
-          <article class="territory-col" data-reveal>
-            <p class="kicker">Esport i valors</p>
-            <h3 class="territory-title">Món de l&#39;esport</h3>
-            <ul class="territory-list">
-              
-              <li><strong>BAXI Manresa</strong><span>Club històric de bàsquet de la Lliga Endesa, ambaixador del caràcter i l&#39;orgull manresà arreu d&#39;Europa.</span></li>
-              
-              <li><strong>CE Manresa</strong><span>Club centenari de futbol, arrelat a la ciutat i compromès amb la formació de joves esportistes.</span></li>
-              
-            </ul>
-            <p class="territory-foot">Amb l&#39;esforç, la cooperació i l&#39;esport de base</p>
+          <article class="territory-col territory-col--sport" data-reveal>
+            <div class="territory-band" aria-hidden="true">
+              <div class="band-eq">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <span class="band-note band-note--1"><svg class="icon"><use href="#i-music"/></svg></span>
+              <span class="band-note band-note--2"><svg class="icon"><use href="#i-music"/></svg></span>
+              <svg class="band-court" viewBox="0 0 400 160" preserveAspectRatio="xMidYMax slice">
+                <path d="M0 150h400M200 150V40M120 150a80 80 0 0 1 160 0M150 150v-55h100v55M168 95a32 32 0 0 1 64 0"/>
+              </svg>
+              <div class="band-ball"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M1.5 12h21M12 1.5v21M4.6 4.6c3.8 4 3.8 10.8 0 14.8M19.4 4.6c-3.8 4-3.8 10.8 0 14.8"/></svg></div>
+              <span class="band-shadow"></span>
+            </div>
+            <div class="territory-body">
+              <p class="kicker">Esport i valors</p>
+              <h3 class="territory-title">Món de l&#39;esport</h3>
+              <ul class="territory-list">
+                
+                <li style="--i: 1">
+                  <span class="territory-icon"><svg class="icon" aria-hidden="true"><use href="#i-ball"/></svg></span>
+                  <div><strong>BAXI Manresa</strong><span>Club històric de bàsquet de la Lliga Endesa, ambaixador del caràcter i l&#39;orgull manresà arreu d&#39;Europa.</span></div>
+                </li>
+                
+                <li style="--i: 1">
+                  <span class="territory-icon"><svg class="icon" aria-hidden="true"><use href="#i-soccer"/></svg></span>
+                  <div><strong>CE Manresa</strong><span>Club centenari de futbol, arrelat a la ciutat i compromès amb la formació de joves esportistes.</span></div>
+                </li>
+                
+              </ul>
+              <p class="territory-foot">Amb l&#39;esforç, la cooperació i l&#39;esport de base</p>
+            </div>
           </article>
           
         </div>

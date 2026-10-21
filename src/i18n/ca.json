@@ -353,13 +353,16 @@
         "items": [
           {
             "name": "Abadal Music Fest",
-            "text": "Festival musical i enogastronòmic que uneix cultura, paisatge i patrimoni vinícola al cor del Bages."
+            "text": "Festival musical i enogastronòmic que uneix cultura, paisatge i patrimoni vinícola al cor del Bages.",
+            "icon": "music"
           },
           {
             "name": "FABA",
-            "text": "Festival d'Arts Visuals i Escèniques de Manresa, plataforma de creació contemporània i emergent."
+            "text": "Festival d'Arts Visuals i Escèniques de Manresa, plataforma de creació contemporània i emergent.",
+            "icon": "palette"
           }
-        ]
+        ],
+        "theme": "culture"
       },
       {
         "kicker": "Esport i valors",
@@ -368,13 +371,16 @@
         "items": [
           {
             "name": "BAXI Manresa",
-            "text": "Club històric de bàsquet de la Lliga Endesa, ambaixador del caràcter i l'orgull manresà arreu d'Europa."
+            "text": "Club històric de bàsquet de la Lliga Endesa, ambaixador del caràcter i l'orgull manresà arreu d'Europa.",
+            "icon": "ball"
           },
           {
             "name": "CE Manresa",
-            "text": "Club centenari de futbol, arrelat a la ciutat i compromès amb la formació de joves esportistes."
+            "text": "Club centenari de futbol, arrelat a la ciutat i compromès amb la formació de joves esportistes.",
+            "icon": "soccer"
           }
-        ]
+        ],
+        "theme": "sport"
       }
     ]
   },
