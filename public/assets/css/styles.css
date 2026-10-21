@@ -553,3 +553,69 @@ figure { margin: 0; }
 /* Les targetes interactives conserven les seves pròpies transicions després d'aparèixer */
 .js .service-card[data-reveal], .js .mk-card[data-reveal] { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s, opacity .7s ease; }
 .service-card::after, .mk-card::after { border-radius: inherit; }
+
+/* --- Bloc propietaris animat ---------------------------------------------------- */
+.owner { position: relative; isolation: isolate; box-shadow: 0 40px 80px -40px rgb(27 38 56 / .6); }
+.owner-media, .owner-body { position: relative; z-index: 1; }
+/* Llums de color que es mouen lentament pel fons */
+.owner-glow { position: absolute; z-index: 0; width: 520px; height: 520px; border-radius: 50%; filter: blur(60px); opacity: .55; pointer-events: none; }
+.owner-glow--1 { right: -140px; top: -180px; background: radial-gradient(circle, rgb(28 98 178 / .9), transparent 65%); animation: drift-1 16s ease-in-out infinite alternate; }
+.owner-glow--2 { right: 18%; bottom: -260px; background: radial-gradient(circle, rgb(201 72 47 / .55), transparent 65%); animation: drift-2 20s ease-in-out infinite alternate; }
+@keyframes drift-1 { to { transform: translate(-160px, 120px) scale(1.15); } }
+@keyframes drift-2 { to { transform: translate(140px, -90px) scale(.9); } }
+
+/* Foto: s'obre com una cortina */
+.js .owner .owner-media picture { display: block; position: absolute; inset: 0; clip-path: inset(0 100% 0 0); transition: clip-path 1.3s cubic-bezier(.7,0,.2,1); }
+.js .owner .owner-media img { transform: scale(1.18); transition: transform 2.2s cubic-bezier(.2,.8,.2,1); }
+.js .owner.is-in .owner-media picture { clip-path: inset(0 0 0 0); }
+.js .owner.is-in .owner-media img { transform: scale(1); }
+.owner:hover .owner-media img, .js .owner.is-in:hover .owner-media img { transform: scale(1.04); }
+
+/* Segell giratori */
+.owner-stamp { position: absolute; top: 18px; right: 18px; z-index: 2; width: 116px; height: 116px; display: grid; place-items: center; }
+.owner-stamp-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 18s linear infinite; }
+.owner-stamp-ring text { font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; fill: #fff; }
+.owner-stamp::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgb(20 29 46 / .72); backdrop-filter: blur(4px); }
+.owner-stamp-core { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--orange); color: #fff; box-shadow: 0 0 0 6px rgb(201 72 47 / .25); }
+.owner-stamp-core .icon { width: 24px; height: 24px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.js .owner .owner-stamp { opacity: 0; transform: scale(.4) rotate(-90deg); transition: opacity .5s ease 1s, transform .9s cubic-bezier(.3,1.5,.5,1) 1s; }
+.js .owner.is-in .owner-stamp { opacity: 1; transform: none; }
+.js .owner .owner-badge { opacity: 0; transform: translateY(24px); transition: opacity .6s ease 1.1s, transform .6s ease 1.1s; }
+.js .owner.is-in .owner-badge { opacity: 1; transform: none; }
+
+/* Titular: les paraules apareixen una a una i "vendre / llogar" es subratllen */
+.owner-title em { font-style: normal; color: #fff; background: linear-gradient(var(--orange), var(--orange)) no-repeat 0 92% / 100% 4px; }
+.js .owner-title em { background-size: 0 4px; transition: background-size .8s cubic-bezier(.7,0,.2,1) 1.3s; }
+.js .owner.is-in .owner-title em { background-size: 100% 4px; }
+.owner-title .w { display: inline-block; }
+.js .owner-title .w { opacity: 0; transform: translateY(.6em) rotate(3deg); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); transition-delay: calc(.25s + var(--w) * 70ms); }
+.js .owner.is-in .owner-title .w { opacity: 1; transform: none; }
+.js .owner .owner-text, .js .owner .eyebrow { opacity: 0; transform: translateY(14px); transition: opacity .7s ease .6s, transform .7s ease .6s; }
+.js .owner.is-in .owner-text, .js .owner.is-in .eyebrow { opacity: 1; transform: none; }
+.js .owner .eyebrow { transition-delay: .15s; }
+
+/* Llista: els tics es dibuixen un darrere l'altre */
+.js .owner .checks li { opacity: 0; transform: translateX(-14px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(.9s + var(--i) * 120ms); }
+.js .owner.is-in .checks li { opacity: 1; transform: none; }
+.js .owner .checks .icon { stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset .6s ease; transition-delay: calc(1.1s + var(--i) * 120ms); }
+.js .owner.is-in .checks .icon { stroke-dashoffset: 0; }
+
+/* Recorregut en quatre passos amb un punt que hi circula */
+.owner-steps { margin: 0 0 32px; }
+.owner-steps-label { margin: 0 0 14px; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #8fb3e3; }
+.owner-steps ol { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.owner-steps ol::before { content: ""; position: absolute; top: 15px; left: 12%; right: 12%; height: 2px; background: rgb(255 255 255 / .16); }
+.owner-steps ol::after { content: ""; position: absolute; top: 11px; left: 12%; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 5px rgb(201 72 47 / .3); animation: travel 5s cubic-bezier(.6,0,.4,1) infinite; }
+@keyframes travel { 0% { left: 12%; opacity: 0; } 10% { opacity: 1; } 85% { left: calc(88% - 10px); opacity: 1; } 100% { left: calc(88% - 10px); opacity: 0; } }
+.owner-steps li { position: relative; display: grid; justify-items: center; gap: 8px; text-align: center; font-size: .8125rem; font-weight: 600; line-height: 1.3; color: #e6ecf5; }
+.owner-step-dot { position: relative; z-index: 1; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--navy); border: 1.5px solid rgb(255 255 255 / .35); font-size: .6875rem; font-weight: 800; color: #fff; transition: background-color .3s, border-color .3s; }
+.owner-steps li:hover .owner-step-dot { background: var(--orange); border-color: var(--orange); }
+.js .owner .owner-steps li { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(1.4s + var(--i) * 140ms); }
+.js .owner.is-in .owner-steps li { opacity: 1; transform: none; }
+@media (max-width: 520px) { .owner-steps li { font-size: .6875rem; } .owner-stamp { width: 96px; height: 96px; } }
+
+/* Reflex de llum sobre el botó de WhatsApp */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgb(255 255 255 / .55), transparent); transform: skewX(-20deg); animation: shine 3.8s ease-in-out 2s infinite; }
+@keyframes shine { 0%, 60% { left: -60%; } 100% { left: 130%; } }

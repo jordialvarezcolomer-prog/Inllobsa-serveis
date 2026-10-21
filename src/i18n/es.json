@@ -193,7 +193,7 @@
   },
   "owner": {
     "eyebrow": "Servicios al propietario",
-    "title": "¿Quieres vender o alquilar tu inmueble en Manresa?",
+    "title": "¿Quieres <em>vender</em> o <em>alquilar</em> tu inmueble en Manresa?",
     "text": "Te ofrecemos una valoración gratuita y profesional ajustada a la realidad del mercado, un reportaje fotográfico, asesoramiento fiscal y una gestión transparente de todas las visitas y los trámites notariales.",
     "points": [
       "Estudio comparativo de mercado real",
@@ -205,7 +205,15 @@
     "badgeText": "Máxima difusión en los principales portales inmobiliarios",
     "ctaWhatsapp": "Pide la valoración por WhatsApp",
     "ctaCall": "Llama al 938 36 20 30",
-    "imgAlt": "El equipo de Inllobsa bajo el rótulo de la oficina del Passeig de Pere III"
+    "imgAlt": "El equipo de Inllobsa bajo el rótulo de la oficina del Passeig de Pere III",
+    "stamp": "Valoración gratuita · Sin compromiso · ",
+    "stepsLabel": "Así te acompañamos",
+    "steps": [
+      "Valoración gratuita",
+      "Reportaje fotográfico",
+      "Visitas y difusión",
+      "Firma en notaría"
+    ]
   },
   "marketing": {
     "eyebrow": "Estrategia y máxima difusión",

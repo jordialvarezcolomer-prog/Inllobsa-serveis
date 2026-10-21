@@ -451,13 +451,22 @@
         </ul>
 
         <!-- Valoració / propietaris -->
-        <article class="owner" id="valoracio" aria-labelledby="owner-title">
+        <article class="owner" id="valoracio" aria-labelledby="owner-title" data-animate>
+          <span class="owner-glow owner-glow--1" aria-hidden="true"></span>
+          <span class="owner-glow owner-glow--2" aria-hidden="true"></span>
           <div class="owner-media">
             <picture>
               <source type="image/webp" srcset="../assets/img/photos/equip-oficina-640.webp 640w, ../assets/img/photos/equip-oficina-1000.webp 1000w" sizes="(min-width: 960px) 500px, 92vw">
               <img src="../assets/img/photos/equip-oficina-1000.jpg" srcset="../assets/img/photos/equip-oficina-640.jpg 640w, ../assets/img/photos/equip-oficina-1000.jpg 1000w" sizes="(min-width: 960px) 500px, 92vw"
                    alt="El equipo de Inllobsa bajo el rótulo de la oficina del Passeig de Pere III" width="1000" height="1250" loading="lazy">
             </picture>
+            <div class="owner-stamp" aria-hidden="true">
+              <svg class="owner-stamp-ring" viewBox="0 0 120 120">
+                <defs><path id="stamp-circle" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs>
+                <text><textPath href="#stamp-circle" textLength="286">Valoración gratuita · Sin compromiso · </textPath></text>
+              </svg>
+              <span class="owner-stamp-core"><svg class="icon"><use href="#i-key"/></svg></span>
+            </div>
             <div class="owner-badge">
               <span class="owner-badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg></span>
               <span><strong>Comercialización de éxito</strong>Máxima difusión en los principales portales inmobiliarios</span>
@@ -465,21 +474,35 @@
           </div>
           <div class="owner-body">
             <p class="eyebrow eyebrow--light">Servicios al propietario</p>
-            <h2 class="owner-title" id="owner-title">¿Quieres vender o alquilar tu inmueble en Manresa?</h2>
+            <h2 class="owner-title" id="owner-title" data-split>¿Quieres <em>vender</em> o <em>alquilar</em> tu inmueble en Manresa?</h2>
             <p class="owner-text">Te ofrecemos una valoración gratuita y profesional ajustada a la realidad del mercado, un reportaje fotográfico, asesoramiento fiscal y una gestión transparente de todas las visitas y los trámites notariales.</p>
             <ul class="checks checks--light checks--2col">
               
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Estudio comparativo de mercado real</li>
+              <li style="--i: 0"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Estudio comparativo de mercado real</li>
               
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Filtro de inquilinos y solvencia bancaria</li>
+              <li style="--i: 1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Filtro de inquilinos y solvencia bancaria</li>
               
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Gestión jurídica y contractual incluida</li>
+              <li style="--i: 2"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Gestión jurídica y contractual incluida</li>
               
-              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Trato humano, directo y transparente</li>
+              <li style="--i: 3"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Trato humano, directo y transparente</li>
               
             </ul>
+            <div class="owner-steps">
+              <p class="owner-steps-label">Así te acompañamos</p>
+              <ol>
+                
+                <li style="--i: 0"><span class="owner-step-dot" aria-hidden="true">01</span>Valoración gratuita</li>
+                
+                <li style="--i: 1"><span class="owner-step-dot" aria-hidden="true">02</span>Reportaje fotográfico</li>
+                
+                <li style="--i: 2"><span class="owner-step-dot" aria-hidden="true">03</span>Visitas y difusión</li>
+                
+                <li style="--i: 3"><span class="owner-step-dot" aria-hidden="true">04</span>Firma en notaría</li>
+                
+              </ol>
+            </div>
             <div class="owner-actions">
-              <a class="btn btn-wa" href="https://wa.me/34630508702?text=Hola%2C%20quiero%20solicitar%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20inmueble." target="_blank" rel="noopener">
+              <a class="btn btn-wa btn-shine" href="https://wa.me/34630508702?text=Hola%2C%20quiero%20solicitar%20una%20valoraci%C3%B3n%20gratuita%20de%20mi%20inmueble." target="_blank" rel="noopener">
                 <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Pide la valoración por WhatsApp</a>
               <a class="btn btn-light" href="tel:+34938362030">
                 <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Llama al 938 36 20 30</a>

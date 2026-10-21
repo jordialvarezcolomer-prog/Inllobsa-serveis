@@ -144,6 +144,30 @@
     revealables.forEach((el) => el.classList.add('is-visible'));
   }
 
+  /* Titulars que entren paraula per paraula (data-split): es respecten les etiquetes internes com <em> */
+  $$('[data-split]').forEach((el) => {
+    let n = 0;
+    const split = (node) => [...node.childNodes].forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach((part) => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          const w = document.createElement('span');
+          w.className = 'w';
+          w.style.setProperty('--w', n++);
+          w.textContent = part;
+          frag.appendChild(w);
+        });
+        child.replaceWith(frag);
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        split(child);
+      }
+    });
+    el.setAttribute('aria-label', el.textContent.trim());
+    split(el);
+  });
+
   /* Blocs que s'animen en entrar a la pantalla sense amagar-se abans (p. ex. la línia del màrqueting) */
   if (hasIO) {
     const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
