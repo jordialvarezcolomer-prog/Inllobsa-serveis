@@ -85,8 +85,8 @@ Des de l'entorn de desenvolupament no s'ha pogut accedir directament a cap d'aqu
 ## Pendent de revisar o aportar
 
 1. **Frases de l'equip:** les de `src/team.json` són **propostes redactades a partir del càrrec**. Cal validar-les amb cada persona abans de publicar.
-1. **Fotos ↔ noms de l'equip:** s'han assignat per semblança amb les fotos de la web de Netlify. Reviseu-les a `src/team.json` (camp `photo`).
-2. **Novena persona:** la de la foto `public/assets/img/team/equip-01-*` (cabell llarg castany, braços creuats) surt a les fotos de grup,
+2. **Fotos ↔ noms de l'equip:** s'han assignat per semblança amb les fotos de la web de Netlify. Reviseu-les a `src/team.json` (camp `photo`).
+3. **Novena persona:** la de la foto `public/assets/img/team/equip-01-*` (cabell llarg castany, braços creuats) surt a les fotos de grup,
    però no a la llista de l'equip. Si cal, afegiu-la a `src/team.json` amb el nom, el càrrec i el contacte.
 4. **Avís legal, política de privacitat i cookies:** cal enllaçar-los al peu de pàgina quan tingueu les URL.
 5. **Instagram:** no hi ha cap URL verificada. Només s'enllaça Facebook.
