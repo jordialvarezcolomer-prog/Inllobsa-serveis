@@ -3,7 +3,7 @@
   "name": "INLLOBSA",
   "legalName": "Inmobiliaria Llobsa, SA",
   "taxId": "A08469967",
-  "phone": "938 362 030",
+  "phone": "938 36 20 30",
   "phoneHref": "+34938362030",
   "email": "inllobsa@inllobsa.com",
   "street": "Passeig de Pere III, 49, baixos",
@@ -13,5 +13,9 @@
   "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Inllobsa%2C%20Passeig%20de%20Pere%20III%2049%2C%2008242%20Manresa",
   "facebook": "https://www.facebook.com/inllobsaimmobiliaria/",
   "officialWeb": "https://www.inllobsa.com/",
-  "foundingYear": "1977"
+  "foundingYear": "1977",
+  "whatsapp": "34630508702",
+  "whatsappDisplay": "630 50 87 02",
+  "solviaPhone": "621 234 741",
+  "solviaPhoneHref": "+34621234741"
 }

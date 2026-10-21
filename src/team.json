@@ -1,11 +1,10 @@
 [
-  { "photo": "equip-01", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-02", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-03", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-04", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-05", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-06", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-07", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-08", "name": "", "role": { "ca": "", "es": "" } },
-  { "photo": "equip-09", "name": "", "role": { "ca": "", "es": "" } }
+  { "photo": "equip-04", "name": "Sita Salido", "role": { "ca": "Directora d'Inllobsa", "es": "Directora de Inllobsa" }, "email": "sita@inllobsa.com", "phone": "676 798 099" },
+  { "photo": "equip-06", "name": "Verònica Cànovas", "role": { "ca": "Vendes d'obra nova", "es": "Ventas de obra nueva" }, "email": "info@inllobsa.com", "phone": "630 508 702" },
+  { "photo": "equip-08", "name": "Encarna Ávila", "role": { "ca": "Comercial de lloguers", "es": "Comercial de alquileres" }, "email": "lloguers@inllobsa.com", "phone": "676 740 664" },
+  { "photo": "equip-05", "name": "Maria Vega", "role": { "ca": "Màrqueting", "es": "Marketing" }, "email": "marketing@inllobsa.com", "phone": "682 581 930" },
+  { "photo": "equip-09", "name": "Iván Gavilán", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "comercial@inllobsa.com", "phone": "639 580 121" },
+  { "photo": "equip-07", "name": "Carla Herrera", "role": { "ca": "Administració de finques", "es": "Administración de fincas" }, "email": "administracio@inllobsa.com", "phone": "686 094 070" },
+  { "photo": "equip-03", "name": "Núria Prat", "role": { "ca": "Atenció al client", "es": "Atención al cliente" }, "email": "atencioclient@inllobsa.com", "phone": "676 798 099" },
+  { "photo": "equip-02", "name": "Josep Mª Hermosilla", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "josepmaria@inllobsa.com", "phone": "629 292 689" }
 ]

@@ -3,214 +3,421 @@
   "locale": "ca_ES",
   "path": "/",
   "meta": {
-    "title": "INLLOBSA · Immobiliària a Manresa des de 1977",
-    "description": "Immobiliària de Manresa amb més de 40 anys d'experiència. Assessorament i gestió administrativa i legal en la compravenda i el lloguer d'habitatges, locals, naus i oficines."
+    "title": "Inllobsa | Immobiliària a Manresa i voltants",
+    "description": "Immobiliària a Manresa des de 1977. Compravenda, lloguer, assessorament hipotecari i jurídic, administració de finques i valoració gratuïta del teu immoble al Bages."
   },
   "a11y": {
     "skip": "Salta al contingut",
     "menuOpen": "Obre el menú",
     "menuClose": "Tanca el menú",
     "language": "Idioma",
-    "home": "INLLOBSA, inici",
+    "home": "Inllobsa, inici",
     "mainNav": "Navegació principal",
-    "backToTop": "Torna a dalt"
+    "backToTop": "Torna a dalt",
+    "slides": "Imatges de l'equip",
+    "slide": "Imatge",
+    "whatsappFloat": "Escriu-nos per WhatsApp",
+    "newTab": "(s'obre en una pestanya nova)",
+    "prev": "Imatge anterior",
+    "next": "Imatge següent",
+    "pause": "Atura el carrusel",
+    "play": "Reprèn el carrusel"
+  },
+  "wa": {
+    "general": "Hola, voldria fer una consulta a Inllobsa.",
+    "valuation": "Hola, vull sol·licitar una valoració gratuïta del meu immoble.",
+    "person": "Hola, us escric des del web d'Inllobsa.",
+    "service": "Hola, voldria informació sobre:"
   },
   "nav": {
-    "about": "Qui som",
     "services": "Serveis",
-    "why": "Per què INLLOBSA",
+    "marketing": "Màrqueting",
+    "values": "Valors",
+    "team": "Equip",
+    "reviews": "Ressenyes",
     "contact": "Contacte",
-    "cta": "Contacta'ns",
-    "team": "L'equip"
+    "valuation": "Valoració gratuïta",
+    "whatsapp": "WhatsApp"
   },
   "langSwitch": {
     "current": "CA",
     "other": "ES",
     "otherLabel": "Versión en castellano"
   },
-  "hero": {
-    "eyebrow": "Immobiliària a Manresa · Des de 1977",
-    "title": "Assessorament immobiliari amb <em>més de 40 anys</em> d'experiència",
-    "lead": "Acompanyem particulars i empreses en la compravenda i el lloguer d'habitatges, locals, naus industrials i oficines, i ens ocupem de tota la gestió administrativa i legal de l'operació.",
-    "ctaPrimary": "Demana assessorament",
-    "ctaSecondary": "Descobreix els serveis",
-    "cardSince": "Des de",
-    "cardOffice": "Oficina Passeig",
-    "facts": [
-      {
-        "value": "1977",
-        "label": "Any de fundació"
-      },
-      {
-        "value": "+40",
-        "label": "Anys d'experiència"
-      },
-      {
-        "value": "Bages",
-        "label": "Manresa i comarca"
-      },
-      {
-        "value": "API",
-        "label": "Assessorament professional"
-      }
-    ],
-    "imgAlt": "L'equip d'INLLOBSA sota el rètol de l'oficina"
+  "topbar": {
+    "hours": "Dl–dv · 9:00–13:30 i 16:00–19:30"
   },
+  "hero": {
+    "eyebrow": "Immobiliària a Manresa des de 1977",
+    "title": "Trobem la llar dels teus somnis",
+    "subtitle": "A Inllobsa no només trobem habitatges, sinó que creem històries.",
+    "text": "Amb més de 40 anys d'experiència, som el pont entre tu i el lloc on començaràs una nova etapa, amb la confiança de saber que estàs en bones mans i que sempre som al teu costat.",
+    "ctaPrimary": "Demana una valoració gratuïta",
+    "ctaSecondary": "Descobreix els serveis",
+    "slideAlts": [
+      "L'equip d'Inllobsa",
+      "L'equip d'Inllobsa celebrant",
+      "Assessores d'Inllobsa"
+    ]
+  },
+  "stats": [
+    {
+      "prefix": "+",
+      "value": "40",
+      "suffix": "",
+      "label": "Anys d'experiència"
+    },
+    {
+      "prefix": "",
+      "value": "100",
+      "suffix": "%",
+      "label": "Gestió transparent"
+    },
+    {
+      "prefix": "",
+      "value": "1977",
+      "suffix": "",
+      "label": "Any de fundació"
+    },
+    {
+      "prefix": "",
+      "value": "8",
+      "suffix": "",
+      "label": "Professionals al teu servei"
+    }
+  ],
+  "advantages": [
+    {
+      "icon": "home",
+      "title": "Àmplia oferta a Manresa",
+      "text": "Venda, lloguer, temporada i traspassos a tota la comarca."
+    },
+    {
+      "icon": "chart",
+      "title": "Valoració gratuïta i professional",
+      "text": "Estudi de mercat exhaustiu per a propietaris, sense compromís."
+    },
+    {
+      "icon": "shield",
+      "title": "Gestió 100% transparent",
+      "text": "Seguretat jurídica i acompanyament directe en cada pas."
+    }
+  ],
   "about": {
-    "eyebrow": "Qui som",
+    "eyebrow": "Som Inllobsa",
     "title": "Una immobiliària manresana amb història pròpia",
     "p1": "Els nostres orígens es remunten al 1977, quan José Salido Chimeno va fundar Immobiliària Inllobsa amb l'objectiu de promoure edificis a Manresa.",
-    "p2": "El 1993, Sita Salido va assumir la direcció de l'empresa i l'activitat es va orientar a la comercialització de promocions pròpies i d'immobles de tercers a la comarca del Bages.",
-    "p3": "Avui posem tota aquesta experiència al servei de qui vol comprar, vendre o llogar: t'assessorem, fem la gestió administrativa i ens ocupem de les formalitats legals perquè l'operació sigui clara i segura.",
+    "p2": "El 1993, Sita Salido va assumir la direcció de l'empresa i l'activitat es va orientar a la comercialització de promocions pròpies i d'immobles de tercers a la comarca del Bages. Avui, un equip multidisciplinari t'acompanya amb rigor i proximitat en cada decisió.",
     "timeline": [
       {
         "year": "1977",
-        "title": "Fundació",
         "text": "José Salido Chimeno funda Immobiliària Inllobsa per promoure edificis a Manresa."
       },
       {
         "year": "1993",
-        "title": "Nova etapa",
-        "text": "Sita Salido assumeix la direcció. L'empresa se centra en la comercialització d'immobles al Bages."
+        "text": "Sita Salido assumeix la direcció i l'empresa se centra en la comercialització al Bages."
       },
       {
         "year": "Avui",
-        "title": "Assessorament i gestió",
-        "text": "Més de 40 anys d'experiència al servei de particulars i empreses."
+        "text": "Més de 40 anys d'experiència al servei de famílies, propietaris i empreses."
       }
-    ],
-    "imgAlt": "Fotografia de grup de l'equip d'INLLOBSA"
+    ]
   },
   "services": {
-    "eyebrow": "Serveis",
-    "title": "Què fem per tu",
-    "lead": "Assessorament i gestió en cada pas de l'operació, tant si ets un particular com una empresa.",
+    "eyebrow": "El nostre catàleg",
+    "title": "Serveis immobiliaris professionals",
+    "lead": "Cobrim totes les etapes del cicle immobiliari a Manresa i rodalies, amb un equip qualificat i dedicat a defensar els teus interessos.",
     "more": "Demana informació",
     "items": [
       {
-        "id": "compravenda",
         "icon": "key",
-        "title": "Compravenda",
-        "text": "Assessorament i gestió en la compra i la venda d'habitatges, locals, naus industrials i oficines, des del primer contacte fins al tancament de l'operació."
+        "title": "Compravenda d'immobles",
+        "text": "Gestionem la compra i la venda de pisos, cases, locals, pàrquings, naus industrials i parcel·les a Manresa i rodalies, amb la màxima seguretat i agilitat.",
+        "points": [
+          "Pisos, cases i xalets",
+          "Locals comercials i oficines",
+          "Pàrquings i naus industrials"
+        ]
       },
       {
-        "id": "lloguer",
         "icon": "home",
-        "title": "Lloguer",
-        "text": "Si vols llogar el teu immoble o en busques un, un assessor especialitzat en lloguers t'acompanya durant tot el procés."
+        "title": "Lloguer d'immobles",
+        "text": "Comercialitzem i gestionem lloguers residencials i comercials. Seleccionem acuradament llogaters solvents perquè estiguis tranquil.",
+        "points": [
+          "Anàlisi de solvència dels llogaters",
+          "Contractes redactats i actualitzats",
+          "Lloguer de temporada i habitual"
+        ]
       },
       {
-        "id": "gestio",
+        "icon": "bank",
+        "title": "Assessorament hipotecari",
+        "text": "T'orientem per aconseguir la millor hipoteca i negociem amb les entitats bancàries unes condicions adaptades a la teva capacitat i als teus objectius.",
+        "points": [
+          "Estudi de viabilitat financera gratuït",
+          "Comparativa de tipus fix i variable",
+          "Acompanyament fins a la signatura"
+        ]
+      },
+      {
         "icon": "doc",
-        "title": "Gestió legal i administrativa",
-        "text": "Ens encarreguem de totes les formalitats legals i administratives de la venda o del lloguer, perquè tu no t'hagis de preocupar de la paperassa."
+        "title": "Orientació legal i jurídica",
+        "text": "Assessorament jurídic en tràmits i documents immobiliaris: herències, càrregues registrals, canvis de titularitat i qualsevol incidència legal.",
+        "points": [
+          "Revisió de contractes d'arres i compravenda",
+          "Herències i successions",
+          "Cèdules d'habitabilitat i certificats"
+        ]
       },
       {
-        "id": "finques",
         "icon": "building",
         "title": "Administració de finques",
-        "text": "Disposem d'un departament propi d'administració de finques. Explica'ns la teva situació i t'informarem de com et podem ajudar."
+        "text": "Cobrament de rebuts, gestió d'incidències, actualització de rendes segons l'IPC o la normativa, lliurament de claus i manteniment continu de la teva propietat.",
+        "points": [
+          "Liquidació mensual de rendes",
+          "Resolució ràpida d'avaries",
+          "Custòdia i gestió de claus"
+        ]
       },
       {
-        "id": "professional",
-        "icon": "factory",
-        "title": "Immobles per a empreses",
-        "text": "Locals comercials, naus industrials i oficines: assessorament específic per a empreses, comerços i professionals."
+        "icon": "search",
+        "title": "Personal shopper immobiliari",
+        "text": "Busquem l'immoble que s'adapta a les teves necessitats reals. Estalvia temps, visites inútils i diners amb un expert dedicat només a tu.",
+        "points": [
+          "Cerca de propietats fora de mercat",
+          "Negociació del millor preu",
+          "Informes d'estat i valor de mercat"
+        ]
+      }
+    ]
+  },
+  "owner": {
+    "eyebrow": "Serveis al propietari",
+    "title": "Vols vendre o llogar el teu immoble a Manresa?",
+    "text": "T'oferim una valoració gratuïta i professional ajustada a la realitat del mercat, un reportatge fotogràfic, assessorament fiscal i una gestió transparent de totes les visites i els tràmits notarials.",
+    "points": [
+      "Estudi comparatiu de mercat real",
+      "Filtre de llogaters i solvència bancària",
+      "Gestió jurídica i contractual inclosa",
+      "Tracte humà, directe i transparent"
+    ],
+    "badgeTitle": "Comercialització d'èxit",
+    "badgeText": "Màxima difusió als principals portals immobiliaris",
+    "ctaWhatsapp": "Demana la valoració per WhatsApp",
+    "ctaCall": "Truca al 938 36 20 30",
+    "imgAlt": "L'equip d'Inllobsa sota el rètol de l'oficina del Passeig de Pere III"
+  },
+  "marketing": {
+    "eyebrow": "Estratègia i màxima difusió",
+    "title": "La força del màrqueting",
+    "lead": "Arriba més lluny amb estratègies intel·ligents. Confia en nosaltres per fer destacar la teva propietat en un mercat competitiu.",
+    "items": [
+      {
+        "icon": "camera",
+        "kicker": "Impacte visual",
+        "title": "Fotografia i vídeo professionals",
+        "text": "Reportatges d'alta resolució, il·luminació professional i vídeos dinàmics que capten el millor angle de cada estança.",
+        "tag": "Qualitat d'imatge garantida"
       },
       {
-        "id": "difusio",
+        "icon": "target",
+        "kicker": "Estratègia a mida",
+        "title": "Pla de màrqueting personalitzat",
+        "text": "Una estratègia específica per a cada immoble segons el perfil, la zona i el públic potencial, per vendre o llogar al preu òptim.",
+        "tag": "Anàlisi i segmentació real"
+      },
+      {
         "icon": "megaphone",
-        "title": "Difusió de l'immoble",
-        "text": "Quan ens confies la venda o el lloguer, publiquem el teu immoble al nostre portal web perquè arribi a més persones interessades."
+        "kicker": "Màxima exposició",
+        "title": "Difusió a xarxes i portals",
+        "text": "Portals immobiliaris nacionals i internacionals, reforçats amb campanyes segmentades a Instagram, Facebook i els canals digitals d'Inllobsa.",
+        "tag": "Portals líders i campanyes"
+      },
+      {
+        "icon": "sofa",
+        "kicker": "Valorització de l'espai",
+        "title": "Home staging",
+        "text": "Despersonalització, decoració i presentació dels espais per potenciar-ne els punts forts, accelerar la venda i reduir el marge de negociació.",
+        "tag": "Revaloració immediata"
+      }
+    ]
+  },
+  "values": {
+    "eyebrow": "El nostre ADN",
+    "title": "Valors que transmetem",
+    "lead": "Els principis que guien cadascuna de les nostres accions i defineixen el nostre compromís amb cada client i cada família.",
+    "items": [
+      {
+        "title": "Honestedat",
+        "text": "Treballem amb respecte, transparència i humilitat per generar confiança."
+      },
+      {
+        "title": "Excel·lència",
+        "text": "Busquem superar-nos constantment per oferir el millor servei en cada pas."
+      },
+      {
+        "title": "Seguretat",
+        "text": "Ens assegurem que cada projecte compleixi els estàndards de qualitat més alts."
+      },
+      {
+        "title": "Col·laboració",
+        "text": "Treballar en equip ens fa més forts i ens permet assolir millors resultats."
+      },
+      {
+        "title": "Adaptabilitat",
+        "text": "Ens ajustem a cada client i projecte amb solucions personalitzades."
+      },
+      {
+        "title": "Consistència",
+        "text": "Mantenim el mateix nivell de qualitat sigui quina sigui la mida del projecte."
+      },
+      {
+        "title": "Professionalitat",
+        "text": "Personal qualificat i una atenció excepcional en tot moment."
+      },
+      {
+        "title": "Empatia",
+        "text": "Ens posem a la teva pell per entendre què necessites de debò."
+      },
+      {
+        "title": "Originalitat",
+        "text": "Apostem per la innovació i per fer les coses d'una manera diferent."
+      },
+      {
+        "title": "Família",
+        "text": "Un ambient proper on cadascú se sent valorat i recolzat."
       }
     ]
   },
   "team": {
-    "eyebrow": "L'equip",
-    "title": "Persones que t'acompanyen",
-    "lead": "Assessors dedicats a la venda, al lloguer i a l'administració de finques, a la nostra oficina del Passeig de Pere III.",
-    "altFallback": "Membre de l'equip d'INLLOBSA"
+    "eyebrow": "Proximitat i compromís",
+    "title": "El nostre equip",
+    "lead": "Persones compromeses amb persones. Coneix l'equip multidisciplinari que t'acompanyarà amb rigor i proximitat en cada decisió.",
+    "blockTitle": "Al teu costat en cada decisió",
+    "p1": "Construïm relacions sòlides amb els clients, fonamentades en la credibilitat i la confiança, per respondre amb eficàcia a les teves demandes durant tot el procés de compravenda o lloguer.",
+    "p2": "Estarem al teu costat des del primer moment per ajudar-te a prendre la millor decisió. El nostre equip es dedica a oferir-te solucions personalitzades en cada operació.",
+    "tags": [
+      "Confiança mútua",
+      "Atenció a mida"
+    ],
+    "imgAlt": "L'equip d'Inllobsa",
+    "imgCaption": "L'equip humà d'Inllobsa",
+    "email": "Envia un correu a",
+    "whatsapp": "Escriu per WhatsApp a",
+    "altFallback": "Membre de l'equip d'Inllobsa"
   },
-  "why": {
-    "eyebrow": "Per què INLLOBSA",
-    "title": "Experiència, proximitat i rigor",
-    "lead": "Una manera de treballar consolidada durant dècades a Manresa.",
-    "items": [
+  "reviews": {
+    "eyebrow": "Ressenyes a Google Maps",
+    "title": "La confiança dels nostres clients",
+    "lead": "Descobreix l'experiència de famílies, compradors, propietaris i llogaters que han confiat en Inllobsa a Manresa i al Bages.",
+    "cardTitle": "Inllobsa Immobiliària a Google Maps",
+    "cardText": "Llegeix les opinions dels nostres clients sobre l'oficina del Passeig de Pere III de Manresa, o explica'ns la teva experiència.",
+    "ctaSee": "Veure les ressenyes a Google",
+    "source": "Ressenya publicada a Google Maps"
+  },
+  "territory": {
+    "eyebrow": "Arrels i comunitat",
+    "title": "Ens impliquem amb el territori",
+    "lead": "Col·laborem amb organitzacions culturals i esportives de referència per donar suport a la vida social, l'esport i el talent del Bages.",
+    "columns": [
       {
-        "icon": "clock",
-        "title": "Trajectòria",
-        "text": "Al sector immobiliari de Manresa des de 1977: més de 40 anys d'operacions i de relació amb els clients."
+        "kicker": "Cultura i patrimoni",
+        "title": "Àmbit de la cultura",
+        "footer": "Compromesos amb el dinamisme cultural de Manresa",
+        "items": [
+          {
+            "name": "Abadal Music Fest",
+            "text": "Festival musical i enogastronòmic que uneix cultura, paisatge i patrimoni vinícola al cor del Bages."
+          },
+          {
+            "name": "FABA",
+            "text": "Festival d'Arts Visuals i Escèniques de Manresa, plataforma de creació contemporània i emergent."
+          }
+        ]
       },
       {
-        "icon": "pin",
-        "title": "Coneixement del territori",
-        "text": "Treballem a Manresa i a la comarca del Bages, un entorn que coneixem a fons."
-      },
-      {
-        "icon": "badge",
-        "title": "Assessorament professional",
-        "text": "Comptes amb l'assessorament d'un agent de la propietat immobiliària (API)."
-      },
-      {
-        "icon": "layers",
-        "title": "Gestió integral",
-        "text": "Assessorament, gestió administrativa i formalitats legals en un mateix lloc, amb un sol interlocutor."
-      },
-      {
-        "icon": "users",
-        "title": "Un equip per a cada àmbit",
-        "text": "Assessors dedicats a la venda, al lloguer i a l'administració de finques."
-      },
-      {
-        "icon": "door",
-        "title": "Tracte proper",
-        "text": "Una oficina a peu de carrer, al Passeig de Pere III, on pots venir a explicar-nos el teu cas en persona."
+        "kicker": "Esport i valors",
+        "title": "Món de l'esport",
+        "footer": "Amb l'esforç, la cooperació i l'esport de base",
+        "items": [
+          {
+            "name": "BAXI Manresa",
+            "text": "Club històric de bàsquet de la Lliga Endesa, ambaixador del caràcter i l'orgull manresà arreu d'Europa."
+          },
+          {
+            "name": "CE Manresa",
+            "text": "Club centenari de futbol, arrelat a la ciutat i compromès amb la formació de joves esportistes."
+          }
+        ]
       }
     ]
   },
-  "cta": {
-    "title": "Tens un immoble o un projecte en ment?",
-    "text": "Explica'ns què necessites i un assessor es posarà en contacte amb tu.",
-    "primary": "Escriu-nos",
-    "call": "Truca al 938 362 030"
+  "solvia": {
+    "eyebrow": "Espai immobiliari a Osona",
+    "title": "Coneixes Solvia Store Vic?",
+    "lead": "Un espai immobiliari on comprar o vendre casa teva amb un procés eficaç, professional i amb totes les garanties.",
+    "p1": "Des de l'inici de la cerca fins que vens o trobes la teva llar, t'oferim un servei pròxim i de qualitat, amb les eines que garanteixen un procés eficaç i professional.",
+    "p2": "Formar part de Solvia és formar part d'una de les immobiliàries de referència a Espanya, amb vendes sòlides des del 2012, i d'un gran equip humà que ofereix cada dia un servei complet.",
+    "phoneLabel": "Atenció telefònica",
+    "cta": "Truca a Solvia Store Vic",
+    "cards": [
+      {
+        "icon": "award",
+        "title": "Des de 2012",
+        "text": "Una trajectòria sòlida i reconeguda en volum de vendes."
+      },
+      {
+        "icon": "users",
+        "title": "Gran equip humà",
+        "text": "Compromís, confiança, proximitat i excel·lència al servei de la teva llar."
+      },
+      {
+        "icon": "shield",
+        "title": "Màximes garanties",
+        "text": "Eines tecnològiques i jurídiques per a una operació segura."
+      }
+    ]
   },
   "contact": {
-    "eyebrow": "Contacte",
-    "title": "Parlem",
-    "lead": "Vine a l'oficina, truca'ns o envia'ns la teva consulta i et respondrem tan aviat com puguem.",
-    "address": "Adreça",
-    "phone": "Telèfon",
-    "email": "Correu electrònic",
-    "social": "Xarxes socials",
-    "directions": "Com arribar-hi",
-    "form": {
-      "title": "Envia'ns la teva consulta",
-      "required": "Camps obligatoris",
-      "name": "Nom i cognoms",
-      "email": "Correu electrònic",
-      "phone": "Telèfon",
-      "optional": "opcional",
-      "service": "Servei d'interès",
-      "servicePlaceholder": "Selecciona una opció",
-      "serviceOther": "Una altra consulta",
-      "message": "Missatge",
-      "messagePlaceholder": "Explica'ns breument què necessites",
-      "consent": "Accepto que INLLOBSA tracti les meves dades per respondre aquesta consulta.",
-      "submit": "Envia la consulta",
-      "sending": "Enviant…",
-      "success": "Gràcies! Hem rebut la teva consulta i et respondrem aviat.",
-      "error": "No s'ha pogut enviar el missatge. Torna-ho a provar o escriu-nos a inllobsa@inllobsa.com.",
-      "errRequired": "Aquest camp és obligatori.",
-      "errEmail": "Introdueix un correu electrònic vàlid.",
-      "errPhone": "Introdueix un telèfon vàlid.",
-      "errConsent": "Has d'acceptar el tractament de les dades per continuar.",
-      "errSummary": "Revisa els camps marcats."
-    }
+    "eyebrow": "Atenció immediata",
+    "title": "Parla directament amb nosaltres",
+    "lead": "Tria el canal que et sigui més còmode i parla directament amb un assessor.",
+    "channels": {
+      "whatsapp": {
+        "title": "WhatsApp directe",
+        "text": "El canal més ràpid per resoldre dubtes, enviar fotos de la propietat o coordinar visites.",
+        "cta": "Obre WhatsApp"
+      },
+      "phone": {
+        "title": "Trucada telefònica",
+        "text": "Parla amb el nostre equip comercial o d'administració per a qualsevol consulta.",
+        "cta": "Truca ara"
+      },
+      "email": {
+        "title": "Correu electrònic",
+        "text": "Envia'ns documentació, detalls de la finca o peticions formals.",
+        "cta": "Escriu un correu"
+      },
+      "visit": {
+        "title": "Visita presencial",
+        "text": "Vine a conèixer-nos al centre de Manresa i pren un cafè amb nosaltres.",
+        "cta": "Com arribar-hi"
+      }
+    },
+    "officeLabel": "Oficina principal",
+    "officeName": "Oficina Inllobsa Passeig",
+    "hoursLabel": "Horari d'atenció",
+    "hoursDays": "De dilluns a divendres",
+    "hours": "9:00–13:30 · 16:00–19:30",
+    "apptLabel": "Atenció personalitzada",
+    "appt": "Visites i reunions amb cita prèvia"
   },
   "footer": {
-    "tagline": "Immobiliària a Manresa des de 1977. Assessorament i gestió en compravenda, lloguer i administració de finques.",
-    "navTitle": "Navegació",
+    "tagline": "Gestió immobiliària professional, transparent i eficient a Manresa i voltants. El teu soci de confiança per comprar, vendre i llogar.",
+    "servicesTitle": "Serveis",
+    "companyTitle": "Inllobsa",
     "contactTitle": "Contacte",
+    "officialWeb": "Web oficial",
     "rights": "Tots els drets reservats."
   }
 }

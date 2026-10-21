@@ -1,12 +1,15 @@
 (() => {
   'use strict';
-  document.documentElement.classList.add('js');
+  const root = document.documentElement;
+  root.classList.remove('no-js');
+  root.classList.add('js');
 
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasIO = 'IntersectionObserver' in window;
 
-  /* Capçalera: ombra en desplaçar */
+  /* Capçalera: línia inferior en desplaçar */
   const header = $('[data-header]');
   const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
@@ -26,16 +29,17 @@
   addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); toggle.focus(); }
   });
-  matchMedia('(min-width: 961px)').addEventListener('change', (e) => e.matches && setMenu(false));
+  matchMedia('(min-width: 1181px)').addEventListener('change', (e) => e.matches && setMenu(false));
 
   /* Secció activa al menú */
   const sections = $$('main section[id]');
   const links = $$('[data-nav-link]');
-  let current = '';
-  if ('IntersectionObserver' in window) {
+  if (hasIO) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => { if (entry.isIntersecting) current = entry.target.id; });
-      links.forEach((a) => a.classList.toggle('is-active', a.hash === `#${current}`));
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((a) => a.classList.toggle('is-active', a.hash === `#${entry.target.id}`));
+      });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach((s) => io.observe(s));
   }
@@ -43,98 +47,98 @@
   /* Canvi d'idioma conservant la secció on es troba l'usuari */
   const sectionInView = () => {
     const line = innerHeight * 0.4;
-    const visible = sections.filter((s) => s.getBoundingClientRect().top <= line);
-    return visible.length ? visible[visible.length - 1].id : '';
+    const passed = sections.filter((s) => s.getBoundingClientRect().top <= line);
+    return passed.length ? passed[passed.length - 1].id : '';
   };
   $$('[data-lang-switch]').forEach((a) => a.addEventListener('click', () => {
     const id = sectionInView();
     a.hash = id && id !== 'top' ? id : '';
   }));
 
-  /* Enllaços "Demana informació": preselecciona el servei al formulari */
-  const serviceSelect = $('#f-service');
-  $$('[data-service]').forEach((a) => a.addEventListener('click', () => {
-    if (serviceSelect) serviceSelect.value = a.dataset.service;
-  }));
+  /* Carrusel del hero */
+  const carousel = $('[data-carousel]');
+  if (carousel) {
+    const slides = $$('[data-slide]', carousel);
+    const dots = $$('[data-dot]', carousel);
+    const toggleBtn = $('[data-carousel-toggle]', carousel);
+    const DELAY = 6500;
+    let index = 0, timer = null, paused = reduceMotion;
 
-  /* Aparició subtil d'elements */
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const targets = $$('.service-card, .why-item, .timeline-item');
-    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
-    }), { rootMargin: '0px 0px -8% 0px' });
-    targets.forEach((el, i) => {
-      el.setAttribute('data-reveal', '');
-      el.style.transitionDelay = `${(i % 3) * 70}ms`;
-      io.observe(el);
-    });
+    const slidesWrap = slides[0].parentElement;
+    const show = (i) => {
+      if (i !== index) slidesWrap.classList.add('has-moved');
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => {
+        const active = n === index;
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', String(!active));
+      });
+      dots.forEach((d, n) => d.setAttribute('aria-current', String(n === index)));
+    };
+    const stop = () => { clearInterval(timer); timer = null; };
+    const play = () => { stop(); if (!paused) timer = setInterval(() => show(index + 1), DELAY); };
+    const setPaused = (p) => {
+      paused = p;
+      toggleBtn.classList.toggle('is-paused', p);
+      toggleBtn.setAttribute('aria-label', p ? toggleBtn.dataset.labelPlay : toggleBtn.dataset.labelPause);
+      play();
+    };
+
+    $('[data-carousel-prev]', carousel).addEventListener('click', () => { show(index - 1); play(); });
+    $('[data-carousel-next]', carousel).addEventListener('click', () => { show(index + 1); play(); });
+    dots.forEach((d) => d.addEventListener('click', () => { show(Number(d.dataset.dot)); play(); }));
+    toggleBtn.addEventListener('click', () => setPaused(!paused));
+    // Pausa mentre el ratolí o el focus són dins del carrusel
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', play);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', play);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
+
+    show(0);
+    slidesWrap.classList.add('is-ready');
+    setPaused(paused);
   }
 
-  /* Formulari de contacte */
-  const form = $('[data-contact-form]');
-  if (form) {
-    const msg = form.dataset;
-    const status = $('[data-form-status]', form);
-    const submit = $('[data-submit]', form);
-    const submitText = submit.textContent;
-    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-    const phoneRe = /^\+?[\d\s().-]{9,20}$/;
-
-    const fields = {
-      nom: (v) => (v.trim() ? '' : msg.msgRequired),
-      email: (v) => (!v.trim() ? msg.msgRequired : emailRe.test(v.trim()) ? '' : msg.msgEmail),
-      telefon: (v) => (!v.trim() || phoneRe.test(v.trim()) ? '' : msg.msgPhone),
-      missatge: (v) => (v.trim() ? '' : msg.msgRequired),
-      consentiment: (_, el) => (el.checked ? '' : msg.msgConsent),
+  /* Comptadors animats de les xifres */
+  const countUp = (el) => {
+    const target = Number(el.dataset.count);
+    if (!target || reduceMotion) return;
+    const from = target > 1000 ? target - 60 : 0;   // els anys compten només els últims anys
+    const duration = 1600;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = String(Math.round(from + (target - from) * eased));
+      if (t < 1) requestAnimationFrame(step);
     };
+    el.textContent = String(from);
+    requestAnimationFrame(step);
+  };
 
-    const check = (name) => {
-      const el = form.elements[name];
-      const error = fields[name](el.value, el);
-      const out = document.getElementById(`${el.id}-err`);
-      out.textContent = error;
-      if (error) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid');
-      return !error;
-    };
-
-    Object.keys(fields).forEach((name) => {
-      const el = form.elements[name];
-      el.addEventListener(el.type === 'checkbox' ? 'change' : 'blur', () => check(name));
-      el.addEventListener('input', () => el.hasAttribute('aria-invalid') && check(name));
+  /* Aparició esglaonada dels elements i arrencada dels comptadors */
+  const revealables = $$('[data-reveal]');
+  if (hasIO && !reduceMotion) {
+    const groups = new Map();
+    revealables.forEach((el) => {
+      const siblings = groups.get(el.parentElement) || [];
+      siblings.push(el);
+      groups.set(el.parentElement, siblings);
+      el.style.transitionDelay = `${Math.min(siblings.length - 1, 5) * 80}ms`;
     });
-
-    const setStatus = (text, type) => {
-      status.textContent = text;
-      status.className = `form-status${type ? ` is-${type}` : ''}`;
-    };
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const invalid = Object.keys(fields).filter((name) => !check(name));
-      if (invalid.length) {
-        setStatus(msg.msgSummary, 'error');
-        form.elements[invalid[0]].focus();
-        return;
-      }
-      submit.disabled = true;
-      submit.textContent = msg.msgSending;
-      setStatus('', '');
-      try {
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(new FormData(form)).toString(),
-        });
-        if (!res.ok) throw new Error(String(res.status));
-        form.reset();
-        setStatus(msg.msgSuccess, 'success');
-      } catch {
-        setStatus(msg.msgError, 'error');
-      } finally {
-        submit.disabled = false;
-        submit.textContent = submitText;
-      }
-    });
+    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('is-visible');
+      $$('[data-count]', el).forEach(countUp);
+      // Un cop ha aparegut, treu el retard perquè no afecti els efectes en passar-hi per sobre
+      setTimeout(() => { el.style.transitionDelay = ''; }, 1200);
+      io.unobserve(entry.target);
+    }), { rootMargin: '0px 0px -8% 0px' });
+    revealables.forEach((el) => io.observe(el));
+  } else {
+    revealables.forEach((el) => el.classList.add('is-visible'));
   }
 
   /* Any actual al peu */
