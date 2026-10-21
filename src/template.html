@@ -423,21 +423,24 @@
 
         <div class="rating" data-reveal>
           <div class="rating-score">
-            <span class="rating-num"><span data-count="{{reviews.ratingValue}}" data-decimals="1">{{reviews.rating}}</span><span class="sr-only"> / 5</span></span>
+            <span class="rating-num">+<span data-count="250">250</span></span>
             <div class="rating-stars" aria-hidden="true">
               <div class="stars stars--base"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
               <div class="stars stars--fill"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
             </div>
-            <p class="rating-label">{{reviews.ratingLabel}}</p>
-          </div>
-          <div class="rating-count">
-            <span class="rating-num">+<span data-count="250">250</span></span>
             <p class="rating-label">{{reviews.countLabel}}</p>
+          </div>
+          <div class="rating-verified">
+            <span class="verified-badge" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <div>
+              <p class="verified-title">{{reviews.verifiedTitle}} <svg class="icon verified-tick" aria-hidden="true"><use href="#i-check"/></svg></p>
+              <p class="rating-label">{{reviews.verifiedText}}</p>
+            </div>
           </div>
           <div class="rating-cta">
             <h3>{{reviews.cardTitle}}</h3>
             <p>{{reviews.cardText}}</p>
-            <a class="btn btn-primary" href="{{site.mapsUrl}}" target="_blank" rel="noopener">{{reviews.ctaSee}}
+            <a class="btn btn-primary" href="{{site.reviewsUrl}}" target="_blank" rel="noopener">{{reviews.ctaSee}}
               <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only">{{a11y.newTab}}</span></a>
           </div>
         </div>
@@ -459,7 +462,7 @@
               </div>
               <blockquote lang="{{this.lang}}" data-review-text><p>{{this.text}}</p></blockquote>
               <button class="review-more" type="button" data-review-more data-less="{{reviews.readLess}}" hidden>{{reviews.readMore}}</button>
-              <p class="review-source">{{reviews.source}}</p>
+              <a class="review-source" href="{{site.reviewsUrl}}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>{{reviews.source}}<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only"> {{a11y.newTab}}</span></a>
             </li>
             {{/each}}
           </ul>
@@ -517,11 +520,11 @@
           </div>
         </div>
         <div class="solvia-side">
-          <figure class="solvia-photo" data-reveal>
+          <figure class="solvia-photo">
             <picture>
               <source type="image/webp" srcset="{{base}}assets/img/photos/solvia-store-vic-640.webp 640w, {{base}}assets/img/photos/solvia-store-vic-800.webp 800w" sizes="(min-width: 960px) 460px, 92vw">
               <img src="{{base}}assets/img/photos/solvia-store-vic-800.jpg" srcset="{{base}}assets/img/photos/solvia-store-vic-640.jpg 640w, {{base}}assets/img/photos/solvia-store-vic-800.jpg 800w" sizes="(min-width: 960px) 460px, 92vw"
-                   alt="{{solvia.imgAlt}}" width="800" height="712" loading="lazy">
+                   alt="{{solvia.imgAlt}}" width="800" height="712">
             </picture>
             <figcaption><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Solvia Store Vic</figcaption>
           </figure>

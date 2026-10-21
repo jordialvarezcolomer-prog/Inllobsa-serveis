@@ -316,14 +316,13 @@
     "cardText": "Lee las opiniones de nuestros clientes sobre la oficina del Passeig de Pere III de Manresa, o cuéntanos tu experiencia.",
     "ctaSee": "Ver las reseñas en Google",
     "source": "Reseña publicada en Google Maps",
-    "rating": "4,5",
-    "ratingValue": "4.5",
-    "ratingLabel": "Valoración media en Google",
     "countLabel": "reseñas de clientes en Google",
     "readMore": "Leerla entera",
     "readLess": "Mostrar menos",
     "pause": "Detener el desplazamiento de las reseñas",
-    "play": "Reanudar el desplazamiento de las reseñas"
+    "play": "Reanudar el desplazamiento de las reseñas",
+    "verifiedTitle": "Verificadas por Google",
+    "verifiedText": "Opiniones reales de clientes publicadas en Google Maps"
   },
   "territory": {
     "eyebrow": "Raíces y comunidad",

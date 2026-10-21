@@ -412,7 +412,7 @@ figure { margin: 0; }
 
 /* --- Ressenyes ---------------------------------------------------------------------------- */
 .rating { display: grid; gap: 28px; align-items: center; max-width: 1040px; margin-inline: auto; padding: clamp(24px, 4vw, 40px); border: 1px solid var(--line); border-radius: var(--radius-lg); }
-@media (min-width: 900px) { .rating { grid-template-columns: auto auto 1fr; gap: 48px; } .rating-count { padding-left: 48px; border-left: 1px solid var(--line); } }
+@media (min-width: 900px) { .rating { grid-template-columns: auto auto 1fr; gap: 48px; } .rating-verified { padding-left: 48px; border-left: 1px solid var(--line); } }
 .rating-num { display: block; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 300; line-height: 1; letter-spacing: -0.03em; color: var(--navy); font-variant-numeric: tabular-nums; }
 .rating-label { margin: 8px 0 0; font-size: .875rem; color: var(--muted); }
 .rating-stars { position: relative; display: inline-block; margin-top: 12px; }
@@ -422,6 +422,15 @@ figure { margin: 0; }
 .stars--fill { position: absolute; inset: 0 auto 0 0; width: 90%; overflow: hidden; color: var(--star); }
 .js .rating .stars--fill { width: 0; transition: width 1.8s cubic-bezier(.2,.8,.2,1) .2s; }
 .js .rating.is-visible .stars--fill { width: 90%; } /* 4,5 de 5 */
+.rating-verified { display: flex; gap: 16px; align-items: center; }
+.verified-badge { position: relative; display: grid; place-items: center; width: 64px; height: 64px; flex: none; border-radius: 50%; background: #e7f6ef; color: #059669; }
+.verified-badge .icon { width: 32px; height: 32px; stroke-width: 1.8; }
+.verified-badge::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #059669; opacity: 0; }
+.js .rating.is-visible .verified-badge::after { animation: ring 1.6s ease-out .6s 2; }
+.js .rating .verified-badge { transform: scale(.6); opacity: 0; transition: transform .6s cubic-bezier(.3,1.6,.5,1) .4s, opacity .4s ease .4s; }
+.js .rating.is-visible .verified-badge { transform: none; opacity: 1; }
+.verified-title { margin: 0; white-space: nowrap; font-size: 1.125rem; font-weight: 800; color: var(--navy); }
+.verified-tick { display: inline-block; vertical-align: -3px; margin-left: 4px; width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: #059669; color: #fff; stroke-width: 3; }
 .rating-cta h3 { font-size: 1.25rem; margin-bottom: 6px; }
 .rating-cta p { color: var(--muted); font-size: .9375rem; margin-bottom: 18px; }
 
@@ -445,7 +454,10 @@ figure { margin: 0; }
 .review.is-open blockquote p { -webkit-line-clamp: unset; display: block; }
 .review-more { align-self: flex-start; margin-top: 8px; padding: 0; border: 0; background: none; font: inherit; font-size: .8125rem; font-weight: 800; color: var(--blue); cursor: pointer; }
 .review-more:hover { text-decoration: underline; }
-.review-source { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: .75rem; font-weight: 700; color: var(--muted); }
+.review-source { display: flex; align-items: center; gap: 6px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: .75rem; font-weight: 700; color: #059669; text-decoration: none; }
+.review-source .icon { width: 15px; height: 15px; }
+.review-source .icon:last-of-type { width: 13px; height: 13px; margin-left: auto; color: var(--muted); }
+.review-source:hover { text-decoration: underline; }
 .marquee-controls { display: flex; justify-content: center; }
 .marquee-toggle { display: none; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--navy); cursor: pointer; }
 .marquee.is-ready .marquee-toggle { display: grid; }

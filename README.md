@@ -57,8 +57,7 @@ Solvia Store Vic · Contacte (WhatsApp, telèfon, correu, visita, horari) · Peu
 
 ## Ressenyes
 
-- Resum amb comptadors animats: **4,5** de valoració mitjana (les estrelles s'omplen fins al 90%) i **+250** ressenyes a Google.
-  Els valors són a `src/i18n/*.json` (`reviews.rating`, `reviews.ratingValue`), i el +250 és a `src/template.html`.
+- Resum: **+250 ressenyes** amb comptador animat i estrelles que s'omplen, i el segell «Verificades per Google». Cada ressenya enllaça a Google Maps (`reviewsUrl` a `src/site.json`).
 - Un carrusel continu de dues files (en sentits oposats) mostra les ressenyes de `src/reviews.json`.
   S'atura en passar-hi el cursor i té un botó de pausa. Les ressenyes llargues es retallen i tenen el botó «Llegeix-la sencera».
 - Hi ha 28 ressenyes reals de 5 estrelles, amb el text literal i l'idioma original. Quan se n'ha escurçat una, s'hi ha posat «[…]».
