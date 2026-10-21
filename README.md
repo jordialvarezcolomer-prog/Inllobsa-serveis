@@ -57,35 +57,37 @@ Solvia Store Vic · Contacte (WhatsApp, telèfon, correu, visita, horari) · Peu
 
 ## Ressenyes
 
-La secció enllaça a Google Maps. Per mostrar ressenyes reals, copieu-les de Google a `src/reviews.json`:
+- Resum amb comptadors animats: **4,5** de valoració mitjana (les estrelles s'omplen fins al 90%) i **+250** ressenyes a Google.
+  Els valors són a `src/i18n/*.json` (`reviews.rating`, `reviews.ratingValue`), i el +250 és a `src/template.html`.
+- Un carrusel continu de dues files (en sentits oposats) mostra les ressenyes de `src/reviews.json`.
+  S'atura en passar-hi el cursor i té un botó de pausa. Les ressenyes llargues es retallen i tenen el botó «Llegeix-la sencera».
+- Hi ha 28 ressenyes reals de 5 estrelles, amb el text literal i l'idioma original. Quan se n'ha escurçat una, s'hi ha posat «[…]».
+  No s'hi han inclòs la ressenya marcada per revisar («La Maravillosa VIDA»), la que no és de la immobiliària (Jose Antonio Reina)
+  ni la que menciona comentaris negatius sobre els lloguers (Diego Ramírez).
+- Per afegir-ne o treure'n, editeu `src/reviews.json` (`name`, `lang`, `text`) i executeu `node build.mjs`.
 
-```json
-[
-  { "name": "Nom Cognom", "meta": "Compravenda · Manresa", "text": "Text literal de la ressenya." }
-]
-```
+## Equip
 
-Executeu `node build.mjs`: apareixerà una targeta per a cada ressenya. Mentre el fitxer estigui buit,
-només es mostra el bloc amb l'enllaç a Google.
-
-Les sis ressenyes de la web de prova de Netlify no s'han incorporat, perquè no s'han pogut verificar a Google.
+Les persones apareixen en ziga-zaga, alternant a banda i banda d'un eix central. En passar el cursor per sobre de la foto
+(o en tocar-la, al mòbil, o en activar-la amb el teclat), la foto s'amplia i surt la frase de la persona, en cursiva i entre cometes.
+Mentre no s'hi passa el cursor, es veuen el nom, el càrrec, el correu i el WhatsApp. Les frases són a `src/team.json` (`quote.ca` i `quote.es`).
 
 ## Fonts del contingut
 
 - Brief de la web de referència https://inllobsa.netlify.app/, facilitat per Inllobsa: textos, serveis, valors,
   equip, horari, territori i Solvia Store Vic.
 - Brief i captures de https://www.mgo.cat/, facilitats per Inllobsa: referència de disseny.
-- Logotip i fotos de l'equip facilitats per Inllobsa. Els colors de marca s'han extret del logotip.
+- Logotip, fotos de l'equip (també la de grup a l'aire lliure) i ressenyes de Google facilitats per Inllobsa. Els colors de marca s'han extret del logotip.
 - Dades legals (Inmobiliaria Llobsa, SA, NIF A08469967) i història: www.inllobsa.com i Ajuntament de Manresa.
 
 Des de l'entorn de desenvolupament no s'ha pogut accedir directament a cap d'aquestes webs, perquè la xarxa les bloqueja.
 
 ## Pendent de revisar o aportar
 
+1. **Frases de l'equip:** les de `src/team.json` són **propostes redactades a partir del càrrec**. Cal validar-les amb cada persona abans de publicar.
 1. **Fotos ↔ noms de l'equip:** s'han assignat per semblança amb les fotos de la web de Netlify. Reviseu-les a `src/team.json` (camp `photo`).
 2. **Novena persona:** la de la foto `public/assets/img/team/equip-01-*` (cabell llarg castany, braços creuats) surt a les fotos de grup,
    però no a la llista de l'equip. Si cal, afegiu-la a `src/team.json` amb el nom, el càrrec i el contacte.
-3. **Ressenyes reals** (vegeu més amunt) i, si voleu, el nombre total de ressenyes a Google.
 4. **Avís legal, política de privacitat i cookies:** cal enllaçar-los al peu de pàgina quan tingueu les URL.
 5. **Instagram:** no hi ha cap URL verificada. Només s'enllaça Facebook.
 6. **WhatsApp de Solvia Store Vic:** només es coneix el telèfon (621 234 741), així que només hi ha botó de trucada.

@@ -304,7 +304,9 @@
     "imgCaption": "L'equip humà d'Inllobsa",
     "email": "Envia un correu a",
     "whatsapp": "Escriu per WhatsApp a",
-    "altFallback": "Membre de l'equip d'Inllobsa"
+    "altFallback": "Membre de l'equip d'Inllobsa",
+    "hoverHint": "Passa el cursor per sobre de cada foto",
+    "touchHint": "Toca una foto per llegir la seva frase"
   },
   "reviews": {
     "eyebrow": "Ressenyes a Google Maps",
@@ -313,7 +315,15 @@
     "cardTitle": "Inllobsa Immobiliària a Google Maps",
     "cardText": "Llegeix les opinions dels nostres clients sobre l'oficina del Passeig de Pere III de Manresa, o explica'ns la teva experiència.",
     "ctaSee": "Veure les ressenyes a Google",
-    "source": "Ressenya publicada a Google Maps"
+    "source": "Ressenya publicada a Google Maps",
+    "rating": "4,5",
+    "ratingValue": "4.5",
+    "ratingLabel": "Valoració mitjana a Google",
+    "countLabel": "ressenyes de clients a Google",
+    "readMore": "Llegeix-la sencera",
+    "readLess": "Mostra'n menys",
+    "pause": "Atura el desplaçament de les ressenyes",
+    "play": "Reprèn el desplaçament de les ressenyes"
   },
   "territory": {
     "eyebrow": "Arrels i comunitat",

@@ -90,11 +90,18 @@ for (const [code, dict] of Object.entries(langs)) {
       return {
         ...m,
         role,
+        quote: m.quote?.[code] || '',
         alt: m.name ? [m.name, role].filter(Boolean).join(', ') : dict.team.altFallback,
         waHref: m.phone ? waLink(`34${digits(m.phone)}`, dict.wa.person) : '',
       };
     }),
-    reviewList: reviews.map((r) => ({ ...r, initials: r.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase() })),
+    // Ressenyes repartides en dues files per al carrusel continu
+    reviewRows: [0, 1].map((row) => ({
+      items: reviews.filter((_, i) => i % 2 === row).map((r) => ({
+        ...r,
+        initials: r.name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase(),
+      })),
+    })),
   };
   const html = render(template, [ctx]);
   const dir = isDefault ? out : join(out, code);

@@ -100,9 +100,12 @@
     setPaused(paused);
   }
 
-  /* Comptadors animats de les xifres */
+  /* Comptadors animats de les xifres (admeten decimals: data-decimals) */
+  const decimalSep = (0.5).toLocaleString(root.lang).charAt(1);
+  const format = (n, decimals) => n.toFixed(decimals).replace('.', decimalSep);
   const countUp = (el) => {
     const target = Number(el.dataset.count);
+    const decimals = Number(el.dataset.decimals || 0);
     if (!target || reduceMotion) return;
     const from = target > 1000 ? target - 60 : 0;   // els anys compten només els últims anys
     const duration = 1600;
@@ -110,10 +113,10 @@
     const step = (now) => {
       const t = Math.min(1, (now - start) / duration);
       const eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = String(Math.round(from + (target - from) * eased));
+      el.textContent = format(from + (target - from) * eased, decimals);
       if (t < 1) requestAnimationFrame(step);
     };
-    el.textContent = String(from);
+    el.textContent = format(from, decimals);
     requestAnimationFrame(step);
   };
 
@@ -139,6 +142,69 @@
     revealables.forEach((el) => io.observe(el));
   } else {
     revealables.forEach((el) => el.classList.add('is-visible'));
+  }
+
+  /* Equip: en tocar o activar la foto amb el teclat, s'amplia i mostra la frase */
+  const people = $$('.person');
+  people.forEach((person) => {
+    const photo = $('[data-person-photo]', person);
+    const toggle = () => {
+      const open = !person.classList.contains('is-open');
+      people.forEach((p) => {
+        p.classList.remove('is-open');
+        $('[data-person-photo]', p).setAttribute('aria-pressed', 'false');
+      });
+      person.classList.toggle('is-open', open);
+      photo.setAttribute('aria-pressed', String(open));
+    };
+    photo.addEventListener('click', toggle);
+    photo.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* Ressenyes: carrusel continu en dues files */
+  const marquee = $('[data-marquee]');
+  if (marquee) {
+    const tracks = $$('[data-marquee-track]', marquee);
+    const toggleBtn = $('[data-marquee-toggle]', marquee);
+
+    // "Llegeix-la sencera" només quan el text queda retallat
+    const setupReadMore = (scope) => $$('.review', scope).forEach((review) => {
+      const text = $('[data-review-text] p', review);
+      const btn = $('[data-review-more]', review);
+      if (!btn) return;
+      const more = btn.textContent;
+      btn.hidden = text.scrollHeight <= text.clientHeight + 2;
+      btn.onclick = () => {
+        const open = review.classList.toggle('is-open');
+        btn.textContent = open ? btn.dataset.less : more;
+        btn.setAttribute('aria-expanded', String(open));
+      };
+    });
+
+    if (!reduceMotion) {
+      tracks.forEach((track) => {
+        // Es dupliquen les targetes perquè el moviment sigui continu; la còpia queda oculta per als lectors de pantalla
+        [...track.children].forEach((item) => {
+          const clone = item.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          $$('button, a', clone).forEach((el) => el.setAttribute('tabindex', '-1'));
+          track.appendChild(clone);
+        });
+      });
+      marquee.classList.add('is-ready');
+      const setDuration = () => tracks.forEach((track) => {
+        track.style.setProperty('--marquee-duration', `${Math.round(track.scrollWidth / 2 / 38)}s`); // ~38 px/s
+      });
+      setDuration();
+      addEventListener('resize', setDuration);
+      toggleBtn.addEventListener('click', () => {
+        const paused = marquee.classList.toggle('is-paused');
+        toggleBtn.setAttribute('aria-label', paused ? marquee.dataset.labelPlay : marquee.dataset.labelPause);
+      });
+    }
+    (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setupReadMore(marquee));
   }
 
   /* Any actual al peu */

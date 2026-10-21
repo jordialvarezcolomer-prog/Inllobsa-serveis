@@ -22,7 +22,7 @@
   <link rel="icon" href="{{base}}assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap">
   <link rel="preload" as="image" href="{{base}}assets/img/photos/hero-01-1920.webp" imagesrcset="{{base}}assets/img/photos/hero-01-1100.webp 1100w, {{base}}assets/img/photos/hero-01-1920.webp 1920w" imagesizes="100vw" type="image/webp">
   <link rel="stylesheet" href="{{base}}assets/css/styles.css">
   <script src="{{base}}assets/js/main.js" defer></script>
@@ -91,6 +91,7 @@
       <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
       <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5 4.8 16A8.5 8.5 0 1 1 8 19.2z"/><path d="M9.2 8.2c-.3 2.9 3.4 6.7 6.6 6.6l.9-1.4-1.9-1-.9.8a4.6 4.6 0 0 1-2.2-2.2l.8-.9-1-1.9z"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5"/></symbol>
+      <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.9-2.6L4 15a1.6 1.6 0 0 1 2.5-2L9 15"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     </defs>
@@ -360,9 +361,9 @@
         <div class="commit">
           <figure class="commit-media">
             <picture>
-              <source type="image/webp" srcset="{{base}}assets/img/photos/equip-grup-800.webp 800w, {{base}}assets/img/photos/equip-grup-1300.webp 1300w" sizes="(min-width: 960px) 640px, 92vw">
-              <img src="{{base}}assets/img/photos/equip-grup-1300.jpg" srcset="{{base}}assets/img/photos/equip-grup-800.jpg 800w, {{base}}assets/img/photos/equip-grup-1300.jpg 1300w" sizes="(min-width: 960px) 640px, 92vw"
-                   alt="{{team.imgAlt}}" width="1300" height="866" loading="lazy">
+              <source type="image/webp" srcset="{{base}}assets/img/photos/equip-huma-800.webp 800w, {{base}}assets/img/photos/equip-huma-1300.webp 1300w" sizes="(min-width: 960px) 640px, 92vw">
+              <img src="{{base}}assets/img/photos/equip-huma-1300.jpg" srcset="{{base}}assets/img/photos/equip-huma-800.jpg 800w, {{base}}assets/img/photos/equip-huma-1300.jpg 1300w" sizes="(min-width: 960px) 640px, 92vw"
+                   alt="{{team.imgAlt}}" width="1300" height="975" loading="lazy">
             </picture>
             <figcaption><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>{{team.imgCaption}}</figcaption>
           </figure>
@@ -378,24 +379,35 @@
           </div>
         </div>
 
-        <ul class="team-grid">
+        <p class="team-hint"><svg class="icon" aria-hidden="true"><use href="#i-pointer"/></svg><span class="hint-hover">{{team.hoverHint}}</span><span class="hint-touch">{{team.touchHint}}</span></p>
+        <ol class="team-zigzag">
           {{#each members}}
-          <li class="member" data-reveal>
-            <picture>
-              <source type="image/webp" srcset="{{base}}assets/img/team/{{this.photo}}-480.webp">
-              <img src="{{base}}assets/img/team/{{this.photo}}-480.jpg" alt="{{this.alt}}" width="480" height="640" loading="lazy">
-            </picture>
-            <div class="member-body">
-              <h3 class="member-name">{{this.name}}</h3>
-              <p class="member-role">{{this.role}}</p>
-              <div class="member-actions">
-                {{#if this.email}}<a class="member-link" href="mailto:{{this.email}}" aria-label="{{team.email}} {{this.name}}" title="{{this.email}}"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span class="member-link-text">{{this.email}}</span></a>{{/if}}
-                {{#if this.waHref}}<a class="member-link member-link--wa" href="{{this.waHref}}" target="_blank" rel="noopener" aria-label="{{team.whatsapp}} {{this.name}} {{a11y.newTab}}"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="member-link-text">{{this.phone}}</span></a>{{/if}}
+          <li class="person" data-reveal>
+            <div class="person-photo" tabindex="0" role="button" aria-pressed="false" aria-controls="person-quote-{{@num}}" aria-label="{{this.name}}" data-person-photo>
+              <picture>
+                <source type="image/webp" srcset="{{base}}assets/img/team/{{this.photo}}-480.webp">
+                <img src="{{base}}assets/img/team/{{this.photo}}-480.jpg" alt="{{this.alt}}" width="480" height="640" loading="lazy">
+              </picture>
+            </div>
+            <div class="person-body">
+              <div class="person-info">
+                <h3 class="person-name">{{this.name}}</h3>
+                <p class="person-role">{{this.role}}</p>
+                <div class="person-actions">
+                  {{#if this.email}}<a class="person-link" href="mailto:{{this.email}}" aria-label="{{team.email}} {{this.name}}"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>{{this.email}}</span></a>{{/if}}
+                  {{#if this.waHref}}<a class="person-link person-link--wa" href="{{this.waHref}}" target="_blank" rel="noopener" aria-label="{{team.whatsapp}} {{this.name}} {{a11y.newTab}}"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>{{this.phone}}</span></a>{{/if}}
+                </div>
               </div>
+              {{#if this.quote}}
+              <blockquote class="person-quote" id="person-quote-{{@num}}">
+                <p>«{{this.quote}}»</p>
+                <footer><strong>{{this.name}}</strong> · {{this.role}}</footer>
+              </blockquote>
+              {{/if}}
             </div>
           </li>
           {{/each}}
-        </ul>
+        </ol>
       </div>
     </section>
 
@@ -407,32 +419,59 @@
           <h2 class="section-title" id="reviews-title">{{reviews.title}}</h2>
           <p class="section-lead">{{reviews.lead}}</p>
         </div>
-        <div class="reviews-card" data-reveal>
-          <div class="reviews-stars" aria-hidden="true">
-            <svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg>
+
+        <div class="rating" data-reveal>
+          <div class="rating-score">
+            <span class="rating-num"><span data-count="{{reviews.ratingValue}}" data-decimals="1">{{reviews.rating}}</span><span class="sr-only"> / 5</span></span>
+            <div class="rating-stars" aria-hidden="true">
+              <div class="stars stars--base"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+              <div class="stars stars--fill"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+            </div>
+            <p class="rating-label">{{reviews.ratingLabel}}</p>
           </div>
-          <div class="reviews-card-body">
+          <div class="rating-count">
+            <span class="rating-num">+<span data-count="250">250</span></span>
+            <p class="rating-label">{{reviews.countLabel}}</p>
+          </div>
+          <div class="rating-cta">
             <h3>{{reviews.cardTitle}}</h3>
             <p>{{reviews.cardText}}</p>
+            <a class="btn btn-primary" href="{{site.mapsUrl}}" target="_blank" rel="noopener">{{reviews.ctaSee}}
+              <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only">{{a11y.newTab}}</span></a>
           </div>
-          <a class="btn btn-primary" href="{{site.mapsUrl}}" target="_blank" rel="noopener">{{reviews.ctaSee}}
-            <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg><span class="sr-only">{{a11y.newTab}}</span></a>
         </div>
-        {{#if reviewList}}
-        <ul class="review-grid">
-          {{#each reviewList}}
-          <li class="review" data-reveal>
-            <div class="review-head">
-              <span class="review-avatar" aria-hidden="true">{{this.initials}}</span>
-              <div><p class="review-name">{{this.name}}</p><p class="review-meta">{{this.meta}}</p></div>
-            </div>
-            <blockquote>«{{this.text}}»</blockquote>
-            <p class="review-source">{{reviews.source}}</p>
-          </li>
-          {{/each}}
-        </ul>
-        {{/if}}
       </div>
+
+      {{#if reviewRows}}
+      <div class="marquee" data-marquee data-label-pause="{{reviews.pause}}" data-label-play="{{reviews.play}}">
+        {{#each reviewRows}}
+        <div class="marquee-row marquee-row--{{@num}}">
+          <ul class="marquee-track" data-marquee-track>
+            {{#each this.items}}
+            <li class="review">
+              <div class="review-head">
+                <span class="review-avatar" aria-hidden="true">{{this.initials}}</span>
+                <div>
+                  <p class="review-name">{{this.name}}</p>
+                  <p class="review-stars" aria-label="5 / 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></p>
+                </div>
+              </div>
+              <blockquote lang="{{this.lang}}" data-review-text><p>{{this.text}}</p></blockquote>
+              <button class="review-more" type="button" data-review-more data-less="{{reviews.readLess}}" hidden>{{reviews.readMore}}</button>
+              <p class="review-source">{{reviews.source}}</p>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/each}}
+        <div class="container marquee-controls">
+          <button class="marquee-toggle" type="button" data-marquee-toggle aria-label="{{reviews.pause}}">
+            <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+            <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+          </button>
+        </div>
+      </div>
+      {{/if}}
     </section>
 
     <!-- TERRITORI -->

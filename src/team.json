@@ -1,10 +1,18 @@
 [
-  { "photo": "equip-04", "name": "Sita Salido", "role": { "ca": "Directora d'Inllobsa", "es": "Directora de Inllobsa" }, "email": "sita@inllobsa.com", "phone": "676 798 099" },
-  { "photo": "equip-06", "name": "Verònica Cànovas", "role": { "ca": "Vendes d'obra nova", "es": "Ventas de obra nueva" }, "email": "info@inllobsa.com", "phone": "630 508 702" },
-  { "photo": "equip-08", "name": "Encarna Ávila", "role": { "ca": "Comercial de lloguers", "es": "Comercial de alquileres" }, "email": "lloguers@inllobsa.com", "phone": "676 740 664" },
-  { "photo": "equip-05", "name": "Maria Vega", "role": { "ca": "Màrqueting", "es": "Marketing" }, "email": "marketing@inllobsa.com", "phone": "682 581 930" },
-  { "photo": "equip-09", "name": "Iván Gavilán", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "comercial@inllobsa.com", "phone": "639 580 121" },
-  { "photo": "equip-07", "name": "Carla Herrera", "role": { "ca": "Administració de finques", "es": "Administración de fincas" }, "email": "administracio@inllobsa.com", "phone": "686 094 070" },
-  { "photo": "equip-03", "name": "Núria Prat", "role": { "ca": "Atenció al client", "es": "Atención al cliente" }, "email": "atencioclient@inllobsa.com", "phone": "676 798 099" },
-  { "photo": "equip-02", "name": "Josep Mª Hermosilla", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "josepmaria@inllobsa.com", "phone": "629 292 689" }
+  { "photo": "equip-04", "name": "Sita Salido", "role": { "ca": "Directora d'Inllobsa", "es": "Directora de Inllobsa" }, "email": "sita@inllobsa.com", "phone": "676 798 099",
+    "quote": { "ca": "Cada clau que lliurem és una història que comença. Per això ens hi impliquem com si fos la nostra.", "es": "Cada llave que entregamos es una historia que empieza. Por eso nos implicamos como si fuera la nuestra." } },
+  { "photo": "equip-06", "name": "Verònica Cànovas", "role": { "ca": "Vendes d'obra nova", "es": "Ventas de obra nueva" }, "email": "info@inllobsa.com", "phone": "630 508 702",
+    "quote": { "ca": "Una casa nova és un projecte de vida: t'acompanyo des del plànol fins a les claus.", "es": "Una casa nueva es un proyecto de vida: te acompaño desde el plano hasta las llaves." } },
+  { "photo": "equip-08", "name": "Encarna Ávila", "role": { "ca": "Comercial de lloguers", "es": "Comercial de alquileres" }, "email": "lloguers@inllobsa.com", "phone": "676 740 664",
+    "quote": { "ca": "Trobar la llar adequada comença per escoltar bé què necessites.", "es": "Encontrar el hogar adecuado empieza por escuchar bien lo que necesitas." } },
+  { "photo": "equip-05", "name": "Maria Vega", "role": { "ca": "Màrqueting", "es": "Marketing" }, "email": "marketing@inllobsa.com", "phone": "682 581 930",
+    "quote": { "ca": "Cada immoble té una història. La meva feina és explicar-la perquè arribi a la persona adequada.", "es": "Cada inmueble tiene una historia. Mi trabajo es contarla para que llegue a la persona adecuada." } },
+  { "photo": "equip-09", "name": "Iván Gavilán", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "comercial@inllobsa.com", "phone": "639 580 121",
+    "quote": { "ca": "Vendre bé vol dir acompanyar de prop i no deixar cap dubte sense resposta.", "es": "Vender bien significa acompañar de cerca y no dejar ninguna duda sin respuesta." } },
+  { "photo": "equip-07", "name": "Carla Herrera", "role": { "ca": "Administració de finques", "es": "Administración de fincas" }, "email": "administracio@inllobsa.com", "phone": "686 094 070",
+    "quote": { "ca": "Una bona administració es nota quan el propietari pot estar tranquil.", "es": "Una buena administración se nota cuando el propietario puede estar tranquilo." } },
+  { "photo": "equip-03", "name": "Núria Prat", "role": { "ca": "Atenció al client", "es": "Atención al cliente" }, "email": "atencioclient@inllobsa.com", "phone": "676 798 099",
+    "quote": { "ca": "Cada trucada i cada visita mereixen la mateixa atenció: la teva consulta és la nostra prioritat.", "es": "Cada llamada y cada visita merecen la misma atención: tu consulta es nuestra prioridad." } },
+  { "photo": "equip-02", "name": "Josep Mª Hermosilla", "role": { "ca": "Comercial de vendes", "es": "Comercial de ventas" }, "email": "josepmaria@inllobsa.com", "phone": "629 292 689",
+    "quote": { "ca": "La confiança es guanya pas a pas, des de la primera visita fins a la signatura.", "es": "La confianza se gana paso a paso, desde la primera visita hasta la firma." } }
 ]
