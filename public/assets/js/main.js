@@ -144,6 +144,40 @@
     revealables.forEach((el) => el.classList.add('is-visible'));
   }
 
+  /* Blocs que s'animen en entrar a la pantalla sense amagar-se abans (p. ex. la línia del màrqueting) */
+  if (hasIO) {
+    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    }), { rootMargin: '0px 0px -15% 0px' });
+    $$('[data-animate]').forEach((el) => io.observe(el));
+  } else {
+    $$('[data-animate]').forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* Targetes de serveis i màrqueting: llum que segueix el cursor i una lleugera inclinació 3D */
+  if (!reduceMotion && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    $$('[data-spotlight]').forEach((card) => {
+      const tilt = card.classList.contains('service-card');
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width;
+        const y = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--mx', `${x * 100}%`);
+        card.style.setProperty('--my', `${y * 100}%`);
+        if (tilt) {
+          card.style.setProperty('--rx', `${(0.5 - y) * 6}deg`);
+          card.style.setProperty('--ry', `${(x - 0.5) * 6}deg`);
+        }
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
+
   /* Equip: en tocar o activar la foto amb el teclat, s'amplia i mostra la frase */
   const people = $$('.person');
   people.forEach((person) => {

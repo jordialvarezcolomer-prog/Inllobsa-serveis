@@ -240,15 +240,45 @@ figure { margin: 0; }
 .service-grid { display: grid; gap: 20px; }
 @media (min-width: 680px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1040px) { .service-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
-.service-card { display: flex; flex-direction: column; padding: 32px 28px 28px; background: #fff; border-radius: var(--radius); transition: transform .25s, box-shadow .25s; }
-.service-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -24px rgb(27 38 56 / .35); }
+.service-card {
+  --rx: 0deg; --ry: 0deg;
+  position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column;
+  padding: 32px 28px 28px; background: #fff; border-radius: var(--radius);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, opacity .7s ease;
+}
+/* Fons blau que puja en passar-hi per sobre */
+.service-card::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--navy); transform: scaleY(0); transform-origin: bottom; transition: transform .5s cubic-bezier(.7,0,.2,1); }
+/* Llum que segueix el cursor */
+.service-card::after, .mk-card::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .3s; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / .12), transparent 45%); }
+.service-card:hover::before, .service-card:focus-within::before { transform: scaleY(1); }
+.service-card:hover::after { opacity: 1; }
+.js .service-card.is-visible:hover, .service-card:hover { transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px); box-shadow: 0 30px 60px -30px rgb(27 38 56 / .6); }
 .service-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
-.service-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; background: var(--tint); color: var(--blue); }
-.service-icon .icon { width: 26px; height: 26px; }
-.service-title { font-size: 1.25rem; margin-bottom: 10px; }
-.service-text { color: var(--muted); font-size: .96875rem; margin-bottom: 18px; }
+.service-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--tint); color: var(--blue); transition: background-color .4s, color .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+.service-icon .icon { width: 28px; height: 28px; }
+.service-title { font-size: 1.25rem; margin-bottom: 10px; transition: color .3s; }
+.service-text { color: var(--muted); font-size: .96875rem; margin-bottom: 18px; transition: color .3s; }
 .service-card .checks { margin-bottom: 24px; flex: 1; align-content: start; }
+.service-card .checks li, .service-card .checks .icon, .service-card .card-num, .service-card .text-link { transition: color .3s; }
 .service-card .text-link { align-self: flex-start; }
+.service-bignum { position: absolute; right: 14px; bottom: -26px; z-index: -1; font-size: 8rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1.5px var(--tint-2); transition: transform .6s cubic-bezier(.2,.8,.2,1), -webkit-text-stroke-color .4s; pointer-events: none; }
+.service-card:hover .service-bignum, .service-card:focus-within .service-bignum { transform: translateY(-14px); -webkit-text-stroke-color: rgb(255 255 255 / .16); }
+.service-card:hover .service-icon, .service-card:focus-within .service-icon { background: var(--orange); color: #fff; transform: rotate(-8deg) scale(1.08); }
+.service-card:hover .service-title, .service-card:focus-within .service-title { color: #fff; }
+.service-card:hover .service-text, .service-card:focus-within .service-text { color: #c6d1e1; }
+.service-card:hover .checks li, .service-card:focus-within .checks li { color: #e6ecf5; }
+.service-card:hover .checks .icon, .service-card:focus-within .checks .icon { color: #8fb3e3; }
+.service-card:hover .card-num, .service-card:focus-within .card-num { color: #b9c6d8; }
+.service-card:hover .text-link, .service-card:focus-within .text-link { color: #fff; }
+
+/* Les icones es dibuixen soles i les llistes entren esglaonades quan la targeta apareix */
+.js .service-icon .icon, .js .mk-icon { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.6s ease .25s; }
+.js .is-visible .service-icon .icon, .js .is-visible .mk-icon { stroke-dashoffset: 0; }
+.js .service-card .checks li { opacity: 0; transform: translateX(-12px); transition: opacity .5s ease, transform .5s ease, color .3s; }
+.js .service-card.is-visible .checks li { opacity: 1; transform: none; }
+.js .service-card.is-visible .checks li:nth-child(1) { transition-delay: .35s, .35s, 0s; }
+.js .service-card.is-visible .checks li:nth-child(2) { transition-delay: .5s, .5s, 0s; }
+.js .service-card.is-visible .checks li:nth-child(3) { transition-delay: .65s, .65s, 0s; }
 
 /* Bloc propietaris */
 .owner { display: grid; margin-top: clamp(48px, 7vw, 88px); border-radius: var(--radius-lg); overflow: hidden; background: var(--navy); color: #d6deea; }
@@ -266,14 +296,32 @@ figure { margin: 0; }
 @media (max-width: 520px) { .owner-actions .btn { width: 100%; white-space: normal; } }
 
 /* --- Màrqueting ---------------------------------------------------------------- */
-.mk-grid { display: grid; gap: 20px; }
+.mk-grid { position: relative; display: grid; gap: 20px; }
 @media (min-width: 680px) { .mk-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .mk-grid { grid-template-columns: repeat(4, 1fr); } }
-.mk-card { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); }
-.mk-icon { width: 40px; height: 40px; color: var(--blue); margin: 22px 0 20px; }
+@media (min-width: 1100px) {
+  .mk-grid { grid-template-columns: repeat(4, 1fr); }
+  /* Línia que uneix les quatre fases i es dibuixa d'esquerra a dreta */
+  .mk-grid::before { content: ""; position: absolute; z-index: 0; top: 61px; left: 60px; right: 60px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--blue), var(--orange)); transform: scaleX(0); transform-origin: left; transition: transform 1.8s cubic-bezier(.6,0,.2,1) .3s; }
+  .mk-grid.is-in::before, .no-js .mk-grid::before { transform: scaleX(1); }
+}
+.mk-card { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s, opacity .7s ease; }
+/* A escriptori les targetes són transparents perquè la línia passi per darrere de les icones */
+@media (min-width: 1100px) { .mk-card { overflow: visible; z-index: 1; background: transparent; } }
+.mk-card::before { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit; background: linear-gradient(160deg, var(--tint), #fff 70%); transform: scaleX(0); transform-origin: left; transition: transform .55s cubic-bezier(.7,0,.2,1); }
+.mk-card:hover::before, .mk-card:focus-within::before { transform: scaleX(1); }
+.mk-card:hover::after { opacity: 1; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgb(28 98 178 / .08), transparent 45%); }
+.js .mk-card.is-visible:hover, .mk-card:hover { transform: translateY(-8px); border-color: rgb(28 98 178 / .35); box-shadow: 0 26px 50px -30px rgb(27 38 56 / .45); }
+.mk-card .card-num { position: absolute; top: 28px; right: 28px; }
+.mk-icon-wrap { position: relative; z-index: 2; display: grid; place-items: center; width: 66px; height: 66px; margin-bottom: 22px; border-radius: 50%; background: #fff; border: 1.5px solid var(--line); color: var(--blue); transition: background-color .4s, border-color .4s, color .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+.mk-icon-wrap::after { content: ""; position: absolute; inset: -1.5px; border-radius: 50%; border: 2px solid var(--blue); opacity: 0; }
+.mk-icon { width: 30px; height: 30px; }
+.mk-card:hover .mk-icon-wrap, .mk-card:focus-within .mk-icon-wrap { background: var(--blue); border-color: var(--blue); color: #fff; transform: scale(1.08); }
+.mk-card:hover .mk-icon-wrap::after { animation: ring 1.4s ease-out infinite; }
+@keyframes ring { from { transform: scale(1); opacity: .6; } to { transform: scale(1.6); opacity: 0; } }
 .mk-title { font-size: 1.1875rem; margin-bottom: 10px; }
 .mk-text { color: var(--muted); font-size: .9375rem; flex: 1; margin-bottom: 20px; }
-.mk-card .tag { align-self: flex-start; }
+.mk-card .tag { align-self: flex-start; transition: background-color .3s, color .3s; }
+.mk-card:hover .tag, .mk-card:focus-within .tag { background: var(--blue); color: #fff; }
 
 /* --- Valors ------------------------------------------------------------------------ */
 .values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); border-top: 1px solid rgb(255 255 255 / .14); border-left: 1px solid rgb(255 255 255 / .14); }
@@ -418,12 +466,18 @@ figure { margin: 0; }
 
 /* --- Solvia Store Vic -------------------------------------------------------------------------- */
 .solvia { display: grid; gap: 40px; align-items: center; }
-@media (min-width: 960px) { .solvia { grid-template-columns: 1.3fr 1fr; gap: 80px; } }
+@media (min-width: 960px) { .solvia { grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; } }
 .solvia-body p:not(.eyebrow):not(.lead) { color: var(--muted); }
 .solvia-body .section-title { margin-bottom: 20px; }
 .solvia-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
 .solvia-phone { font-size: .9375rem; color: var(--muted); }
 .solvia-phone a { font-weight: 800; color: var(--navy); text-decoration: none; }
+.solvia-side { display: grid; gap: 14px; }
+.solvia-photo { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
+.solvia-photo img { width: 100%; height: auto; transition: transform .8s ease; }
+.solvia-photo:hover img { transform: scale(1.03); }
+.solvia-photo figcaption { position: absolute; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 8px; background: rgb(20 29 46 / .8); color: #fff; font-size: .8125rem; font-weight: 700; }
+.solvia-photo figcaption .icon { width: 16px; height: 16px; }
 .solvia-cards { display: grid; gap: 14px; }
 .solvia-cards li { display: flex; gap: 16px; padding: 22px; border-radius: var(--radius); background: var(--tint); }
 .solvia-cards .icon { width: 30px; height: 30px; color: var(--blue); }
@@ -483,3 +537,7 @@ figure { margin: 0; }
   .btn { white-space: normal; text-align: center; padding-block: 10px; }
   .rating > * { min-width: 0; }
 }
+
+/* Les targetes interactives conserven les seves pròpies transicions després d'aparèixer */
+.js .service-card[data-reveal], .js .mk-card[data-reveal] { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s, opacity .7s ease; }
+.service-card::after, .mk-card::after { border-radius: inherit; }

@@ -245,9 +245,9 @@
           </div>
           <p class="section-lead">{{services.lead}}</p>
         </div>
-        <ul class="service-grid">
+        <ul class="service-grid" data-animate>
           {{#each services.items}}
-          <li class="service-card" data-reveal>
+          <li class="service-card" data-reveal data-spotlight>
             <div class="service-top">
               <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg></span>
               <span class="card-num" aria-hidden="true">{{@num}}</span>
@@ -259,6 +259,7 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>{{this}}</li>
               {{/each}}
             </ul>
+            <span class="service-bignum" aria-hidden="true">{{@num}}</span>
             <a class="text-link" href="{{this.waHref}}" target="_blank" rel="noopener">
               {{services.more}}<span class="sr-only">: {{this.title}} {{a11y.newTab}}</span>
               <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
@@ -310,11 +311,11 @@
           </div>
           <p class="section-lead">{{marketing.lead}}</p>
         </div>
-        <ul class="mk-grid">
+        <ul class="mk-grid" data-animate>
           {{#each marketing.items}}
-          <li class="mk-card" data-reveal>
+          <li class="mk-card" data-reveal data-spotlight>
             <span class="card-num" aria-hidden="true">{{@num}}</span>
-            <svg class="icon mk-icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg>
+            <span class="mk-icon-wrap"><svg class="icon mk-icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg></span>
             <p class="kicker">{{this.kicker}}</p>
             <h3 class="mk-title">{{this.title}}</h3>
             <p class="mk-text">{{this.text}}</p>
@@ -515,6 +516,15 @@
             <span class="solvia-phone">{{solvia.phoneLabel}}: <a href="tel:{{site.solviaPhoneHref}}">{{site.solviaPhone}}</a></span>
           </div>
         </div>
+        <div class="solvia-side">
+          <figure class="solvia-photo" data-reveal>
+            <picture>
+              <source type="image/webp" srcset="{{base}}assets/img/photos/solvia-store-vic-640.webp 640w, {{base}}assets/img/photos/solvia-store-vic-800.webp 800w" sizes="(min-width: 960px) 460px, 92vw">
+              <img src="{{base}}assets/img/photos/solvia-store-vic-800.jpg" srcset="{{base}}assets/img/photos/solvia-store-vic-640.jpg 640w, {{base}}assets/img/photos/solvia-store-vic-800.jpg 800w" sizes="(min-width: 960px) 460px, 92vw"
+                   alt="{{solvia.imgAlt}}" width="800" height="712" loading="lazy">
+            </picture>
+            <figcaption><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Solvia Store Vic</figcaption>
+          </figure>
         <ul class="solvia-cards">
           {{#each solvia.cards}}
           <li data-reveal>
@@ -523,6 +533,7 @@
           </li>
           {{/each}}
         </ul>
+        </div>
       </div>
     </section>
 
