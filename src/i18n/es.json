@@ -1,0 +1,129 @@
+{
+  "lang": "es",
+  "locale": "es_ES",
+  "path": "/es/",
+  "meta": {
+    "title": "INLLOBSA · Inmobiliaria en Manresa desde 1977",
+    "description": "Inmobiliaria de Manresa con más de 40 años de experiencia. Asesoramiento y gestión administrativa y legal en la compraventa y el alquiler de viviendas, locales, naves y oficinas."
+  },
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "menuOpen": "Abrir el menú",
+    "menuClose": "Cerrar el menú",
+    "language": "Idioma",
+    "home": "INLLOBSA, inicio",
+    "mainNav": "Navegación principal",
+    "backToTop": "Volver arriba"
+  },
+  "nav": {
+    "about": "Quiénes somos",
+    "services": "Servicios",
+    "why": "Por qué INLLOBSA",
+    "contact": "Contacto",
+    "cta": "Contáctanos"
+  },
+  "langSwitch": {
+    "current": "ES",
+    "other": "CA",
+    "otherLabel": "Versió en català"
+  },
+  "hero": {
+    "eyebrow": "Inmobiliaria en Manresa · Desde 1977",
+    "title": "Asesoramiento inmobiliario con <em>más de 40 años</em> de experiencia",
+    "lead": "Acompañamos a particulares y empresas en la compraventa y el alquiler de viviendas, locales, naves industriales y oficinas, y nos ocupamos de toda la gestión administrativa y legal de la operación.",
+    "ctaPrimary": "Solicita asesoramiento",
+    "ctaSecondary": "Descubre los servicios",
+    "cardSince": "Desde",
+    "cardOffice": "Oficina Passeig",
+    "facts": [
+      { "value": "1977", "label": "Año de fundación" },
+      { "value": "+40", "label": "Años de experiencia" },
+      { "value": "Bages", "label": "Manresa y comarca" },
+      { "value": "API", "label": "Asesoramiento profesional" }
+    ]
+  },
+  "about": {
+    "eyebrow": "Quiénes somos",
+    "title": "Una inmobiliaria manresana con historia propia",
+    "p1": "Nuestros orígenes se remontan a 1977, cuando José Salido Chimeno fundó Inmobiliaria Inllobsa con el objetivo de promover edificios en Manresa.",
+    "p2": "En 1993, Sita Salido asumió la dirección de la empresa y la actividad se orientó a la comercialización de promociones propias y de inmuebles de terceros en la comarca del Bages.",
+    "p3": "Hoy ponemos toda esa experiencia al servicio de quien quiere comprar, vender o alquilar: te asesoramos, hacemos la gestión administrativa y nos ocupamos de los trámites legales para que la operación sea clara y segura.",
+    "timeline": [
+      { "year": "1977", "title": "Fundación", "text": "José Salido Chimeno funda Inmobiliaria Inllobsa para promover edificios en Manresa." },
+      { "year": "1993", "title": "Nueva etapa", "text": "Sita Salido asume la dirección. La empresa se centra en la comercialización de inmuebles en el Bages." },
+      { "year": "Hoy", "title": "Asesoramiento y gestión", "text": "Más de 40 años de experiencia al servicio de particulares y empresas." }
+    ]
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Qué hacemos por ti",
+    "lead": "Asesoramiento y gestión en cada paso de la operación, tanto si eres un particular como una empresa.",
+    "more": "Solicita información",
+    "items": [
+      { "id": "compravenda", "icon": "key", "title": "Compraventa", "text": "Asesoramiento y gestión en la compra y la venta de viviendas, locales, naves industriales y oficinas, desde el primer contacto hasta el cierre de la operación." },
+      { "id": "lloguer", "icon": "home", "title": "Alquiler", "text": "Si quieres alquilar tu inmueble o buscas uno, un asesor especializado en alquileres te acompaña durante todo el proceso." },
+      { "id": "gestio", "icon": "doc", "title": "Gestión legal y administrativa", "text": "Nos encargamos de todos los trámites legales y administrativos de la venta o del alquiler, para que tú no tengas que preocuparte del papeleo." },
+      { "id": "finques", "icon": "building", "title": "Administración de fincas", "text": "Contamos con un departamento propio de administración de fincas. Cuéntanos tu situación y te informaremos de cómo podemos ayudarte." },
+      { "id": "professional", "icon": "factory", "title": "Inmuebles para empresas", "text": "Locales comerciales, naves industriales y oficinas: asesoramiento específico para empresas, comercios y profesionales." },
+      { "id": "difusio", "icon": "megaphone", "title": "Difusión del inmueble", "text": "Cuando nos confías la venta o el alquiler, publicamos tu inmueble en nuestro portal web para que llegue a más personas interesadas." }
+    ]
+  },
+  "why": {
+    "eyebrow": "Por qué INLLOBSA",
+    "title": "Experiencia, cercanía y rigor",
+    "lead": "Una forma de trabajar consolidada durante décadas en Manresa.",
+    "items": [
+      { "icon": "clock", "title": "Trayectoria", "text": "En el sector inmobiliario de Manresa desde 1977: más de 40 años de operaciones y de relación con los clientes." },
+      { "icon": "pin", "title": "Conocimiento del territorio", "text": "Trabajamos en Manresa y en la comarca del Bages, un entorno que conocemos a fondo." },
+      { "icon": "badge", "title": "Asesoramiento profesional", "text": "Cuentas con el asesoramiento de un agente de la propiedad inmobiliaria (API)." },
+      { "icon": "layers", "title": "Gestión integral", "text": "Asesoramiento, gestión administrativa y trámites legales en un mismo lugar, con un único interlocutor." },
+      { "icon": "users", "title": "Un equipo para cada ámbito", "text": "Asesores dedicados a la venta, al alquiler y a la administración de fincas." },
+      { "icon": "door", "title": "Trato cercano", "text": "Una oficina a pie de calle, en el Passeig de Pere III, donde puedes venir a contarnos tu caso en persona." }
+    ]
+  },
+  "cta": {
+    "title": "¿Tienes un inmueble o un proyecto en mente?",
+    "text": "Cuéntanos qué necesitas y un asesor se pondrá en contacto contigo.",
+    "primary": "Escríbenos",
+    "call": "Llama al 938 362 030"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos",
+    "lead": "Ven a la oficina, llámanos o envíanos tu consulta y te responderemos lo antes posible.",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo electrónico",
+    "social": "Redes sociales",
+    "directions": "Cómo llegar",
+    "form": {
+      "title": "Envíanos tu consulta",
+      "required": "Campos obligatorios",
+      "name": "Nombre y apellidos",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "optional": "opcional",
+      "service": "Servicio de interés",
+      "servicePlaceholder": "Selecciona una opción",
+      "serviceOther": "Otra consulta",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos brevemente qué necesitas",
+      "consent": "Acepto que INLLOBSA trate mis datos para responder a esta consulta.",
+      "submit": "Enviar consulta",
+      "sending": "Enviando…",
+      "success": "¡Gracias! Hemos recibido tu consulta y te responderemos pronto.",
+      "error": "No se ha podido enviar el mensaje. Vuelve a intentarlo o escríbenos a inllobsa@inllobsa.com.",
+      "errRequired": "Este campo es obligatorio.",
+      "errEmail": "Introduce un correo electrónico válido.",
+      "errPhone": "Introduce un teléfono válido.",
+      "errConsent": "Debes aceptar el tratamiento de los datos para continuar.",
+      "errSummary": "Revisa los campos marcados."
+    }
+  },
+  "footer": {
+    "tagline": "Inmobiliaria en Manresa desde 1977. Asesoramiento y gestión en compraventa, alquiler y administración de fincas.",
+    "navTitle": "Navegación",
+    "contactTitle": "Contacto",
+    "rights": "Todos los derechos reservados."
+  }
+}

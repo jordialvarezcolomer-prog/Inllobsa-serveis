@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}">
+  <link rel="canonical" href="{{site.url}}{{path}}">
+  <link rel="alternate" hreflang="ca" href="{{site.url}}/">
+  <link rel="alternate" hreflang="es" href="{{site.url}}/es/">
+  <link rel="alternate" hreflang="x-default" href="{{site.url}}/">
+  <meta name="theme-color" content="#0b3d6e">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="INLLOBSA">
+  <meta property="og:locale" content="{{locale}}">
+  <meta property="og:title" content="{{meta.title}}">
+  <meta property="og:description" content="{{meta.description}}">
+  <meta property="og:url" content="{{site.url}}{{path}}">
+
+  <link rel="icon" href="{{base}}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{base}}assets/css/styles.css">
+  <script src="{{base}}assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "INLLOBSA",
+    "legalName": "{{site.legalName}}",
+    "taxID": "{{site.taxId}}",
+    "foundingDate": "{{site.foundingYear}}",
+    "url": "{{site.url}}{{path}}",
+    "telephone": "{{site.phoneHref}}",
+    "email": "{{site.email}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{site.street}}",
+      "postalCode": "{{site.postalCode}}",
+      "addressLocality": "{{site.city}}",
+      "addressRegion": "{{site.region}}",
+      "addressCountry": "ES"
+    },
+    "areaServed": "Bages",
+    "sameAs": ["{{site.facebook}}", "{{site.officialWeb}}"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 20 3M17 6l3 3M14.5 8.5 17 11"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1M10 21v-3h4v3"/></symbol>
+      <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 21V11l6 3.5V11l6 3.5V8h3V4h3v17z"/><path d="M6 18h1.5M10.5 18H12M15 18h1.5"/></symbol>
+      <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4h3l8 4.5v-13L6 10z"/><path d="M18 9a4 4 0 0 1 0 6M6 14l1.5 5.5H10l-1-5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m9 14.2-1.5 7.3L12 19l4.5 2.5-1.5-7.3"/><path d="m9.5 9 1.8 1.8 3.5-3.5"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14a6.5 6.5 0 0 1 3 6"/></symbol>
+      <symbol id="i-door" viewBox="0 0 24 24"><path d="M3 21h18M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><path d="M14.5 12.5h.01"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">{{a11y.skip}}</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="{{a11y.home}}">
+        <!-- Logotip oficial: vegeu assets/img/logo/README.md -->
+        <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.svg" alt="INLLOBSA" width="168" height="40"
+             onerror="this.parentNode.classList.add('brand--text');this.remove()">
+        <span class="brand-text">INLLOBSA</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="{{a11y.mainNav}}" data-nav>
+        <ul class="nav-list">
+          <li><a href="#about" data-nav-link>{{nav.about}}</a></li>
+          <li><a href="#services" data-nav-link>{{nav.services}}</a></li>
+          <li><a href="#why" data-nav-link>{{nav.why}}</a></li>
+          <li><a href="#contact" data-nav-link>{{nav.contact}}</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="lang-switch" role="group" aria-label="{{a11y.language}}">
+            <span class="lang-current" aria-current="true">{{langSwitch.current}}</span>
+            <a class="lang-other" href="{{otherHref}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang-switch title="{{langSwitch.otherLabel}}">
+              <span aria-hidden="true">{{langSwitch.other}}</span><span class="sr-only">{{langSwitch.otherLabel}}</span>
+            </a>
+          </div>
+          <a class="btn btn-primary btn-sm" href="#contact">{{nav.cta}}</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+              data-menu-toggle data-label-open="{{a11y.menuOpen}}" data-label-close="{{a11y.menuClose}}">
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+        <span class="sr-only" data-menu-label>{{a11y.menuOpen}}</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{hero.eyebrow}}</p>
+          <h1 class="hero-title">{{{hero.title}}}</h1>
+          <p class="hero-lead">{{hero.lead}}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">{{hero.ctaPrimary}}
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#services">{{hero.ctaSecondary}}</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Recurs gràfic. Es pot substituir per una fotografia de l'oficina o de Manresa. -->
+          <svg class="hero-art" viewBox="0 0 480 560" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="heroBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#11508c"/>
+                <stop offset="1" stop-color="#0b3d6e"/>
+              </linearGradient>
+              <pattern id="heroGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+                <path d="M32 0H0v32" fill="none" stroke="#fff" stroke-opacity=".06"/>
+              </pattern>
+            </defs>
+            <rect width="480" height="560" fill="url(#heroBg)"/>
+            <rect width="480" height="560" fill="url(#heroGrid)"/>
+            <g fill="none" stroke="#fff" stroke-width="1.5" stroke-opacity=".55">
+              <!-- edifici alt -->
+              <path d="M96 470V150h150v320"/>
+              <path d="M96 150l75-46 75 46"/>
+              <g stroke-opacity=".35">
+                <path d="M124 190h26v34h-26zM192 190h26v34h-26zM124 250h26v34h-26zM192 250h26v34h-26zM124 310h26v34h-26zM192 310h26v34h-26zM124 370h26v34h-26z"/>
+                <path d="M152 470v-60h38v60"/>
+              </g>
+              <!-- edifici baix -->
+              <path d="M246 470V262h138v208"/>
+              <g stroke-opacity=".35">
+                <path d="M270 292h34v26h-34zM326 292h34v26h-34zM270 344h34v26h-34zM326 344h34v26h-34zM270 396h34v26h-34z"/>
+              </g>
+              <path d="M56 470h368" stroke-opacity=".7"/>
+            </g>
+            <rect x="192" y="370" width="26" height="34" fill="#f08a3c"/>
+            <rect x="326" y="396" width="34" height="26" fill="#fff" fill-opacity=".14"/>
+          </svg>
+          <div class="hero-card hero-card--since">
+            <span class="hero-card-label">{{hero.cardSince}}</span>
+            <span class="hero-card-value">1977</span>
+          </div>
+          <div class="hero-card hero-card--office">
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+            <span><strong>{{hero.cardOffice}}</strong><br>{{site.street}} · {{site.city}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="facts">
+          {{#each hero.facts}}
+          <li class="fact"><span class="fact-value">{{this.value}}</span><span class="fact-label">{{this.label}}</span></li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- QUI SOM -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">{{about.eyebrow}}</p>
+          <h2 class="section-title" id="about-title">{{about.title}}</h2>
+          <p class="lead">{{about.p1}}</p>
+          <p>{{about.p2}}</p>
+          <p>{{about.p3}}</p>
+        </div>
+        <ol class="timeline">
+          {{#each about.timeline}}
+          <li class="timeline-item">
+            <span class="timeline-year">{{this.year}}</span>
+            <div>
+              <h3 class="timeline-title">{{this.title}}</h3>
+              <p>{{this.text}}</p>
+            </div>
+          </li>
+          {{/each}}
+        </ol>
+      </div>
+    </section>
+
+    <!-- SERVEIS -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">{{services.eyebrow}}</p>
+            <h2 class="section-title" id="services-title">{{services.title}}</h2>
+          </div>
+          <p class="section-lead">{{services.lead}}</p>
+        </div>
+        <ul class="service-grid">
+          {{#each services.items}}
+          <li class="service-card">
+            <div class="service-top">
+              <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg></span>
+              <span class="service-num" aria-hidden="true">{{@num}}</span>
+            </div>
+            <h3 class="service-title">{{this.title}}</h3>
+            <p class="service-text">{{this.text}}</p>
+            <a class="service-link" href="#contact" data-service="{{this.id}}">
+              {{services.more}}<span class="sr-only">: {{this.title}}</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- PER QUÈ -->
+    <section class="section why" id="why" aria-labelledby="why-title">
+      <div class="container why-grid">
+        <div class="why-head">
+          <p class="eyebrow">{{why.eyebrow}}</p>
+          <h2 class="section-title" id="why-title">{{why.title}}</h2>
+          <p class="section-lead">{{why.lead}}</p>
+        </div>
+        <ul class="why-list">
+          {{#each why.items}}
+          <li class="why-item">
+            <svg class="icon why-icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg>
+            <h3 class="why-title">{{this.title}}</h3>
+            <p>{{this.text}}</p>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-inner">
+        <div>
+          <h2 class="cta-title" id="cta-title">{{cta.title}}</h2>
+          <p>{{cta.text}}</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="#contact">{{cta.primary}}</a>
+          <a class="btn btn-outline-light" href="tel:{{site.phoneHref}}">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{cta.call}}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTE -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="eyebrow">{{contact.eyebrow}}</p>
+          <h2 class="section-title" id="contact-title">{{contact.title}}</h2>
+          <p class="section-lead">{{contact.lead}}</p>
+
+          <dl class="contact-list">
+            <div class="contact-row">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>{{contact.address}}</dt>
+              <dd>
+                <address>{{site.street}}<br>{{site.postalCode}} {{site.city}} ({{site.region}})</address>
+                <a class="text-link" href="{{site.mapsUrl}}" target="_blank" rel="noopener">{{contact.directions}}</a>
+              </dd>
+            </div>
+            <div class="contact-row">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{contact.phone}}</dt>
+              <dd><a href="tel:{{site.phoneHref}}">{{site.phone}}</a></dd>
+            </div>
+            <div class="contact-row">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>{{contact.email}}</dt>
+              <dd><a href="mailto:{{site.email}}">{{site.email}}</a></dd>
+            </div>
+            <div class="contact-row">
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>{{contact.social}}</dt>
+              <dd><a href="{{site.facebook}}" target="_blank" rel="noopener">Facebook</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="form-card">
+          <h3 class="form-title">{{contact.form.title}}</h3>
+          <p class="form-note"><span aria-hidden="true">*</span> {{contact.form.required}}</p>
+          <form class="contact-form" name="contacte" method="POST" action="{{path}}#contact" novalidate
+                data-netlify="true" netlify-honeypot="bot-field" data-contact-form
+                data-msg-required="{{contact.form.errRequired}}" data-msg-email="{{contact.form.errEmail}}"
+                data-msg-phone="{{contact.form.errPhone}}" data-msg-consent="{{contact.form.errConsent}}"
+                data-msg-summary="{{contact.form.errSummary}}" data-msg-sending="{{contact.form.sending}}"
+                data-msg-success="{{contact.form.success}}" data-msg-error="{{contact.form.error}}">
+            <input type="hidden" name="form-name" value="contacte">
+            <input type="hidden" name="idioma" value="{{lang}}">
+            <p class="hp" aria-hidden="true"><label>Bot <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+            <div class="field">
+              <label for="f-name">{{contact.form.name}} <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="nom" type="text" autocomplete="name" required aria-describedby="f-name-err">
+              <p class="field-error" id="f-name-err"></p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">{{contact.form.email}} <span class="req" aria-hidden="true">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+                <p class="field-error" id="f-email-err"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">{{contact.form.phone}} <span class="opt">({{contact.form.optional}})</span></label>
+                <input id="f-phone" name="telefon" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="f-phone-err">
+                <p class="field-error" id="f-phone-err"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-service">{{contact.form.service}}</label>
+              <select id="f-service" name="servei">
+                <option value="">{{contact.form.servicePlaceholder}}</option>
+                {{#each services.items}}
+                <option value="{{this.id}}">{{this.title}}</option>
+                {{/each}}
+                <option value="altres">{{contact.form.serviceOther}}</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">{{contact.form.message}} <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="missatge" rows="5" required placeholder="{{contact.form.messagePlaceholder}}" aria-describedby="f-message-err"></textarea>
+              <p class="field-error" id="f-message-err"></p>
+            </div>
+            <div class="field field-check">
+              <input id="f-consent" name="consentiment" type="checkbox" value="si" required aria-describedby="f-consent-err">
+              <label for="f-consent">{{contact.form.consent}} <span class="req" aria-hidden="true">*</span></label>
+              <p class="field-error" id="f-consent-err"></p>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" data-submit>{{contact.form.submit}}</button>
+            <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="#top" aria-label="{{a11y.home}}">
+          <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo-negatiu.svg" alt="INLLOBSA" width="168" height="40" loading="lazy"
+               onerror="this.parentNode.classList.add('brand--text');this.remove()">
+          <span class="brand-text">INLLOBSA</span>
+        </a>
+        <p>{{footer.tagline}}</p>
+      </div>
+      <nav aria-label="{{footer.navTitle}}">
+        <h2 class="footer-title">{{footer.navTitle}}</h2>
+        <ul class="footer-list">
+          <li><a href="#about">{{nav.about}}</a></li>
+          <li><a href="#services">{{nav.services}}</a></li>
+          <li><a href="#why">{{nav.why}}</a></li>
+          <li><a href="#contact">{{nav.contact}}</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">{{footer.contactTitle}}</h2>
+        <ul class="footer-list">
+          <li>{{site.street}}, {{site.postalCode}} {{site.city}}</li>
+          <li><a href="tel:{{site.phoneHref}}">{{site.phone}}</a></li>
+          <li><a href="mailto:{{site.email}}">{{site.email}}</a></li>
+          <li><a href="{{site.facebook}}" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> {{site.legalName}} · NIF {{site.taxId}} · {{footer.rights}}</p>
+      <div class="footer-bottom-links">
+        <a href="{{otherHref}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang-switch>{{langSwitch.otherLabel}}</a>
+        <a href="#top">{{a11y.backToTop}} ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

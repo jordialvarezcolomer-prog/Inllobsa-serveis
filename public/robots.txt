@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inllobsa.netlify.app/sitemap.xml

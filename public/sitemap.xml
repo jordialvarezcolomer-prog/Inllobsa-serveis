@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://inllobsa.netlify.app/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://inllobsa.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inllobsa.netlify.app/es/"/>
+  </url>
+  <url>
+    <loc>https://inllobsa.netlify.app/es/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://inllobsa.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inllobsa.netlify.app/es/"/>
+  </url>
+</urlset>
