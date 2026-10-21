@@ -10,6 +10,7 @@ const read = (p) => readFileSync(join(root, p), 'utf8');
 
 const template = read('src/template.html');
 const site = JSON.parse(read('src/site.json'));
+const team = JSON.parse(read('src/team.json'));
 const langs = {
   ca: JSON.parse(read('src/i18n/ca.json')),
   es: JSON.parse(read('src/i18n/es.json')),
@@ -18,11 +19,12 @@ const langs = {
 const escape = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-function lookup(path, scopes) {
+function lookup(path, scopes, optional = false) {
   for (const scope of scopes) {
     const value = path.split('.').reduce((o, k) => (o == null ? undefined : o[k]), scope);
     if (value !== undefined) return value;
   }
+  if (optional) return undefined;
   throw new Error(`Clau de traducció inexistent: ${path}`);
 }
 
@@ -35,6 +37,9 @@ function render(tpl, scopes) {
       .map((item, i) => render(body.replace(/\{\{@num\}\}/g, String(i + 1).padStart(2, '0')), [{ this: item }, ...scopes]))
       .join('');
   });
+  // {{#if path}} … {{/if}}: es mostra només si el valor no és buit (sense niuar)
+  tpl = tpl.replace(/\{\{#if ([\w.]+)\}\}([\s\S]*?)\{\{\/if\}\}/g, (_, path, body) =>
+    (lookup(path, scopes, true) ? body : ''));
   tpl = tpl.replace(/\{\{\{([\w.@]+)\}\}\}/g, (_, path) => String(lookup(path, scopes)));
   return tpl.replace(/\{\{([\w.@]+)\}\}/g, (_, path) => escape(lookup(path, scopes)));
 }
@@ -48,6 +53,10 @@ for (const [code, dict] of Object.entries(langs)) {
     base: isDefault ? '' : '../',
     otherLang: other,
     otherHref: isDefault ? 'es/' : '../',
+    members: team.map((m) => {
+      const role = m.role?.[code] || '';
+      return { photo: m.photo, name: m.name, role, alt: m.name ? [m.name, role].filter(Boolean).join(', ') : dict.team.altFallback };
+    }),
   };
   const html = render(template, [ctx]);
   const dir = isDefault ? out : join(out, code);

@@ -15,11 +15,14 @@ src/
   i18n/ca.json      Tots els textos en català
   i18n/es.json      Tots els textos en castellà
   site.json         Dades corporatives compartides (contacte, NIF, URL del web…)
+  team.json         Equip: foto, nom i càrrec de cada persona (CA/ES)
 build.mjs           Genera public/index.html i public/es/index.html (sense dependències)
 public/             Web publicable
   assets/css/styles.css
   assets/js/main.js
-  assets/img/logo/  ← aquí va el logotip oficial (vegeu-ne el README)
+  assets/img/logo/    Logotip oficial
+  assets/img/photos/  Fotos de grup (WebP + JPEG, diverses mides)
+  assets/img/team/    Retrats de l'equip (una foto per persona)
 netlify.toml        Configuració de desplegament a Netlify
 ```
 
@@ -50,10 +53,12 @@ El build falla si les dues llengües no tenen exactament les mateixes claus.
 
 | Font | Estat |
 | --- | --- |
-| https://inllobsa.netlify.app/ | **No s'ha pogut consultar.** La xarxa de l'entorn de desenvolupament la bloqueja. |
+| https://inllobsa.netlify.app/ | **No s'ha pogut consultar** (ni amb navegador). La xarxa de l'entorn de desenvolupament la bloqueja. |
 | https://www.inllobsa.com/ | No s'ha pogut obrir directament. S'ha consultat a través de cercadors (pàgina «Empresa / Qui som», avís legal i dades de contacte). |
 | https://www.mgo.cat/ | **No s'ha pogut consultar.** L'estructura s'ha definit amb criteris propis de web corporativa. |
 | Fitxa de l'Ajuntament de Manresa i directori municipal d'immobiliàries (2024) | Consultats a través de cercadors. Confirmen els serveis i les dades de contacte. |
+
+Material facilitat per INLLOBSA: el logotip, del qual s'han extret els colors de marca (blau `#30425F`, taronja `#C9482F`), i les fotos de l'equip.
 
 Contingut verificat que s'ha fet servir: fundació el 1977 per José Salido Chimeno per promoure edificis a Manresa;
 direcció de Sita Salido des del 1993 i orientació a la comercialització al Bages; més de 40 anys d'experiència;
@@ -64,13 +69,13 @@ i departament d'administració de finques; assessorament d'un membre API; Passei
 
 ## Pendent de revisar o aportar
 
-1. **Logotip oficial**: deseu-lo a `public/assets/img/logo/` (vegeu-ne el README). Fins aleshores, només es mostra el nom en text.
-2. **Blau corporatiu exacte**: s'ha fet servir `#0b3d6e`, perquè no s'ha pogut mostrejar el color de la web.
-   Es canvia a les variables `--blue-*` de `public/assets/css/styles.css`, i el taronja d'accent a `--orange`.
-3. **Valors i textos de inllobsa.netlify.app**: la secció «Per què INLLOBSA» s'ha construït només amb fets verificats.
+1. **Noms i càrrecs de l'equip**: les 9 fotos ja surten a la secció «L'equip», però sense noms.
+   Ompliu `name` i `role` a `src/team.json`, en l'ordre de la foto de grup d'esquerra a dreta, i executeu `node build.mjs`.
+   Els noms apareixeran sota cada foto i al text alternatiu.
+2. **Logotip en SVG**: el logotip actual és un PNG fet a partir del JPEG facilitat (vegeu `public/assets/img/logo/README.md`).
+3. **Valors i textos de inllobsa.netlify.app i referència de MGO**: no s'hi ha pogut accedir.
    Si la web de referència defineix valors propis, cal substituir-los a `src/i18n/*.json`.
 4. **Política de privacitat i avís legal**: el formulari demana consentiment, però no hi ha cap URL verificada de la política.
    Cal afegir-ne l'enllaç abans de publicar.
 5. **Horari d'atenció i Instagram**: no s'han pogut verificar i no s'hi han inclòs.
 6. **URL definitiva** del web: actualitzeu `url` a `src/site.json` (canonical, hreflang i sitemap).
-7. Imatge del hero: és una il·lustració vectorial. Es pot substituir per una fotografia real de l'oficina o de Manresa.

@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="ca" href="{{site.url}}/">
   <link rel="alternate" hreflang="es" href="{{site.url}}/es/">
   <link rel="alternate" hreflang="x-default" href="{{site.url}}/">
-  <meta name="theme-color" content="#0b3d6e">
+  <meta name="theme-color" content="#30425f">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="INLLOBSA">
@@ -79,16 +79,14 @@
   <header class="site-header" data-header>
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="{{a11y.home}}">
-        <!-- Logotip oficial: vegeu assets/img/logo/README.md -->
-        <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.svg" alt="INLLOBSA" width="168" height="40"
-             onerror="this.parentNode.classList.add('brand--text');this.remove()">
-        <span class="brand-text">INLLOBSA</span>
+        <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.png" alt="INLLOBSA Immobiliària" width="518" height="234">
       </a>
 
       <nav class="main-nav" id="main-nav" aria-label="{{a11y.mainNav}}" data-nav>
         <ul class="nav-list">
           <li><a href="#about" data-nav-link>{{nav.about}}</a></li>
           <li><a href="#services" data-nav-link>{{nav.services}}</a></li>
+          <li><a href="#team" data-nav-link>{{nav.team}}</a></li>
           <li><a href="#why" data-nav-link>{{nav.why}}</a></li>
           <li><a href="#contact" data-nav-link>{{nav.contact}}</a></li>
         </ul>
@@ -127,39 +125,13 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <!-- Recurs gràfic. Es pot substituir per una fotografia de l'oficina o de Manresa. -->
-          <svg class="hero-art" viewBox="0 0 480 560" preserveAspectRatio="xMidYMid slice">
-            <defs>
-              <linearGradient id="heroBg" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#11508c"/>
-                <stop offset="1" stop-color="#0b3d6e"/>
-              </linearGradient>
-              <pattern id="heroGrid" width="32" height="32" patternUnits="userSpaceOnUse">
-                <path d="M32 0H0v32" fill="none" stroke="#fff" stroke-opacity=".06"/>
-              </pattern>
-            </defs>
-            <rect width="480" height="560" fill="url(#heroBg)"/>
-            <rect width="480" height="560" fill="url(#heroGrid)"/>
-            <g fill="none" stroke="#fff" stroke-width="1.5" stroke-opacity=".55">
-              <!-- edifici alt -->
-              <path d="M96 470V150h150v320"/>
-              <path d="M96 150l75-46 75 46"/>
-              <g stroke-opacity=".35">
-                <path d="M124 190h26v34h-26zM192 190h26v34h-26zM124 250h26v34h-26zM192 250h26v34h-26zM124 310h26v34h-26zM192 310h26v34h-26zM124 370h26v34h-26z"/>
-                <path d="M152 470v-60h38v60"/>
-              </g>
-              <!-- edifici baix -->
-              <path d="M246 470V262h138v208"/>
-              <g stroke-opacity=".35">
-                <path d="M270 292h34v26h-34zM326 292h34v26h-34zM270 344h34v26h-34zM326 344h34v26h-34zM270 396h34v26h-34z"/>
-              </g>
-              <path d="M56 470h368" stroke-opacity=".7"/>
-            </g>
-            <rect x="192" y="370" width="26" height="34" fill="#f08a3c"/>
-            <rect x="326" y="396" width="34" height="26" fill="#fff" fill-opacity=".14"/>
-          </svg>
-          <div class="hero-card hero-card--since">
+        <div class="hero-visual">
+          <picture>
+            <source type="image/webp" srcset="{{base}}assets/img/photos/equip-oficina-640.webp 640w, {{base}}assets/img/photos/equip-oficina-1000.webp 1000w" sizes="(min-width: 960px) 480px, 92vw">
+            <img class="hero-photo" src="{{base}}assets/img/photos/equip-oficina-1000.jpg" srcset="{{base}}assets/img/photos/equip-oficina-640.jpg 640w, {{base}}assets/img/photos/equip-oficina-1000.jpg 1000w" sizes="(min-width: 960px) 480px, 92vw"
+                 alt="{{hero.imgAlt}}" width="1000" height="1250" fetchpriority="high">
+          </picture>
+          <div class="hero-card hero-card--since" aria-hidden="true">
             <span class="hero-card-label">{{hero.cardSince}}</span>
             <span class="hero-card-value">1977</span>
           </div>
@@ -201,6 +173,15 @@
           {{/each}}
         </ol>
       </div>
+      <div class="container">
+        <figure class="about-photo">
+          <picture>
+            <source type="image/webp" srcset="{{base}}assets/img/photos/equip-800.webp 800w, {{base}}assets/img/photos/equip-1400.webp 1400w" sizes="(min-width: 1180px) 1116px, 92vw">
+            <img src="{{base}}assets/img/photos/equip-1400.jpg" srcset="{{base}}assets/img/photos/equip-800.jpg 800w, {{base}}assets/img/photos/equip-1400.jpg 1400w" sizes="(min-width: 1180px) 1116px, 92vw"
+                 alt="{{about.imgAlt}}" width="1400" height="933" loading="lazy">
+          </picture>
+        </figure>
+      </div>
     </section>
 
     <!-- SERVEIS -->
@@ -226,6 +207,30 @@
               {{services.more}}<span class="sr-only">: {{this.title}}</span>
               <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <!-- EQUIP -->
+    <section class="section team" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">{{team.eyebrow}}</p>
+            <h2 class="section-title" id="team-title">{{team.title}}</h2>
+          </div>
+          <p class="section-lead">{{team.lead}}</p>
+        </div>
+        <ul class="team-grid">
+          {{#each members}}
+          <li class="team-member">
+            <picture>
+              <source type="image/webp" srcset="{{base}}assets/img/team/{{this.photo}}-480.webp">
+              <img src="{{base}}assets/img/team/{{this.photo}}-480.jpg" alt="{{this.alt}}" width="480" height="640" loading="lazy">
+            </picture>
+            {{#if this.name}}<p class="team-name">{{this.name}}<span class="team-role">{{this.role}}</span></p>{{/if}}
           </li>
           {{/each}}
         </ul>
@@ -360,9 +365,7 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a class="brand brand--footer" href="#top" aria-label="{{a11y.home}}">
-          <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo-negatiu.svg" alt="INLLOBSA" width="168" height="40" loading="lazy"
-               onerror="this.parentNode.classList.add('brand--text');this.remove()">
-          <span class="brand-text">INLLOBSA</span>
+          <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.png" alt="INLLOBSA Immobiliària" width="518" height="234" loading="lazy">
         </a>
         <p>{{footer.tagline}}</p>
       </div>
@@ -371,6 +374,7 @@
         <ul class="footer-list">
           <li><a href="#about">{{nav.about}}</a></li>
           <li><a href="#services">{{nav.services}}</a></li>
+          <li><a href="#team">{{nav.team}}</a></li>
           <li><a href="#why">{{nav.why}}</a></li>
           <li><a href="#contact">{{nav.contact}}</a></li>
         </ul>

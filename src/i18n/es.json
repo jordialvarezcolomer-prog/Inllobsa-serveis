@@ -20,7 +20,8 @@
     "services": "Servicios",
     "why": "Por qué INLLOBSA",
     "contact": "Contacto",
-    "cta": "Contáctanos"
+    "cta": "Contáctanos",
+    "team": "El equipo"
   },
   "langSwitch": {
     "current": "ES",
@@ -36,11 +37,24 @@
     "cardSince": "Desde",
     "cardOffice": "Oficina Passeig",
     "facts": [
-      { "value": "1977", "label": "Año de fundación" },
-      { "value": "+40", "label": "Años de experiencia" },
-      { "value": "Bages", "label": "Manresa y comarca" },
-      { "value": "API", "label": "Asesoramiento profesional" }
-    ]
+      {
+        "value": "1977",
+        "label": "Año de fundación"
+      },
+      {
+        "value": "+40",
+        "label": "Años de experiencia"
+      },
+      {
+        "value": "Bages",
+        "label": "Manresa y comarca"
+      },
+      {
+        "value": "API",
+        "label": "Asesoramiento profesional"
+      }
+    ],
+    "imgAlt": "El equipo de INLLOBSA bajo el rótulo de la oficina"
   },
   "about": {
     "eyebrow": "Quiénes somos",
@@ -49,10 +63,23 @@
     "p2": "En 1993, Sita Salido asumió la dirección de la empresa y la actividad se orientó a la comercialización de promociones propias y de inmuebles de terceros en la comarca del Bages.",
     "p3": "Hoy ponemos toda esa experiencia al servicio de quien quiere comprar, vender o alquilar: te asesoramos, hacemos la gestión administrativa y nos ocupamos de los trámites legales para que la operación sea clara y segura.",
     "timeline": [
-      { "year": "1977", "title": "Fundación", "text": "José Salido Chimeno funda Inmobiliaria Inllobsa para promover edificios en Manresa." },
-      { "year": "1993", "title": "Nueva etapa", "text": "Sita Salido asume la dirección. La empresa se centra en la comercialización de inmuebles en el Bages." },
-      { "year": "Hoy", "title": "Asesoramiento y gestión", "text": "Más de 40 años de experiencia al servicio de particulares y empresas." }
-    ]
+      {
+        "year": "1977",
+        "title": "Fundación",
+        "text": "José Salido Chimeno funda Inmobiliaria Inllobsa para promover edificios en Manresa."
+      },
+      {
+        "year": "1993",
+        "title": "Nueva etapa",
+        "text": "Sita Salido asume la dirección. La empresa se centra en la comercialización de inmuebles en el Bages."
+      },
+      {
+        "year": "Hoy",
+        "title": "Asesoramiento y gestión",
+        "text": "Más de 40 años de experiencia al servicio de particulares y empresas."
+      }
+    ],
+    "imgAlt": "Fotografía de grupo del equipo de INLLOBSA"
   },
   "services": {
     "eyebrow": "Servicios",
@@ -60,25 +87,85 @@
     "lead": "Asesoramiento y gestión en cada paso de la operación, tanto si eres un particular como una empresa.",
     "more": "Solicita información",
     "items": [
-      { "id": "compravenda", "icon": "key", "title": "Compraventa", "text": "Asesoramiento y gestión en la compra y la venta de viviendas, locales, naves industriales y oficinas, desde el primer contacto hasta el cierre de la operación." },
-      { "id": "lloguer", "icon": "home", "title": "Alquiler", "text": "Si quieres alquilar tu inmueble o buscas uno, un asesor especializado en alquileres te acompaña durante todo el proceso." },
-      { "id": "gestio", "icon": "doc", "title": "Gestión legal y administrativa", "text": "Nos encargamos de todos los trámites legales y administrativos de la venta o del alquiler, para que tú no tengas que preocuparte del papeleo." },
-      { "id": "finques", "icon": "building", "title": "Administración de fincas", "text": "Contamos con un departamento propio de administración de fincas. Cuéntanos tu situación y te informaremos de cómo podemos ayudarte." },
-      { "id": "professional", "icon": "factory", "title": "Inmuebles para empresas", "text": "Locales comerciales, naves industriales y oficinas: asesoramiento específico para empresas, comercios y profesionales." },
-      { "id": "difusio", "icon": "megaphone", "title": "Difusión del inmueble", "text": "Cuando nos confías la venta o el alquiler, publicamos tu inmueble en nuestro portal web para que llegue a más personas interesadas." }
+      {
+        "id": "compravenda",
+        "icon": "key",
+        "title": "Compraventa",
+        "text": "Asesoramiento y gestión en la compra y la venta de viviendas, locales, naves industriales y oficinas, desde el primer contacto hasta el cierre de la operación."
+      },
+      {
+        "id": "lloguer",
+        "icon": "home",
+        "title": "Alquiler",
+        "text": "Si quieres alquilar tu inmueble o buscas uno, un asesor especializado en alquileres te acompaña durante todo el proceso."
+      },
+      {
+        "id": "gestio",
+        "icon": "doc",
+        "title": "Gestión legal y administrativa",
+        "text": "Nos encargamos de todos los trámites legales y administrativos de la venta o del alquiler, para que tú no tengas que preocuparte del papeleo."
+      },
+      {
+        "id": "finques",
+        "icon": "building",
+        "title": "Administración de fincas",
+        "text": "Contamos con un departamento propio de administración de fincas. Cuéntanos tu situación y te informaremos de cómo podemos ayudarte."
+      },
+      {
+        "id": "professional",
+        "icon": "factory",
+        "title": "Inmuebles para empresas",
+        "text": "Locales comerciales, naves industriales y oficinas: asesoramiento específico para empresas, comercios y profesionales."
+      },
+      {
+        "id": "difusio",
+        "icon": "megaphone",
+        "title": "Difusión del inmueble",
+        "text": "Cuando nos confías la venta o el alquiler, publicamos tu inmueble en nuestro portal web para que llegue a más personas interesadas."
+      }
     ]
+  },
+  "team": {
+    "eyebrow": "El equipo",
+    "title": "Personas que te acompañan",
+    "lead": "Asesores dedicados a la venta, al alquiler y a la administración de fincas, en nuestra oficina del Passeig de Pere III.",
+    "altFallback": "Miembro del equipo de INLLOBSA"
   },
   "why": {
     "eyebrow": "Por qué INLLOBSA",
     "title": "Experiencia, cercanía y rigor",
     "lead": "Una forma de trabajar consolidada durante décadas en Manresa.",
     "items": [
-      { "icon": "clock", "title": "Trayectoria", "text": "En el sector inmobiliario de Manresa desde 1977: más de 40 años de operaciones y de relación con los clientes." },
-      { "icon": "pin", "title": "Conocimiento del territorio", "text": "Trabajamos en Manresa y en la comarca del Bages, un entorno que conocemos a fondo." },
-      { "icon": "badge", "title": "Asesoramiento profesional", "text": "Cuentas con el asesoramiento de un agente de la propiedad inmobiliaria (API)." },
-      { "icon": "layers", "title": "Gestión integral", "text": "Asesoramiento, gestión administrativa y trámites legales en un mismo lugar, con un único interlocutor." },
-      { "icon": "users", "title": "Un equipo para cada ámbito", "text": "Asesores dedicados a la venta, al alquiler y a la administración de fincas." },
-      { "icon": "door", "title": "Trato cercano", "text": "Una oficina a pie de calle, en el Passeig de Pere III, donde puedes venir a contarnos tu caso en persona." }
+      {
+        "icon": "clock",
+        "title": "Trayectoria",
+        "text": "En el sector inmobiliario de Manresa desde 1977: más de 40 años de operaciones y de relación con los clientes."
+      },
+      {
+        "icon": "pin",
+        "title": "Conocimiento del territorio",
+        "text": "Trabajamos en Manresa y en la comarca del Bages, un entorno que conocemos a fondo."
+      },
+      {
+        "icon": "badge",
+        "title": "Asesoramiento profesional",
+        "text": "Cuentas con el asesoramiento de un agente de la propiedad inmobiliaria (API)."
+      },
+      {
+        "icon": "layers",
+        "title": "Gestión integral",
+        "text": "Asesoramiento, gestión administrativa y trámites legales en un mismo lugar, con un único interlocutor."
+      },
+      {
+        "icon": "users",
+        "title": "Un equipo para cada ámbito",
+        "text": "Asesores dedicados a la venta, al alquiler y a la administración de fincas."
+      },
+      {
+        "icon": "door",
+        "title": "Trato cercano",
+        "text": "Una oficina a pie de calle, en el Passeig de Pere III, donde puedes venir a contarnos tu caso en persona."
+      }
     ]
   },
   "cta": {

@@ -1,16 +1,15 @@
 /* ==========================================================================
    INLLOBSA · Landing corporativa
-   Colors de marca: ajusteu --blue-* i --orange quan es disposi dels valors
-   exactes del manual d'identitat o del nou logotip.
+   Colors de marca extrets del logotip oficial (blau #30425F, taronja #C9482F).
    ========================================================================== */
 :root {
-  --blue-900: #082a4c;
-  --blue-800: #0b3d6e;   /* blau corporatiu principal */
-  --blue-700: #11508c;
-  --blue-100: #e6eef7;
-  --blue-50:  #f3f7fb;
-  --orange:   #f08a3c;   /* accent subtil (logotip) */
-  --orange-700: #c45f12; /* variant accessible per a text sobre blanc */
+  --blue-900: #1f2d42;
+  --blue-800: #30425f;   /* blau corporatiu (logotip) */
+  --blue-700: #3b5a86;
+  --blue-100: #e7ecf3;
+  --blue-50:  #f3f6fa;
+  --orange:   #c9482f;   /* accent subtil (teulada del logotip) */
+  --orange-700: #b03d26; /* variant per a text sobre blanc */
 
   --ink:   #14202e;
   --muted: #526173;
@@ -22,7 +21,7 @@
   --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 14px;
   --radius-sm: 8px;
-  --shadow: 0 1px 2px rgb(8 42 76 / .06), 0 12px 32px -12px rgb(8 42 76 / .18);
+  --shadow: 0 1px 2px rgb(31 45 66 / .06), 0 12px 32px -12px rgb(31 45 66 / .18);
   --container: 1180px;
   --gutter: clamp(16px, 4vw, 32px);
   --section: clamp(72px, 10vw, 128px);
@@ -110,13 +109,12 @@ address { font-style: normal; }
   background: rgb(255 255 255 / .92); backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid transparent; transition: border-color .2s, box-shadow .2s;
 }
-.site-header.is-scrolled { border-color: var(--line); box-shadow: 0 6px 24px -18px rgb(8 42 76 / .5); }
+.site-header.is-scrolled { border-color: var(--line); box-shadow: 0 6px 24px -18px rgb(31 45 66 / .5); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
 .brand { display: inline-flex; align-items: center; text-decoration: none; flex: none; }
-.brand-logo { height: 40px; width: auto; }
-.brand-text { display: none; font-weight: 700; font-size: 1.25rem; letter-spacing: .08em; color: var(--blue-800); }
-.brand--text .brand-text { display: inline; }
+.brand-logo { height: 54px; width: auto; }
+@media (max-width: 600px) { .brand-logo { height: 46px; } }
 
 .main-nav { display: flex; align-items: center; gap: 32px; }
 .nav-list { display: flex; gap: 28px; }
@@ -152,7 +150,7 @@ address { font-style: normal; }
     position: fixed; inset: var(--header-h) 0 auto 0; z-index: 49;
     flex-direction: column; align-items: stretch; gap: 24px;
     padding: 24px var(--gutter) 32px; background: #fff; border-bottom: 1px solid var(--line);
-    box-shadow: 0 24px 40px -24px rgb(8 42 76 / .35);
+    box-shadow: 0 24px 40px -24px rgb(31 45 66 / .35);
     max-height: calc(100dvh - var(--header-h)); overflow-y: auto;
     visibility: hidden; opacity: 0; transform: translateY(-8px);
     transition: opacity .2s, transform .2s, visibility 0s .2s;
@@ -177,20 +175,21 @@ address { font-style: normal; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 
 .hero-visual { position: relative; max-width: 520px; width: 100%; justify-self: center; }
-.hero-art { width: 100%; height: auto; aspect-ratio: 480 / 560; border-radius: 24px; box-shadow: var(--shadow); }
+.hero-photo { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); background: var(--blue-800); }
 .hero-card {
   position: absolute; background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
   padding: 16px 20px; color: var(--ink);
 }
-.hero-card--since { top: 28px; left: -20px; display: grid; }
+.hero-card--since { top: 40%; left: -24px; display: grid; }
 .hero-card-label { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .hero-card-value { font-size: 2rem; font-weight: 700; color: var(--blue-800); line-height: 1.1; }
-.hero-card--office { right: -20px; bottom: 36px; display: flex; gap: 12px; align-items: flex-start; font-size: .875rem; line-height: 1.45; max-width: 270px; }
+.hero-card--office { right: -20px; bottom: -24px; display: flex; gap: 12px; align-items: flex-start; font-size: .875rem; line-height: 1.45; max-width: 270px; }
 .hero-card--office .icon { color: var(--orange); margin-top: 2px; }
 .hero-card--office strong { color: var(--blue-900); }
 @media (max-width: 600px) {
-  .hero-card--since { left: 12px; top: 12px; }
-  .hero-card--office { right: 12px; left: 12px; bottom: 12px; max-width: none; }
+  .hero-card--since { left: 12px; top: 38%; padding: 12px 16px; }
+  .hero-card-value { font-size: 1.625rem; }
+  .hero-card--office { position: relative; inset: auto; margin: -28px 12px 0; max-width: none; }
 }
 
 .facts {
@@ -218,6 +217,18 @@ address { font-style: normal; }
 .timeline-item:last-child .timeline-year { background: var(--blue-800); color: #fff; }
 .timeline-title { font-size: 1.125rem; margin: 6px 0 6px; }
 .timeline-item p { color: var(--muted); font-size: 1rem; }
+.about-photo { margin: clamp(48px, 7vw, 80px) 0 0; }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 20px; background: var(--blue-800); }
+@media (min-width: 760px) { .about-photo img { aspect-ratio: 21 / 9; object-position: 50% 62%; } }
+
+/* --- Team ------------------------------------------------------------------ */
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (min-width: 640px) { .team-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+@media (min-width: 1000px) { .team-grid { grid-template-columns: repeat(10, 1fr); } .team-member { grid-column: span 2; transform: none; } .team-member:nth-child(6) { grid-column: 2 / span 2; } }
+.team-member img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius); background: var(--blue-800); }
+.team-name { margin: 14px 0 0; font-weight: 600; color: var(--blue-900); line-height: 1.35; }
+.team-role { display: block; font-weight: 400; font-size: .9375rem; color: var(--muted); }
+.team-role:empty { display: none; }
 
 /* --- Services ------------------------------------------------------------- */
 .services { background: var(--blue-50); }
@@ -303,7 +314,7 @@ address { font-style: normal; }
 .field textarea { resize: vertical; min-height: 130px; }
 .field select {
   appearance: none; padding-right: 44px;
-  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%230b3d6e' stroke-width='1.8'%3E%3Cpath d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2330425f' stroke-width='1.8'%3E%3Cpath d='m1 1.5 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 16px center;
 }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue-700); box-shadow: 0 0 0 4px rgb(17 80 140 / .14); }
 .field [aria-invalid="true"] { border-color: var(--error) !important; }
@@ -320,18 +331,18 @@ address { font-style: normal; }
 .hp { position: absolute; left: -9999px; }
 
 /* --- Footer ---------------------------------------------------------------- */
-.site-footer { background: var(--blue-900); color: #b9c9db; font-size: .9375rem; }
-.site-footer a { color: #e3ecf5; text-decoration: none; }
-.site-footer a:hover { color: #fff; text-decoration: underline; }
+.site-footer { background: var(--blue-50); color: var(--muted); font-size: .9375rem; border-top: 1px solid var(--line); }
+.site-footer a { color: var(--blue-800); text-decoration: none; }
+.site-footer a:hover { color: var(--orange-700); text-decoration: underline; }
+.brand--footer .brand-logo { height: 72px; }
 .footer-grid { display: grid; gap: 40px; padding-block: 64px 48px; }
 @media (min-width: 760px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 64px; } }
 .footer-brand p { max-width: 30em; margin-top: 20px; }
-.brand--footer .brand-text { color: #fff; }
-.footer-title { color: #fff; font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
+.footer-title { color: var(--blue-900); font-size: .8125rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
 .footer-list { display: grid; gap: 10px; }
 .footer-bottom {
   display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between;
-  padding-block: 24px 32px; border-top: 1px solid rgb(255 255 255 / .12); font-size: .875rem;
+  padding-block: 24px 32px; border-top: 1px solid var(--line); font-size: .875rem;
 }
 .footer-bottom p { margin: 0; }
 .footer-bottom-links { display: flex; gap: 24px; }

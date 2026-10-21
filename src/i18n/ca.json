@@ -20,7 +20,8 @@
     "services": "Serveis",
     "why": "Per què INLLOBSA",
     "contact": "Contacte",
-    "cta": "Contacta'ns"
+    "cta": "Contacta'ns",
+    "team": "L'equip"
   },
   "langSwitch": {
     "current": "CA",
@@ -36,11 +37,24 @@
     "cardSince": "Des de",
     "cardOffice": "Oficina Passeig",
     "facts": [
-      { "value": "1977", "label": "Any de fundació" },
-      { "value": "+40", "label": "Anys d'experiència" },
-      { "value": "Bages", "label": "Manresa i comarca" },
-      { "value": "API", "label": "Assessorament professional" }
-    ]
+      {
+        "value": "1977",
+        "label": "Any de fundació"
+      },
+      {
+        "value": "+40",
+        "label": "Anys d'experiència"
+      },
+      {
+        "value": "Bages",
+        "label": "Manresa i comarca"
+      },
+      {
+        "value": "API",
+        "label": "Assessorament professional"
+      }
+    ],
+    "imgAlt": "L'equip d'INLLOBSA sota el rètol de l'oficina"
   },
   "about": {
     "eyebrow": "Qui som",
@@ -49,10 +63,23 @@
     "p2": "El 1993, Sita Salido va assumir la direcció de l'empresa i l'activitat es va orientar a la comercialització de promocions pròpies i d'immobles de tercers a la comarca del Bages.",
     "p3": "Avui posem tota aquesta experiència al servei de qui vol comprar, vendre o llogar: t'assessorem, fem la gestió administrativa i ens ocupem de les formalitats legals perquè l'operació sigui clara i segura.",
     "timeline": [
-      { "year": "1977", "title": "Fundació", "text": "José Salido Chimeno funda Immobiliària Inllobsa per promoure edificis a Manresa." },
-      { "year": "1993", "title": "Nova etapa", "text": "Sita Salido assumeix la direcció. L'empresa se centra en la comercialització d'immobles al Bages." },
-      { "year": "Avui", "title": "Assessorament i gestió", "text": "Més de 40 anys d'experiència al servei de particulars i empreses." }
-    ]
+      {
+        "year": "1977",
+        "title": "Fundació",
+        "text": "José Salido Chimeno funda Immobiliària Inllobsa per promoure edificis a Manresa."
+      },
+      {
+        "year": "1993",
+        "title": "Nova etapa",
+        "text": "Sita Salido assumeix la direcció. L'empresa se centra en la comercialització d'immobles al Bages."
+      },
+      {
+        "year": "Avui",
+        "title": "Assessorament i gestió",
+        "text": "Més de 40 anys d'experiència al servei de particulars i empreses."
+      }
+    ],
+    "imgAlt": "Fotografia de grup de l'equip d'INLLOBSA"
   },
   "services": {
     "eyebrow": "Serveis",
@@ -60,25 +87,85 @@
     "lead": "Assessorament i gestió en cada pas de l'operació, tant si ets un particular com una empresa.",
     "more": "Demana informació",
     "items": [
-      { "id": "compravenda", "icon": "key", "title": "Compravenda", "text": "Assessorament i gestió en la compra i la venda d'habitatges, locals, naus industrials i oficines, des del primer contacte fins al tancament de l'operació." },
-      { "id": "lloguer", "icon": "home", "title": "Lloguer", "text": "Si vols llogar el teu immoble o en busques un, un assessor especialitzat en lloguers t'acompanya durant tot el procés." },
-      { "id": "gestio", "icon": "doc", "title": "Gestió legal i administrativa", "text": "Ens encarreguem de totes les formalitats legals i administratives de la venda o del lloguer, perquè tu no t'hagis de preocupar de la paperassa." },
-      { "id": "finques", "icon": "building", "title": "Administració de finques", "text": "Disposem d'un departament propi d'administració de finques. Explica'ns la teva situació i t'informarem de com et podem ajudar." },
-      { "id": "professional", "icon": "factory", "title": "Immobles per a empreses", "text": "Locals comercials, naus industrials i oficines: assessorament específic per a empreses, comerços i professionals." },
-      { "id": "difusio", "icon": "megaphone", "title": "Difusió de l'immoble", "text": "Quan ens confies la venda o el lloguer, publiquem el teu immoble al nostre portal web perquè arribi a més persones interessades." }
+      {
+        "id": "compravenda",
+        "icon": "key",
+        "title": "Compravenda",
+        "text": "Assessorament i gestió en la compra i la venda d'habitatges, locals, naus industrials i oficines, des del primer contacte fins al tancament de l'operació."
+      },
+      {
+        "id": "lloguer",
+        "icon": "home",
+        "title": "Lloguer",
+        "text": "Si vols llogar el teu immoble o en busques un, un assessor especialitzat en lloguers t'acompanya durant tot el procés."
+      },
+      {
+        "id": "gestio",
+        "icon": "doc",
+        "title": "Gestió legal i administrativa",
+        "text": "Ens encarreguem de totes les formalitats legals i administratives de la venda o del lloguer, perquè tu no t'hagis de preocupar de la paperassa."
+      },
+      {
+        "id": "finques",
+        "icon": "building",
+        "title": "Administració de finques",
+        "text": "Disposem d'un departament propi d'administració de finques. Explica'ns la teva situació i t'informarem de com et podem ajudar."
+      },
+      {
+        "id": "professional",
+        "icon": "factory",
+        "title": "Immobles per a empreses",
+        "text": "Locals comercials, naus industrials i oficines: assessorament específic per a empreses, comerços i professionals."
+      },
+      {
+        "id": "difusio",
+        "icon": "megaphone",
+        "title": "Difusió de l'immoble",
+        "text": "Quan ens confies la venda o el lloguer, publiquem el teu immoble al nostre portal web perquè arribi a més persones interessades."
+      }
     ]
+  },
+  "team": {
+    "eyebrow": "L'equip",
+    "title": "Persones que t'acompanyen",
+    "lead": "Assessors dedicats a la venda, al lloguer i a l'administració de finques, a la nostra oficina del Passeig de Pere III.",
+    "altFallback": "Membre de l'equip d'INLLOBSA"
   },
   "why": {
     "eyebrow": "Per què INLLOBSA",
     "title": "Experiència, proximitat i rigor",
     "lead": "Una manera de treballar consolidada durant dècades a Manresa.",
     "items": [
-      { "icon": "clock", "title": "Trajectòria", "text": "Al sector immobiliari de Manresa des de 1977: més de 40 anys d'operacions i de relació amb els clients." },
-      { "icon": "pin", "title": "Coneixement del territori", "text": "Treballem a Manresa i a la comarca del Bages, un entorn que coneixem a fons." },
-      { "icon": "badge", "title": "Assessorament professional", "text": "Comptes amb l'assessorament d'un agent de la propietat immobiliària (API)." },
-      { "icon": "layers", "title": "Gestió integral", "text": "Assessorament, gestió administrativa i formalitats legals en un mateix lloc, amb un sol interlocutor." },
-      { "icon": "users", "title": "Un equip per a cada àmbit", "text": "Assessors dedicats a la venda, al lloguer i a l'administració de finques." },
-      { "icon": "door", "title": "Tracte proper", "text": "Una oficina a peu de carrer, al Passeig de Pere III, on pots venir a explicar-nos el teu cas en persona." }
+      {
+        "icon": "clock",
+        "title": "Trajectòria",
+        "text": "Al sector immobiliari de Manresa des de 1977: més de 40 anys d'operacions i de relació amb els clients."
+      },
+      {
+        "icon": "pin",
+        "title": "Coneixement del territori",
+        "text": "Treballem a Manresa i a la comarca del Bages, un entorn que coneixem a fons."
+      },
+      {
+        "icon": "badge",
+        "title": "Assessorament professional",
+        "text": "Comptes amb l'assessorament d'un agent de la propietat immobiliària (API)."
+      },
+      {
+        "icon": "layers",
+        "title": "Gestió integral",
+        "text": "Assessorament, gestió administrativa i formalitats legals en un mateix lloc, amb un sol interlocutor."
+      },
+      {
+        "icon": "users",
+        "title": "Un equip per a cada àmbit",
+        "text": "Assessors dedicats a la venda, al lloguer i a l'administració de finques."
+      },
+      {
+        "icon": "door",
+        "title": "Tracte proper",
+        "text": "Una oficina a peu de carrer, al Passeig de Pere III, on pots venir a explicar-nos el teu cas en persona."
+      }
     ]
   },
   "cta": {
