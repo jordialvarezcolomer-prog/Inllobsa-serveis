@@ -282,18 +282,9 @@ figure { margin: 0; }
 
 /* Bloc propietaris */
 .owner { display: grid; margin-top: clamp(48px, 7vw, 88px); border-radius: var(--radius-lg); overflow: hidden; background: var(--navy); color: #d6deea; }
-@media (min-width: 960px) { .owner { grid-template-columns: 5fr 7fr; } }
-.owner-media { position: relative; min-height: 340px; }
 .owner-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
-.owner-badge { position: absolute; left: 16px; right: 16px; bottom: 16px; display: flex; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: rgb(20 29 46 / .82); backdrop-filter: blur(6px); color: #d6deea; font-size: .875rem; line-height: 1.4; }
-.owner-badge strong { display: block; color: #fff; }
-.owner-badge-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--blue); color: #fff; flex: none; }
-.owner-body { padding: clamp(28px, 5vw, 64px); }
 .owner-title { color: #fff; font-size: clamp(1.75rem, 3.4vw, 2.625rem); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 18px; }
 .owner-text { font-weight: 300; font-size: 1.0625rem; margin-bottom: 24px; }
-.owner .checks { margin-bottom: 32px; }
-.owner-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-@media (max-width: 520px) { .owner-actions .btn { width: 100%; white-space: normal; } }
 
 /* --- Màrqueting ---------------------------------------------------------------- */
 .mk-grid { position: relative; display: grid; gap: 20px; }
@@ -572,7 +563,7 @@ figure { margin: 0; }
 .owner:hover .owner-media img, .js .owner.is-in:hover .owner-media img { transform: scale(1.04); }
 
 /* Segell giratori */
-.owner-stamp { position: absolute; top: 18px; right: 18px; z-index: 2; width: 116px; height: 116px; display: grid; place-items: center; }
+.owner-stamp { position: absolute; right: clamp(16px, 4vw, 48px); bottom: -40px; z-index: 3; width: 124px; height: 124px; display: grid; place-items: center; }
 .owner-stamp-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 18s linear infinite; }
 .owner-stamp-ring text { font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; fill: #fff; }
 .owner-stamp::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgb(20 29 46 / .72); backdrop-filter: blur(4px); }
@@ -581,8 +572,6 @@ figure { margin: 0; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .js .owner .owner-stamp { opacity: 0; transform: scale(.4) rotate(-90deg); transition: opacity .5s ease 1s, transform .9s cubic-bezier(.3,1.5,.5,1) 1s; }
 .js .owner.is-in .owner-stamp { opacity: 1; transform: none; }
-.js .owner .owner-badge { opacity: 0; transform: translateY(24px); transition: opacity .6s ease 1.1s, transform .6s ease 1.1s; }
-.js .owner.is-in .owner-badge { opacity: 1; transform: none; }
 
 /* Titular: les paraules apareixen una a una i "vendre / llogar" es subratllen */
 .owner-title em { font-style: normal; color: #fff; background: linear-gradient(var(--orange), var(--orange)) no-repeat 0 92% / 100% 4px; }
@@ -613,9 +602,38 @@ figure { margin: 0; }
 .owner-steps li:hover .owner-step-dot { background: var(--orange); border-color: var(--orange); }
 .js .owner .owner-steps li { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; transition-delay: calc(1.4s + var(--i) * 140ms); }
 .js .owner.is-in .owner-steps li { opacity: 1; transform: none; }
-@media (max-width: 520px) { .owner-steps li { font-size: .6875rem; } .owner-stamp { width: 96px; height: 96px; } }
+@media (max-width: 520px) { .owner-steps li { font-size: .6875rem; } }
 
 /* Reflex de llum sobre el botó de WhatsApp */
 .btn-shine { position: relative; overflow: hidden; }
 .btn-shine::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgb(255 255 255 / .55), transparent); transform: skewX(-20deg); animation: shine 3.8s ease-in-out 2s infinite; }
 @keyframes shine { 0%, 60% { left: -60%; } 100% { left: 130%; } }
+
+/* Composició: foto panoràmica de tota la plantilla, cinta de conceptes i contingut en dues columnes */
+.owner-media { position: relative; z-index: 2; aspect-ratio: 2.3 / 1; }
+.owner-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(48 66 95 / .55), transparent 40%); pointer-events: none; }
+.owner-media img { object-position: 50% 20%; }
+@media (max-width: 600px) {
+  .owner-media { aspect-ratio: 2 / 1; }
+  .owner-stamp { width: 92px; height: 92px; bottom: -30px; }
+  .owner-stamp-core { width: 38px; height: 38px; }
+}
+.owner-ticker { position: relative; z-index: 1; overflow: hidden; padding: 14px 0; background: rgb(20 29 46 / .45); border-block: 1px solid rgb(255 255 255 / .08); }
+.owner-ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; }
+.owner-ticker:hover .owner-ticker-track { animation-play-state: paused; }
+.owner-ticker ul { display: flex; flex: none; }
+.owner-ticker li { display: flex; align-items: center; gap: 22px; padding-right: 22px; font-size: .8125rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #e6ecf5; white-space: nowrap; }
+.owner-ticker li::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+.owner-body { display: grid; gap: 36px; padding: clamp(40px, 5vw, 64px) clamp(24px, 5vw, 64px) clamp(28px, 5vw, 56px); }
+@media (min-width: 960px) { .owner-body { grid-template-columns: 1.2fr .8fr; gap: 56px; align-items: start; } }
+.owner .checks { margin: 0; }
+.owner-side { padding: 28px; border-radius: var(--radius); background: rgb(255 255 255 / .06); border: 1px solid rgb(255 255 255 / .1); }
+@media (max-width: 520px) { .owner-side { padding: 20px 16px; } }
+.owner-actions { display: grid; gap: 12px; }
+.js .owner .owner-side { opacity: 0; transform: translateY(24px); transition: opacity .7s ease 1s, transform .7s ease 1s; }
+.js .owner.is-in .owner-side { opacity: 1; transform: none; }
+/* La cortina de la foto ara baixa de dalt a baix */
+.js .owner .owner-media picture { clip-path: inset(0 0 100% 0); }
+.js .owner.is-in .owner-media picture { clip-path: inset(0 0 0 0); }
+.owner-side .btn { font-size: .78rem; letter-spacing: .04em; padding-inline: 16px; }

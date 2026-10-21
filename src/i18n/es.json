@@ -201,11 +201,9 @@
       "Gestión jurídica y contractual incluida",
       "Trato humano, directo y transparente"
     ],
-    "badgeTitle": "Comercialización de éxito",
-    "badgeText": "Máxima difusión en los principales portales inmobiliarios",
     "ctaWhatsapp": "Pide la valoración por WhatsApp",
     "ctaCall": "Llama al 938 36 20 30",
-    "imgAlt": "El equipo de Inllobsa bajo el rótulo de la oficina del Passeig de Pere III",
+    "imgAlt": "El equipo de Inllobsa",
     "stamp": "Valoración gratuita · Sin compromiso · ",
     "stepsLabel": "Así te acompañamos",
     "steps": [
@@ -213,7 +211,18 @@
       "Reportaje fotográfico",
       "Visitas y difusión",
       "Firma en notaría"
-    ]
+    ],
+    "ticker": [
+      "Valoración gratuita",
+      "Reportaje fotográfico",
+      "Home staging",
+      "Difusión en los principales portales",
+      "Campañas en redes sociales",
+      "Filtro de inquilinos",
+      "Asesoramiento fiscal",
+      "Trámites notariales"
+    ],
+    "tickerLabel": "Qué incluye el servicio al propietario"
   },
   "marketing": {
     "eyebrow": "Estrategia y máxima difusión",

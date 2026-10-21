@@ -274,9 +274,9 @@
           <span class="owner-glow owner-glow--2" aria-hidden="true"></span>
           <div class="owner-media">
             <picture>
-              <source type="image/webp" srcset="{{base}}assets/img/photos/equip-oficina-640.webp 640w, {{base}}assets/img/photos/equip-oficina-1000.webp 1000w" sizes="(min-width: 960px) 500px, 92vw">
-              <img src="{{base}}assets/img/photos/equip-oficina-1000.jpg" srcset="{{base}}assets/img/photos/equip-oficina-640.jpg 640w, {{base}}assets/img/photos/equip-oficina-1000.jpg 1000w" sizes="(min-width: 960px) 500px, 92vw"
-                   alt="{{owner.imgAlt}}" width="1000" height="1250" loading="lazy">
+              <source type="image/webp" srcset="{{base}}assets/img/photos/equip-banda-900.webp 900w, {{base}}assets/img/photos/equip-banda-1600.webp 1600w" sizes="(min-width: 1200px) 1120px, 94vw">
+              <img src="{{base}}assets/img/photos/equip-banda-1600.jpg" srcset="{{base}}assets/img/photos/equip-banda-900.jpg 900w, {{base}}assets/img/photos/equip-banda-1600.jpg 1600w" sizes="(min-width: 1200px) 1120px, 94vw"
+                   alt="{{owner.imgAlt}}" width="1600" height="696" loading="lazy">
             </picture>
             <div class="owner-stamp" aria-hidden="true">
               <svg class="owner-stamp-ring" viewBox="0 0 120 120">
@@ -285,33 +285,49 @@
               </svg>
               <span class="owner-stamp-core"><svg class="icon"><use href="#i-key"/></svg></span>
             </div>
-            <div class="owner-badge">
-              <span class="owner-badge-icon"><svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg></span>
-              <span><strong>{{owner.badgeTitle}}</strong>{{owner.badgeText}}</span>
+          </div>
+
+          <div class="owner-ticker">
+            <div class="owner-ticker-track">
+              <ul aria-label="{{owner.tickerLabel}}">
+                {{#each owner.ticker}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+              <ul aria-hidden="true">
+                {{#each owner.ticker}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
             </div>
           </div>
+
           <div class="owner-body">
-            <p class="eyebrow eyebrow--light">{{owner.eyebrow}}</p>
-            <h2 class="owner-title" id="owner-title" data-split>{{{owner.title}}}</h2>
-            <p class="owner-text">{{owner.text}}</p>
-            <ul class="checks checks--light checks--2col">
-              {{#each owner.points}}
-              <li style="--i: {{@i}}"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>{{this}}</li>
-              {{/each}}
-            </ul>
-            <div class="owner-steps">
-              <p class="owner-steps-label">{{owner.stepsLabel}}</p>
-              <ol>
-                {{#each owner.steps}}
-                <li style="--i: {{@i}}"><span class="owner-step-dot" aria-hidden="true">{{@num}}</span>{{this}}</li>
+            <div class="owner-main">
+              <p class="eyebrow eyebrow--light">{{owner.eyebrow}}</p>
+              <h2 class="owner-title" id="owner-title" data-split>{{{owner.title}}}</h2>
+              <p class="owner-text">{{owner.text}}</p>
+              <ul class="checks checks--light checks--2col">
+                {{#each owner.points}}
+                <li style="--i: {{@i}}"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>{{this}}</li>
                 {{/each}}
-              </ol>
+              </ul>
             </div>
-            <div class="owner-actions">
-              <a class="btn btn-wa btn-shine" href="{{links.waValuation}}" target="_blank" rel="noopener">
-                <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>{{owner.ctaWhatsapp}}</a>
-              <a class="btn btn-light" href="tel:{{site.phoneHref}}">
-                <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{owner.ctaCall}}</a>
+            <div class="owner-side">
+              <div class="owner-steps">
+                <p class="owner-steps-label">{{owner.stepsLabel}}</p>
+                <ol>
+                  {{#each owner.steps}}
+                  <li style="--i: {{@i}}"><span class="owner-step-dot" aria-hidden="true">{{@num}}</span>{{this}}</li>
+                  {{/each}}
+                </ol>
+              </div>
+              <div class="owner-actions">
+                <a class="btn btn-wa btn-shine btn-block" href="{{links.waValuation}}" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>{{owner.ctaWhatsapp}}</a>
+                <a class="btn btn-light btn-block" href="tel:{{site.phoneHref}}">
+                  <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{owner.ctaCall}}</a>
+              </div>
             </div>
           </div>
         </article>
