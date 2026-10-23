@@ -73,6 +73,12 @@ for (const [code, dict] of Object.entries(langs)) {
   const isDefault = code === 'ca';
   const ctx = {
     ...dict,
+    hoopSvg: read('src/art/hoop.svg').trim(),
+    // Il·lustracions animades dels valors (src/art/*.svg), inserides dins l'HTML
+    values: {
+      ...dict.values,
+      items: dict.values.items.map((it) => ({ ...it, artSvg: read(`src/art/${it.art}.svg`).trim() })),
+    },
     services: {
       ...dict.services,
       items: dict.services.items.map((it) => ({ ...it, waHref: waLink(site.whatsapp, `${dict.wa.service} ${it.title}`) })),

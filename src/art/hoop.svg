@@ -1,0 +1,33 @@
+<svg class="band-hoop" viewBox="0 0 560 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+  <g class="hoop-court">
+    <path d="M0 152h560M300 152a116 116 0 0 1 116-112M362 152v-50h66"/>
+  </g>
+  <g class="hoop-stand">
+    <path d="M444 152V96h-10"/>
+    <rect x="428" y="40" width="7" height="60" rx="2"/>
+  </g>
+  <ellipse class="hoop-shadow" cx="160" cy="153" rx="11" ry="3">
+    <animate attributeName="cx" dur="2.6s" repeatCount="indefinite" keyTimes="0;0.55;0.68;0.8;1" values="160;402;402;402;402"/>
+    <animate attributeName="rx" dur="2.6s" repeatCount="indefinite" keyTimes="0;0.3;0.55;0.8;1" values="11;4;6;11;11"/>
+  </ellipse>
+  <g class="hoop-ball">
+    <g>
+      <circle r="10"/>
+      <path d="M-10 0h20M0-10v20M-7-7c3 3.5 3 10.5 0 14M7-7c-3 3.5-3 10.5 0 14"/>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="540" dur="2.6s" repeatCount="indefinite"/>
+    </g>
+    <animateMotion dur="2.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0.84;0.93;1;1" keyTimes="0;0.55;0.68;0.8;1" path="M160 142 Q285 -60 402 69 L402 112 L402 142"/>
+    <animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" keyTimes="0;0.06;0.86;0.96;1" values="0;1;1;0;0"/>
+  </g>
+  <g class="hoop-front">
+    <path class="hoop-net" d="M383 80 L391 110 M421 80 L413 110 M383 80 L413 110 M421 80 L391 110 M391 110 H413">
+      <animate attributeName="d" dur="2.6s" repeatCount="indefinite" keyTimes="0;0.56;0.62;0.72;1"
+        values="M383 80 L391 110 M421 80 L413 110 M383 80 L413 110 M421 80 L391 110 M391 110 H413;
+                M383 80 L391 110 M421 80 L413 110 M383 80 L413 110 M421 80 L391 110 M391 110 H413;
+                M383 80 L387 118 M421 80 L417 118 M383 80 L417 118 M421 80 L387 118 M387 118 H417;
+                M383 80 L393 108 M421 80 L411 108 M383 80 L411 108 M421 80 L393 108 M393 108 H411;
+                M383 80 L391 110 M421 80 L413 110 M383 80 L413 110 M421 80 L391 110 M391 110 H413"/>
+    </path>
+    <path class="hoop-rim" d="M381 79h47"/>
+  </g>
+</svg>

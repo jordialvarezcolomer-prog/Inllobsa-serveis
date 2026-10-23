@@ -61,7 +61,7 @@
     const slides = $$('[data-slide]', carousel);
     const dots = $$('[data-dot]', carousel);
     const toggleBtn = $('[data-carousel-toggle]', carousel);
-    const DELAY = 6500;
+    const DELAY = 5000;
     let index = 0, timer = null, paused = reduceMotion;
 
     const slidesWrap = slides[0].parentElement;
@@ -201,6 +201,15 @@
       });
     });
   }
+
+  /* Llançament a cistella (SVG animat): només es mou quan és a la pantalla i si no es demana reduir el moviment */
+  $$('.band-hoop').forEach((svg) => {
+    if (!svg.pauseAnimations) return;
+    svg.pauseAnimations();
+    if (reduceMotion || !hasIO) return;
+    new IntersectionObserver((entries) => entries.forEach((e) => (e.isIntersecting ? svg.unpauseAnimations() : svg.pauseAnimations())))
+      .observe(svg);
+  });
 
   /* Equip: en tocar o activar la foto amb el teclat, s'amplia i mostra la frase */
   const people = $$('.person');

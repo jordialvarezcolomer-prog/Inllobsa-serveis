@@ -315,19 +315,63 @@ figure { margin: 0; }
 .mk-card:hover .tag, .mk-card:focus-within .tag { background: var(--blue); color: #fff; }
 
 /* --- Valors ------------------------------------------------------------------------ */
-.values-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); border-top: 1px solid rgb(255 255 255 / .14); border-left: 1px solid rgb(255 255 255 / .14); }
-.value { padding: 28px 24px 32px; border-right: 1px solid rgb(255 255 255 / .14); border-bottom: 1px solid rgb(255 255 255 / .14); }
-.value-num { display: block; font-size: 2.5rem; font-weight: 300; line-height: 1; color: #8fb3e3; margin-bottom: 18px; letter-spacing: -0.02em; }
-.value-title { font-size: 1.0625rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px; }
-.value p { font-size: .9375rem; color: #b9c6d8; }
+.values-grid { display: grid; gap: 20px; }
+@media (min-width: 640px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .values-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+.value { position: relative; overflow: hidden; isolation: isolate; padding: 32px 28px 36px; border-radius: var(--radius); background: rgb(255 255 255 / .05); border: 1px solid rgb(255 255 255 / .12); transition: transform .45s cubic-bezier(.2,.8,.2,1), background-color .4s, border-color .4s, opacity .7s ease; }
+.js .value[data-reveal] { transition: transform .45s cubic-bezier(.2,.8,.2,1), background-color .4s, border-color .4s, opacity .7s ease; }
+.js .value.is-visible:hover, .value:hover { transform: translateY(-8px); background: rgb(255 255 255 / .09); border-color: rgb(255 255 255 / .25); }
+.value-bignum { position: absolute; right: 16px; top: 8px; z-index: -1; font-size: 5.5rem; font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgb(255 255 255 / .1); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.value:hover .value-bignum { transform: translateY(6px) scale(1.06); }
+.value-art { display: grid; place-items: center; width: 96px; height: 96px; margin-bottom: 26px; border-radius: 28px; background: radial-gradient(circle at 30% 25%, rgb(255 255 255 / .16), rgb(255 255 255 / .04)); border: 1px solid rgb(255 255 255 / .14); transition: transform .5s cubic-bezier(.3,1.6,.5,1), background-color .4s; }
+.value:hover .value-art { transform: rotate(-6deg) scale(1.08); }
+.value-art svg { width: 64px; height: 64px; overflow: visible; }
+.value-art svg * { transform-box: fill-box; transform-origin: center; }
+.value-art .art-main, .value-art .art-line { fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.value-art .art-spark, .value-art .art-rays path { fill: none; stroke: var(--star); stroke-width: 2.4; stroke-linecap: round; }
+.value-title { font-size: 1.25rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 10px; }
+.value p { font-size: .96875rem; color: #b9c6d8; }
+
+/* Dibuix de les línies quan la targeta apareix */
+.js .value-art .art-main, .js .value-art .art-line { stroke-dasharray: 220; stroke-dashoffset: 220; transition: stroke-dashoffset 1.8s ease .3s; }
+.js .value.is-visible .value-art .art-main, .js .value.is-visible .value-art .art-line { stroke-dashoffset: 0; }
+
+/* Excel·lència: l'estrella s'omple i les espurnes brillen */
+.value--excellence .art-star { fill: rgb(251 191 36 / 0); transition: fill .8s ease 1.6s, stroke-dashoffset 1.8s ease .3s; animation: star-pulse 3s ease-in-out 2.2s infinite; }
+.value--excellence.is-visible .art-star, .no-js .value--excellence .art-star { fill: rgb(251 191 36 / .9); stroke: var(--star); }
+@keyframes star-pulse { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.08) rotate(6deg); } }
+.art-spark { animation: twinkle 2.2s ease-in-out infinite; }
+.art-spark--2 { animation-delay: .7s; } .art-spark--3 { animation-delay: 1.4s; }
+@keyframes twinkle { 0%, 100% { opacity: .2; transform: scale(.6) rotate(0); } 50% { opacity: 1; transform: scale(1.2) rotate(45deg); } }
+
+/* Originalitat: la bombeta s'encén */
+.art-glow { fill: var(--star); opacity: 0; animation: glow 2.8s ease-in-out infinite; }
+.art-rays { animation: rays 2.8s ease-in-out infinite; }
+@keyframes glow { 0%, 30%, 100% { opacity: 0; transform: scale(.8); } 55%, 80% { opacity: .35; transform: scale(1.1); } }
+@keyframes rays { 0%, 30%, 100% { opacity: 0; transform: scale(.85); } 55%, 80% { opacity: 1; transform: scale(1); } }
+
+/* Família: el cor batega i en suren de petits */
+.art-heart { fill: var(--orange); stroke: none; animation: beat 1.6s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.18); } 30% { transform: scale(1); } 45% { transform: scale(1.12); } }
+.art-float { fill: #f5a593; animation: float-up 3.4s ease-in infinite; }
+.art-float--2 { animation-delay: 1.7s; }
+@keyframes float-up { 0% { opacity: 0; transform: translateY(14px) scale(.6); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(-14px) scale(1.1); } }
+
+/* Formació: el birret es balanceja i la borla fa pèndol */
+.art-cap { animation: cap 3.2s ease-in-out infinite; }
+@keyframes cap { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-3px) rotate(-4deg); } }
+.art-tassel { transform-origin: top center !important; animation: swing 1.6s ease-in-out infinite; }
+.art-tassel-end { fill: var(--orange); }
+@keyframes swing { 0%, 100% { transform: rotate(12deg); } 50% { transform: rotate(-12deg); } }
+
+/* En passar per sobre, les il·lustracions van més de pressa */
+.value:hover .value-art svg * { animation-duration: 1.1s; }
 
 /* --- Equip ---------------------------------------------------------------------------- */
 .commit { display: grid; gap: 32px; align-items: center; padding: clamp(20px, 3vw, 36px); background: #fff; border-radius: var(--radius-lg); margin-bottom: clamp(40px, 6vw, 64px); }
 @media (min-width: 960px) { .commit { grid-template-columns: 1.1fr 1fr; gap: 56px; } }
 .commit-media { position: relative; }
 .commit-media img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
-.commit-media figcaption { position: absolute; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 8px; background: rgb(20 29 46 / .8); color: #fff; font-size: .8125rem; font-weight: 700; }
-.commit-media figcaption .icon { width: 16px; height: 16px; }
 .commit-title { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 300; margin-bottom: 18px; }
 .commit-body p { color: var(--muted); }
 .commit-tags { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
@@ -487,7 +531,6 @@ figure { margin: 0; }
 .territory-band { position: relative; height: 170px; overflow: hidden; background: linear-gradient(135deg, var(--navy), var(--blue)); }
 .territory-col--sport .territory-band { background: linear-gradient(135deg, #1f2d42, var(--navy) 55%, #3b5a86); }
 .band-eq, .band-note { display: none; }
-.band-court, .band-ball, .band-shadow { display: none; }
 
 /* Cultura: equalitzador musical i notes que suren */
 .territory-col--culture .band-eq { position: absolute; left: 32px; right: 32px; bottom: 0; height: 120px; display: flex; align-items: flex-end; gap: 6px; }
@@ -509,29 +552,23 @@ figure { margin: 0; }
 .band-note--2 .icon { width: 20px; height: 20px; }
 @keyframes note { 0% { transform: translate(0, 0) rotate(-10deg); opacity: 0; } 15% { opacity: .9; } 100% { transform: translate(30px, -130px) rotate(18deg); opacity: 0; } }
 
-/* Esport: pista de bàsquet i pilota que bota */
-.territory-col--sport .band-court { position: absolute; inset: 0; display: block; width: 100%; height: 100%; fill: none; stroke: rgb(255 255 255 / .28); stroke-width: 2; }
-.territory-col--sport .band-ball { position: absolute; left: 50%; bottom: 10px; display: block; width: 46px; height: 46px; margin-left: -23px; animation: bounce 1.1s cubic-bezier(.5,0,.5,1) infinite; transform-origin: bottom center; }
-.band-ball svg { width: 100%; height: 100%; animation: roll 2.2s linear infinite; }
-.band-ball circle { fill: var(--orange); }
-.band-ball path { fill: none; stroke: #6b1f10; stroke-width: 1.2; }
-.territory-col--sport .band-shadow { position: absolute; left: 50%; bottom: 6px; display: block; width: 46px; height: 8px; margin-left: -23px; border-radius: 50%; background: rgb(0 0 0 / .35); filter: blur(2px); animation: shadow 1.1s cubic-bezier(.5,0,.5,1) infinite; }
-@keyframes bounce {
-  0%, 100% { transform: translateY(0) scale(1.12, .86); }
-  12% { transform: translateY(-14px) scale(.95, 1.06); }
-  50% { transform: translateY(-96px) scale(1, 1); }
-  88% { transform: translateY(-14px) scale(.95, 1.06); }
-}
-@keyframes shadow { 0%, 100% { transform: scale(1); opacity: .5; } 50% { transform: scale(.45); opacity: .18; } }
-@keyframes roll { to { transform: rotate(360deg); } }
+/* Esport: llançament a cistella (animació SVG; es pausa quan no és visible) */
+.band-hoop { display: none; }
+.territory-col--sport .band-hoop { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.hoop-court path { fill: none; stroke: rgb(255 255 255 / .22); stroke-width: 2; }
+.hoop-stand path { fill: none; stroke: rgb(255 255 255 / .55); stroke-width: 4; stroke-linecap: round; }
+.hoop-stand rect { fill: rgb(255 255 255 / .85); }
+.hoop-shadow { fill: rgb(0 0 0 / .3); }
+.hoop-ball circle { fill: var(--orange); }
+.hoop-ball path { fill: none; stroke: #6b1f10; stroke-width: 1.2; }
+.hoop-net { fill: none; stroke: rgb(255 255 255 / .85); stroke-width: 1.6; stroke-linecap: round; }
+.hoop-rim { fill: none; stroke: var(--orange); stroke-width: 4; stroke-linecap: round; }
 
 /* La capçalera entra amb un lliscament i les animacions només corren quan la targeta és visible */
 .js .territory-band > * { animation-play-state: paused; }
-.js .territory-col.is-visible .territory-band > *, .js .territory-col.is-visible .band-eq span, .js .territory-col.is-visible .band-ball svg { animation-play-state: running; }
-.js .band-eq span, .js .band-ball svg { animation-play-state: paused; }
+.js .territory-col.is-visible .territory-band > *, .js .territory-col.is-visible .band-eq span { animation-play-state: running; }
+.js .band-eq span { animation-play-state: paused; }
 .territory-col:hover .band-eq span { animation-duration: .7s; }
-.territory-col:hover .band-ball { animation-duration: .8s; }
-.territory-col:hover .band-shadow { animation-duration: .8s; }
 
 /* --- Solvia Store Vic -------------------------------------------------------------------------- */
 .solvia { display: grid; gap: 40px; align-items: center; }

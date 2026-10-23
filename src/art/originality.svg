@@ -1,0 +1,6 @@
+<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <circle class="art-glow" cx="32" cy="26" r="17"/>
+  <g class="art-rays"><path d="M32 2v4M14 9l3 3M50 9l-3 3M6 26h4M54 26h4"/></g>
+  <path class="art-main" d="M32 11a14 14 0 0 0-8.2 25.4c1.5 1.1 2.4 2.9 2.4 4.8V44h11.6v-2.8c0-1.9.9-3.7 2.4-4.8A14 14 0 0 0 32 11z"/>
+  <path class="art-line" d="M26.5 49h11M28.5 54h7M28 30l4 4 4-4"/>
+</svg>

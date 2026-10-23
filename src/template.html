@@ -373,8 +373,9 @@
         </div>
         <ol class="values-grid">
           {{#each values.items}}
-          <li class="value" data-reveal>
-            <span class="value-num" aria-hidden="true">{{@num}}</span>
+          <li class="value value--{{this.art}}" data-reveal>
+            <span class="value-bignum" aria-hidden="true">{{@num}}</span>
+            <div class="value-art">{{{this.artSvg}}}</div>
             <h3 class="value-title">{{this.title}}</h3>
             <p>{{this.text}}</p>
           </li>
@@ -401,7 +402,6 @@
               <img src="{{base}}assets/img/photos/equip-huma-1300.jpg" srcset="{{base}}assets/img/photos/equip-huma-800.jpg 800w, {{base}}assets/img/photos/equip-huma-1300.jpg 1300w" sizes="(min-width: 960px) 640px, 92vw"
                    alt="{{team.imgAlt}}" width="1300" height="975" loading="lazy">
             </picture>
-            <figcaption><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>{{team.imgCaption}}</figcaption>
           </figure>
           <div class="commit-body">
             <h3 class="commit-title">{{team.blockTitle}}</h3>
@@ -532,11 +532,7 @@
               </div>
               <span class="band-note band-note--1"><svg class="icon"><use href="#i-music"/></svg></span>
               <span class="band-note band-note--2"><svg class="icon"><use href="#i-music"/></svg></span>
-              <svg class="band-court" viewBox="0 0 400 160" preserveAspectRatio="xMidYMax slice">
-                <path d="M0 150h400M200 150V40M120 150a80 80 0 0 1 160 0M150 150v-55h100v55M168 95a32 32 0 0 1 64 0"/>
-              </svg>
-              <div class="band-ball"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5"/><path d="M1.5 12h21M12 1.5v21M4.6 4.6c3.8 4 3.8 10.8 0 14.8M19.4 4.6c-3.8 4-3.8 10.8 0 14.8"/></svg></div>
-              <span class="band-shadow"></span>
+{{{hoopSvg}}}
             </div>
             <div class="territory-body">
               <p class="kicker">{{this.kicker}}</p>

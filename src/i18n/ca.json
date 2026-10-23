@@ -265,44 +265,24 @@
     "lead": "Els principis que guien cadascuna de les nostres accions i defineixen el nostre compromís amb cada client i cada família.",
     "items": [
       {
-        "title": "Honestedat",
-        "text": "Treballem amb respecte, transparència i humilitat per generar confiança."
-      },
-      {
+        "art": "excellence",
         "title": "Excel·lència",
         "text": "Busquem superar-nos constantment per oferir el millor servei en cada pas."
       },
       {
-        "title": "Seguretat",
-        "text": "Ens assegurem que cada projecte compleixi els estàndards de qualitat més alts."
-      },
-      {
-        "title": "Col·laboració",
-        "text": "Treballar en equip ens fa més forts i ens permet assolir millors resultats."
-      },
-      {
-        "title": "Adaptabilitat",
-        "text": "Ens ajustem a cada client i projecte amb solucions personalitzades."
-      },
-      {
-        "title": "Consistència",
-        "text": "Mantenim el mateix nivell de qualitat sigui quina sigui la mida del projecte."
-      },
-      {
-        "title": "Professionalitat",
-        "text": "Personal qualificat i una atenció excepcional en tot moment."
-      },
-      {
-        "title": "Empatia",
-        "text": "Ens posem a la teva pell per entendre què necessites de debò."
-      },
-      {
+        "art": "originality",
         "title": "Originalitat",
         "text": "Apostem per la innovació i per fer les coses d'una manera diferent."
       },
       {
+        "art": "family",
         "title": "Família",
         "text": "Un ambient proper on cadascú se sent valorat i recolzat."
+      },
+      {
+        "art": "training",
+        "title": "Formació",
+        "text": "Ens formem contínuament per oferir-te un assessorament rigorós i actualitzat."
       }
     ]
   },
@@ -318,7 +298,6 @@
       "Atenció a mida"
     ],
     "imgAlt": "L'equip d'Inllobsa",
-    "imgCaption": "L'equip humà d'Inllobsa",
     "email": "Envia un correu a",
     "whatsapp": "Escriu per WhatsApp a",
     "altFallback": "Membre de l'equip d'Inllobsa",

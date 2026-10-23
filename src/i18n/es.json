@@ -265,44 +265,24 @@
     "lead": "Los principios que guían cada una de nuestras acciones y definen nuestro compromiso con cada cliente y cada familia.",
     "items": [
       {
-        "title": "Honestidad",
-        "text": "Trabajamos con respeto, transparencia y humildad para generar confianza."
-      },
-      {
+        "art": "excellence",
         "title": "Excelencia",
         "text": "Buscamos superarnos constantemente para ofrecer el mejor servicio en cada paso."
       },
       {
-        "title": "Seguridad",
-        "text": "Nos aseguramos de que cada proyecto cumpla los estándares de calidad más altos."
-      },
-      {
-        "title": "Colaboración",
-        "text": "Trabajar en equipo nos hace más fuertes y nos permite lograr mejores resultados."
-      },
-      {
-        "title": "Adaptabilidad",
-        "text": "Nos ajustamos a cada cliente y proyecto con soluciones personalizadas."
-      },
-      {
-        "title": "Constancia",
-        "text": "Mantenemos el mismo nivel de calidad sea cual sea el tamaño del proyecto."
-      },
-      {
-        "title": "Profesionalidad",
-        "text": "Personal cualificado y una atención excepcional en todo momento."
-      },
-      {
-        "title": "Empatía",
-        "text": "Nos ponemos en tu piel para entender qué necesitas de verdad."
-      },
-      {
+        "art": "originality",
         "title": "Originalidad",
         "text": "Apostamos por la innovación y por hacer las cosas de una forma diferente."
       },
       {
+        "art": "family",
         "title": "Familia",
         "text": "Un ambiente cercano donde cada persona se siente valorada y respaldada."
+      },
+      {
+        "art": "training",
+        "title": "Formación",
+        "text": "Nos formamos continuamente para ofrecerte un asesoramiento riguroso y actualizado."
       }
     ]
   },
@@ -318,7 +298,6 @@
       "Atención a medida"
     ],
     "imgAlt": "El equipo de Inllobsa",
-    "imgCaption": "El equipo humano de Inllobsa",
     "email": "Enviar un correo a",
     "whatsapp": "Escribir por WhatsApp a",
     "altFallback": "Miembro del equipo de Inllobsa",
