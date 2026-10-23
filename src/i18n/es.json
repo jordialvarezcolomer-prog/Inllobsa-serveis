@@ -17,11 +17,7 @@
     "slides": "Imágenes del equipo",
     "slide": "Imagen",
     "whatsappFloat": "Escríbenos por WhatsApp",
-    "newTab": "(se abre en una pestaña nueva)",
-    "prev": "Imagen anterior",
-    "next": "Imagen siguiente",
-    "pause": "Detener el carrusel",
-    "play": "Reanudar el carrusel"
+    "newTab": "(se abre en una pestaña nueva)"
   },
   "wa": {
     "general": "Hola, quería hacer una consulta a Inllobsa.",
@@ -194,7 +190,7 @@
   "owner": {
     "eyebrow": "Servicios al propietario",
     "title": "¿Quieres <em>vender</em> o <em>alquilar</em> tu inmueble en Manresa?",
-    "text": "Te ofrecemos una valoración gratuita y profesional ajustada a la realidad del mercado, un reportaje fotográfico, asesoramiento fiscal y una gestión transparente de todas las visitas y los trámites notariales.",
+    "text": "Te ofrecemos una <strong>valoración gratuita</strong> y profesional ajustada a la realidad del mercado, un <strong>reportaje fotográfico</strong>, <strong>asesoramiento fiscal</strong> y una gestión transparente de todas las visitas y los trámites notariales.",
     "points": [
       "Estudio comparativo de mercado real",
       "Filtro de inquilinos y solvencia bancaria",

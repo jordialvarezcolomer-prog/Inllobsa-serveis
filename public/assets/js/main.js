@@ -55,15 +55,12 @@
     a.hash = id && id !== 'top' ? id : '';
   }));
 
-  /* Carrusel del hero */
+  /* Carrusel del hero: passa sol cada 4 s des del primer moment, sense controls */
   const carousel = $('[data-carousel]');
   if (carousel) {
     const slides = $$('[data-slide]', carousel);
-    const dots = $$('[data-dot]', carousel);
-    const toggleBtn = $('[data-carousel-toggle]', carousel);
     const DELAY = 4000;
-    let index = 0, timer = null, paused = false;   // passa sol des del primer moment; es pot aturar amb el botó
-
+    let index = 0, timer = null;
     const slidesWrap = slides[0].parentElement;
     const show = (i) => {
       if (i !== index) slidesWrap.classList.add('has-moved');
@@ -73,26 +70,12 @@
         s.classList.toggle('is-active', active);
         s.setAttribute('aria-hidden', String(!active));
       });
-      dots.forEach((d, n) => d.setAttribute('aria-current', String(n === index)));
     };
-    const stop = () => { clearInterval(timer); timer = null; };
-    const play = () => { stop(); if (!paused) timer = setInterval(() => show(index + 1), DELAY); };
-    const setPaused = (p) => {
-      paused = p;
-      toggleBtn.classList.toggle('is-paused', p);
-      toggleBtn.setAttribute('aria-label', p ? toggleBtn.dataset.labelPlay : toggleBtn.dataset.labelPause);
-      play();
-    };
-
-    $('[data-carousel-prev]', carousel).addEventListener('click', () => { show(index - 1); play(); });
-    $('[data-carousel-next]', carousel).addEventListener('click', () => { show(index + 1); play(); });
-    dots.forEach((d) => d.addEventListener('click', () => { show(Number(d.dataset.dot)); play(); }));
-    toggleBtn.addEventListener('click', () => setPaused(!paused));
-    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
-
+    const play = () => { clearInterval(timer); timer = setInterval(() => show(index + 1), DELAY); };
+    document.addEventListener('visibilitychange', () => (document.hidden ? clearInterval(timer) : play()));
     show(0);
     slidesWrap.classList.add('is-ready');
-    setPaused(paused);
+    play();
   }
 
   /* Comptadors animats de les xifres (admeten decimals: data-decimals) */

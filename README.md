@@ -46,7 +46,7 @@ Solvia Store Vic · Contacte (WhatsApp, telèfon, correu, visita, horari) · Peu
 - **WhatsApp:** botó a la capçalera, botó flotant, bloc de valoració, targeta de contacte i un enllaç per a cada servei
   i per a cada persona de l'equip. Tots porten un missatge predefinit en l'idioma de la pàgina.
 - **Correu i telèfon:** enllaços `mailto:` i `tel:` a la barra superior, a les targetes de l'equip i al contacte.
-- **Carrusel del hero:** passa sol cada 4 s des que s'obre la pàgina, amb fletxes, punts i botó de pausa.
+- **Carrusel del hero:** passa sol cada 4 s des que s'obre la pàgina, sense controls visibles.
 - **Animacions:** les xifres compten fins al seu valor quan apareixen, i les targetes i els números
   apareixen de manera esglaonada en fer scroll.
 - **Selector CA/ES:** conserva la secció on es troba l'usuari.
