@@ -722,8 +722,7 @@ figure { margin: 0; }
 .owner-side .btn { font-size: .78rem; letter-spacing: .04em; padding-inline: 16px; }
 
 /* Conceptes destacats del servei al propietari */
-.owner-text strong { font-weight: 800; color: #fff; padding: 0 .3em; border-radius: 6px; background: rgb(201 72 47 / .32); box-decoration-break: clone; -webkit-box-decoration-break: clone; transition: background-color .3s; }
-.owner-text strong:hover { background: rgb(201 72 47 / .55); }
+.owner-text strong { font-weight: 800; color: #fff; }
 
 /* Màrqueting en una sola columna (mòbil): línia vertical que uneix les icones */
 .mk-link { display: none; }
