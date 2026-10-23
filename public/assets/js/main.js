@@ -61,8 +61,8 @@
     const slides = $$('[data-slide]', carousel);
     const dots = $$('[data-dot]', carousel);
     const toggleBtn = $('[data-carousel-toggle]', carousel);
-    const DELAY = 5000;
-    let index = 0, timer = null, paused = reduceMotion;
+    const DELAY = 4000;
+    let index = 0, timer = null, paused = false;   // passa sol des del primer moment; es pot aturar amb el botó
 
     const slidesWrap = slides[0].parentElement;
     const show = (i) => {
@@ -88,11 +88,6 @@
     $('[data-carousel-next]', carousel).addEventListener('click', () => { show(index + 1); play(); });
     dots.forEach((d) => d.addEventListener('click', () => { show(Number(d.dataset.dot)); play(); }));
     toggleBtn.addEventListener('click', () => setPaused(!paused));
-    // Pausa mentre el ratolí o el focus són dins del carrusel
-    carousel.addEventListener('mouseenter', stop);
-    carousel.addEventListener('mouseleave', play);
-    carousel.addEventListener('focusin', stop);
-    carousel.addEventListener('focusout', play);
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : play()));
 
     show(0);

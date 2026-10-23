@@ -368,15 +368,6 @@ figure { margin: 0; }
 .value:hover .value-art svg * { animation-duration: 1.1s; }
 
 /* --- Equip ---------------------------------------------------------------------------- */
-.commit { display: grid; gap: 32px; align-items: center; padding: clamp(20px, 3vw, 36px); background: #fff; border-radius: var(--radius-lg); margin-bottom: clamp(40px, 6vw, 64px); }
-@media (min-width: 960px) { .commit { grid-template-columns: 1.1fr 1fr; gap: 56px; } }
-.commit-media { position: relative; }
-.commit-media img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
-.commit-title { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 300; margin-bottom: 18px; }
-.commit-body p { color: var(--muted); }
-.commit-tags { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
-.commit-tags li { display: flex; gap: 6px; align-items: center; font-size: .875rem; font-weight: 700; color: var(--navy); }
-.commit-tags .icon { width: 16px; height: 16px; color: var(--blue); stroke-width: 2.4; }
 
 /* Equip en ziga-zaga: cada persona a un costat de la pàgina */
 .team-hint { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0 0 40px; font-size: .875rem; font-weight: 700; color: var(--muted); }
