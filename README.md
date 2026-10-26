@@ -15,6 +15,18 @@ no mostra pisos, preus ni cercadors.
   i la branca. El fitxer `netlify.toml` ja indica l'ordre de build (`node build.mjs`) i la carpeta que es publica (`public`).
 - **En local:** `node build.mjs && cd public && python3 -m http.server`, i obriu http://localhost:8000.
 
+## Versió en un sol fitxer
+
+Per enganxar o pujar la web on no es poden afegir fitxers a part:
+
+```bash
+node build.mjs && node tools/standalone.mjs
+```
+
+Es creen `standalone/inllobsa-ca.html` i `standalone/inllobsa-es.html` (uns 0,9 MB cadascun), amb els estils,
+el JavaScript i les imatges a dins. El selector d'idioma de cada fitxer enllaça a l'altre, així que s'han de
+publicar tots dos amb aquests noms i a la mateixa carpeta. Les fonts tipogràfiques es carreguen de Google Fonts.
+
 ## Estructura
 
 ```
