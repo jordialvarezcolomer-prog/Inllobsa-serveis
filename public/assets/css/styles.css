@@ -625,22 +625,29 @@ figure { margin: 0; }
 .solvia-route-legend .dot { width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid var(--navy); background: #fff; }
 .solvia-route-legend .dot--to { border-color: var(--orange); }
 
-/* Foto: la botiga «obre la persiana» */
+/* Foto: un punt negre, com la «o» de Solvia, creix fins a cobrir-la i torna a la «o» del rètol */
 .solvia-side { display: grid; gap: 14px; }
 .solvia-photo { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
 .solvia-photo img { width: 100%; height: auto; transition: transform .8s ease; }
-.js .solvia-photo img { transform: scale(1.1); transition: transform 2.4s cubic-bezier(.2,.8,.2,1) .6s; }
-.js .solvia-photo.is-in img { transform: scale(1); }
-.solvia-photo:hover img, .js .solvia-photo.is-in:hover img { transform: scale(1.03); transition-duration: .8s; transition-delay: 0s; }
-.solvia-shutter { position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background: repeating-linear-gradient(180deg, #dfe5ee 0 13px, #c3ccd9 13px 15px, #eef2f7 15px 16px);
-  box-shadow: inset 0 -10px 0 #9aa7b8; transform: translateY(0); transition: transform 1.7s cubic-bezier(.75,0,.25,1) .25s; }
-.solvia-shutter::after { content: ""; position: absolute; left: 50%; bottom: 18px; width: 56px; height: 8px; margin-left: -28px; border-radius: 4px; background: #7d8a9c; }
-.js .solvia-photo.is-in .solvia-shutter { transform: translateY(-101%); }
-.no-js .solvia-shutter { display: none; }
+.solvia-photo:hover img { transform: scale(1.03); }
+.solvia-reveal { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.solvia-reveal::before { content: ""; position: absolute; inset: 0; background: var(--tint); }
+/* posició i mida de la «o» del rètol dins de la foto */
+.solvia-o { position: absolute; left: 29.5%; top: 39.7%; width: 3.8%; aspect-ratio: 1; border-radius: 50%; background: #111; transform: translate(-50%, -50%); }
+.js .solvia-photo.is-in .solvia-reveal::before { animation: solvia-cover 2.6s linear .2s forwards; }
+.js .solvia-photo.is-in .solvia-o { animation: solvia-o 2.6s cubic-bezier(.7,0,.3,1) .2s forwards; }
+@keyframes solvia-o {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  42%, 52% { transform: translate(-50%, -50%) scale(70); opacity: 1; }
+  94% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+@keyframes solvia-cover { 0%, 41% { opacity: 1; } 42%, 100% { opacity: 0; } }
+.no-js .solvia-reveal { display: none; }
+@media (prefers-reduced-motion: reduce) { .solvia-reveal { display: none; } }
 .solvia-photo figcaption { position: absolute; z-index: 3; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 8px; background: rgb(20 29 46 / .8); color: #fff; font-size: .8125rem; font-weight: 700; }
 .solvia-photo figcaption .icon { width: 16px; height: 16px; }
-.js .solvia-photo figcaption { opacity: 0; transform: translateY(12px); transition: opacity .6s ease 1.8s, transform .6s ease 1.8s; }
+.js .solvia-photo figcaption { opacity: 0; transform: translateY(12px); transition: opacity .6s ease 2.6s, transform .6s ease 2.6s; }
 .js .solvia-photo.is-in figcaption { opacity: 1; transform: none; }
 
 /* Targetes: entren des del costat i les icones es dibuixen */
