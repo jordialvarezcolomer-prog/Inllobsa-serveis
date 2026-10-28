@@ -50,7 +50,7 @@ El build falla si les dues llengües no tenen exactament les mateixes claus.
 
 Capçalera amb barra superior (adreça, horari, telèfon, correu) · Hero amb carrusel de fotos de l'equip ·
 Xifres animades · Avantatges · Som Inllobsa · Serveis (6) · Valoració per a propietaris (`#valoracio`) ·
-Màrqueting (4) · Valors (4, amb il·lustracions animades) · Equip (8 persones amb correu i WhatsApp) · Ressenyes · Territori ·
+Màrqueting (5, units per una «W») · Valors (4, amb les icones del catàleg) · Equip (8 persones amb correu i WhatsApp) · Ressenyes · Territori ·
 Solvia Store Vic · Contacte (WhatsApp, telèfon, correu, visita, horari) · Peu de pàgina · Botó flotant de WhatsApp.
 
 ## Funcionalitats
@@ -94,12 +94,14 @@ Des de l'entorn de desenvolupament no s'ha pogut accedir directament a cap d'aqu
 
 ## Pendent de revisar o aportar
 
-1. **Text del valor «Formació»:** està redactat a partir del nom del valor. Reviseu-lo a `src/i18n/*.json` (`values.items`).
-2. **Frases de l'equip:** les de `src/team.json` són **propostes redactades a partir del càrrec**. Cal validar-les amb cada persona abans de publicar.
-3. **Fotos ↔ noms de l'equip:** s'han assignat per semblança amb les fotos de la web de Netlify. Reviseu-les a `src/team.json` (camp `photo`).
-4. **Novena persona:** la de la foto `public/assets/img/team/equip-01-*` (cabell llarg castany, braços creuats) surt a les fotos de grup,
+1. **Icona del valor «Formació»:** la guia comercial no té aquest valor, així que s'hi ha posat un birret dibuixat en el mateix estil (`src/art/training.svg`). La resta d'icones dels serveis i dels valors surten del catàleg (`public/assets/img/icons/`).
+2. **Text de la targeta «Experts en intel·ligència artificial»** (màrqueting): redactat a partir de la indicació «som experts en IA». Reviseu-lo a `src/i18n/*.json` (`marketing.items`).
+3. **Text del valor «Formació»:** està redactat a partir del nom del valor. Reviseu-lo a `src/i18n/*.json` (`values.items`).
+4. **Frases de l'equip:** les de `src/team.json` són **propostes redactades a partir del càrrec**. Cal validar-les amb cada persona abans de publicar.
+5. **Fotos ↔ noms de l'equip:** s'han assignat per semblança amb les fotos de la web de Netlify. Reviseu-les a `src/team.json` (camp `photo`).
+6. **Novena persona:** la de la foto `public/assets/img/team/equip-01-*` (cabell llarg castany, braços creuats) surt a les fotos de grup,
    però no a la llista de l'equip. Si cal, afegiu-la a `src/team.json` amb el nom, el càrrec i el contacte.
-5. **Avís legal, política de privacitat i cookies:** cal enllaçar-los al peu de pàgina quan tingueu les URL.
-6. **Instagram:** no hi ha cap URL verificada. Només s'enllaça Facebook.
-7. **WhatsApp de Solvia Store Vic:** només es coneix el telèfon (621 234 741), així que només hi ha botó de trucada.
-8. **URL definitiva** del web: actualitzeu `url` a `src/site.json` (canonical, hreflang i sitemap).
+7. **Avís legal, política de privacitat i cookies:** cal enllaçar-los al peu de pàgina quan tingueu les URL.
+8. **Instagram:** no hi ha cap URL verificada. Només s'enllaça Facebook.
+9. **WhatsApp de Solvia Store Vic:** només es coneix el telèfon (621 234 741), així que només hi ha botó de trucada.
+10. **URL definitiva** del web: actualitzeu `url` a `src/site.json` (canonical, hreflang i sitemap).

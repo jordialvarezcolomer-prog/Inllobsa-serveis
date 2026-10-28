@@ -225,6 +225,11 @@ figure { margin: 0; }
 .timeline-year { font-size: 1.75rem; font-weight: 300; color: var(--blue); letter-spacing: -0.02em; }
 .timeline-item p { color: var(--muted); }
 
+/* Icones del catàleg: imatge usada com a màscara i pintada amb el color del text */
+.mask-icon { display: block; background-color: currentColor;
+  -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; -webkit-mask-size: contain;
+  mask-repeat: no-repeat; mask-position: center; mask-size: contain; }
+
 /* --- Serveis ------------------------------------------------------------------ */
 .service-grid { display: grid; gap: 20px; }
 @media (min-width: 680px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -243,8 +248,10 @@ figure { margin: 0; }
 .service-card:hover::after { opacity: 1; }
 .js .service-card.is-visible:hover, .service-card:hover { transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-6px); box-shadow: 0 30px 60px -30px rgb(27 38 56 / .6); }
 .service-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
-.service-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: var(--tint); color: var(--blue); transition: background-color .4s, color .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
-.service-icon .icon { width: 28px; height: 28px; }
+.service-icon { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 18px; background: var(--tint); color: var(--blue); transition: background-color .4s, color .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+.service-icon .mask-icon { width: 46px; height: 46px; }
+.js .service-icon .mask-icon { clip-path: inset(100% 0 0 0); transition: clip-path 1s cubic-bezier(.6,0,.2,1) .3s; }
+.js .service-card.is-visible .service-icon .mask-icon { clip-path: inset(0 0 0 0); }
 .service-title { font-size: 1.25rem; margin-bottom: 10px; transition: color .3s; }
 .service-text { color: var(--muted); font-size: .96875rem; margin-bottom: 18px; transition: color .3s; }
 .service-card .checks { margin-bottom: 24px; flex: 1; align-content: start; }
@@ -261,8 +268,8 @@ figure { margin: 0; }
 .service-card:hover .text-link, .service-card:focus-within .text-link { color: #fff; }
 
 /* Les icones es dibuixen soles i les llistes entren esglaonades quan la targeta apareix */
-.js .service-icon .icon, .js .mk-icon { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.6s ease .25s; }
-.js .is-visible .service-icon .icon, .js .is-visible .mk-icon { stroke-dashoffset: 0; }
+.js .mk-icon { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.6s ease .25s; }
+.js .is-visible .mk-icon { stroke-dashoffset: 0; }
 .js .service-card .checks li { opacity: 0; transform: translateX(-12px); transition: opacity .5s ease, transform .5s ease, color .3s; }
 .js .service-card.is-visible .checks li { opacity: 1; transform: none; }
 .js .service-card.is-visible .checks li:nth-child(1) { transition-delay: .35s, .35s, 0s; }
@@ -276,17 +283,10 @@ figure { margin: 0; }
 .owner-text { font-weight: 300; font-size: 1.0625rem; margin-bottom: 24px; }
 
 /* --- Màrqueting ---------------------------------------------------------------- */
-.mk-grid { position: relative; display: grid; gap: 20px; }
-@media (min-width: 680px) { .mk-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) {
-  .mk-grid { grid-template-columns: repeat(4, 1fr); }
-  /* Línia que uneix les quatre fases i es dibuixa d'esquerra a dreta */
-  .mk-grid::before { content: ""; position: absolute; z-index: 0; top: 61px; left: 60px; right: 60px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--blue), var(--orange)); transform: scaleX(0); transform-origin: left; transition: transform 1.8s cubic-bezier(.6,0,.2,1) .3s; }
-  .mk-grid.is-in::before, .no-js .mk-grid::before { transform: scaleX(1); }
-}
+.mk-wrap { position: relative; }
+.mk-grid { position: relative; z-index: 1; display: grid; gap: 20px; }
+.mk-net { display: none; }
 .mk-card { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s, opacity .7s ease; }
-/* A escriptori les targetes són transparents perquè la línia passi per darrere de les icones */
-@media (min-width: 1100px) { .mk-card { overflow: visible; z-index: 1; background: transparent; } }
 .mk-card::before { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit; background: linear-gradient(160deg, var(--tint), #fff 70%); transform: scaleX(0); transform-origin: left; transition: transform .55s cubic-bezier(.7,0,.2,1); }
 .mk-card:hover::before, .mk-card:focus-within::before { transform: scaleX(1); }
 .mk-card:hover::after { opacity: 1; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgb(28 98 178 / .08), transparent 45%); }
@@ -302,6 +302,31 @@ figure { margin: 0; }
 .mk-text { color: var(--muted); font-size: .9375rem; flex: 1; margin-bottom: 20px; }
 .mk-card .tag { align-self: flex-start; transition: background-color .3s, color .3s; }
 .mk-card:hover .tag, .mk-card:focus-within .tag { background: var(--blue); color: #fff; }
+
+/* Escriptori: 3 targetes a dalt i 2 a baix, amb les icones a la vora i unides per una «W» */
+@media (min-width: 1100px) {
+  .mk-grid { grid-template-columns: repeat(6, 1fr); column-gap: 24px; row-gap: 104px; }
+  .mk-card { grid-column: span 2; overflow: visible; align-items: center; text-align: center; }
+  .mk-card:nth-child(4) { grid-column: 2 / span 2; }
+  .mk-card:nth-child(5) { grid-column: 4 / span 2; }
+  .mk-card:nth-child(-n+3) { padding-bottom: 62px; }
+  .mk-card:nth-child(n+4) { padding-top: 62px; }
+  .mk-card .mk-icon-wrap { position: absolute; left: 50%; margin: 0 0 0 -33px; }
+  .mk-card:nth-child(-n+3) .mk-icon-wrap { bottom: -34px; }
+  .mk-card:nth-child(n+4) .mk-icon-wrap { top: -34px; }
+  .mk-card .tag { align-self: center; }
+  /* la targeta no es desplaça en passar-hi per sobre, perquè la icona no se separi de la línia */
+  .js .mk-card.is-visible:hover, .mk-card:hover { transform: none; }
+  .mk-net { display: block; position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .mk-net-line { fill: none; stroke: url(#mk-net-grad); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: var(--len, 2000); stroke-dashoffset: var(--len, 2000); transition: stroke-dashoffset 2.4s cubic-bezier(.6,0,.2,1) .3s; }
+  .mk-wrap.is-in .mk-net-line, .no-js .mk-net-line { stroke-dashoffset: 0; }
+  .mk-net-flow { fill: none; stroke: var(--orange); stroke-width: 6; stroke-linecap: round; stroke-dasharray: .1 28; opacity: 0; animation: net-flow 1.8s linear infinite; transition: opacity .6s ease 2.6s; }
+  .mk-wrap.is-in .mk-net-flow { opacity: .8; }
+  @keyframes net-flow { to { stroke-dashoffset: -28.1; } }
+  /* la icona de cada fase s'il·lumina quan hi arriba la línia */
+  .js .mk-wrap .mk-icon-wrap { border-color: var(--line); }
+  .js .mk-wrap.is-in .mk-icon-wrap { border-color: var(--blue); transition: border-color .4s ease calc(.6s + var(--n, 0) * .45s), background-color .4s, color .4s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+}
 
 /* --- Valors ------------------------------------------------------------------------ */
 .values-grid { display: grid; gap: 20px; }
@@ -352,6 +377,21 @@ figure { margin: 0; }
 .art-tassel { transform-origin: top center !important; animation: swing 1.6s ease-in-out infinite; }
 .art-tassel-end { fill: var(--orange); }
 @keyframes swing { 0%, 100% { transform: rotate(12deg); } 50% { transform: rotate(-12deg); } }
+
+/* Icones del catàleg als valors */
+.value-art .mask-icon { width: 62px; height: 62px; color: #fff; }
+.js .value-art .mask-icon { clip-path: circle(0% at 50% 50%); transition: clip-path 1.2s cubic-bezier(.6,0,.2,1) .4s; }
+.js .value.is-visible .value-art .mask-icon { clip-path: circle(75% at 50% 50%); }
+/* Excel·lència: un reflex daurat travessa la icona */
+.value--excellence .mask-icon { background: linear-gradient(110deg, #fff 38%, var(--star) 50%, #fff 62%) 0 0 / 260% 100%; animation: shimmer 3.2s ease-in-out 1.6s infinite; }
+@keyframes shimmer { 0% { background-position: 100% 0; } 60%, 100% { background-position: -60% 0; } }
+/* Originalitat: la bombeta s'encén */
+.value--originality .value-art { animation: bulb 2.8s ease-in-out infinite; }
+.value--originality .mask-icon { animation: bulb-color 2.8s ease-in-out infinite; }
+@keyframes bulb { 0%, 35%, 100% { box-shadow: 0 0 0 0 rgb(251 191 36 / 0); } 60% { box-shadow: 0 0 36px 6px rgb(251 191 36 / .35); } }
+@keyframes bulb-color { 0%, 35%, 100% { background-color: #fff; } 60% { background-color: #ffe7a3; } }
+/* Família: la casa batega com un cor */
+.value--family .mask-icon { animation: beat 1.8s ease-in-out infinite; }
 
 /* En passar per sobre, les il·lustracions van més de pressa */
 .value:hover .value-art svg * { animation-duration: 1.1s; }
@@ -773,9 +813,9 @@ figure { margin: 0; }
 /* Conceptes destacats del servei al propietari */
 .owner-text strong { font-weight: 800; color: #fff; }
 
-/* Màrqueting en una sola columna (mòbil): línia vertical que uneix les icones */
+/* Màrqueting en una sola columna (mòbil i tauleta): línia vertical que uneix les icones */
 .mk-link { display: none; }
-@media (max-width: 679px) {
+@media (max-width: 1099px) {
   /* Icona en una columna a l'esquerra perquè la línia no travessi el text */
   .mk-grid .mk-card { display: grid; grid-template-columns: 52px 1fr; column-gap: 14px; align-items: start; padding: 22px; overflow: visible; background: transparent; }
   .mk-card > * { grid-column: 2; }

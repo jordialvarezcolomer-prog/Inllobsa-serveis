@@ -94,6 +94,7 @@
       <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3.5 20.5 4.8 16A8.5 8.5 0 1 1 8 19.2z"/><path d="M9.2 8.2c-.3 2.9 3.4 6.7 6.6 6.6l.9-1.4-1.9-1-.9.8a4.6 4.6 0 0 1-2.2-2.2l.8-.9-1-1.9z"/></symbol>
       <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5"/></symbol>
       <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.9-2.6L4 15a1.6 1.6 0 0 1 2.5-2L9 15"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M10 3.5l1.9 5 5 1.9-5 1.9-1.9 5-1.9-5-5-1.9 5-1.9z"/><path d="M18.5 14l.9 2.2 2.1.8-2.1.8-.9 2.2-.9-2.2-2.1-.8 2.1-.8z"/><path d="M18 3v3M16.5 4.5h3"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     </defs>
@@ -238,7 +239,7 @@
           {{#each services.items}}
           <li class="service-card" data-reveal data-spotlight>
             <div class="service-top">
-              <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-{{this.icon}}"/></svg></span>
+              <span class="service-icon"><span class="mask-icon" style="-webkit-mask-image:url({{base}}assets/img/icons/{{this.icon}}.png);mask-image:url({{base}}assets/img/icons/{{this.icon}}.png)" aria-hidden="true"></span></span>
               <span class="card-num" aria-hidden="true">{{@num}}</span>
             </div>
             <h3 class="service-title">{{this.title}}</h3>
@@ -333,7 +334,13 @@
           </div>
           <p class="section-lead">{{marketing.lead}}</p>
         </div>
-        <ul class="mk-grid" data-animate>
+        <div class="mk-wrap" data-animate data-mk-net>
+        <svg class="mk-net" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="mk-net-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100%" y2="0"><stop offset="0" stop-color="#1c62b2"/><stop offset="1" stop-color="#c9482f"/></linearGradient></defs>
+          <path class="mk-net-line"/>
+          <path class="mk-net-flow"/>
+        </svg>
+        <ul class="mk-grid">
           {{#each marketing.items}}
           <li class="mk-card" data-reveal data-spotlight>
             <span class="card-num" aria-hidden="true">{{@num}}</span>
@@ -346,6 +353,7 @@
           </li>
           {{/each}}
         </ul>
+        </div>
       </div>
     </section>
 
@@ -363,7 +371,7 @@
           {{#each values.items}}
           <li class="value value--{{this.art}}" data-reveal>
             <span class="value-bignum" aria-hidden="true">{{@num}}</span>
-            <div class="value-art">{{{this.artSvg}}}</div>
+            <div class="value-art">{{{this.artHtml}}}</div>
             <h3 class="value-title">{{this.title}}</h3>
             <p>{{this.text}}</p>
           </li>

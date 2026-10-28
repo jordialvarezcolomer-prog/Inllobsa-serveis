@@ -189,6 +189,30 @@
       .observe(svg);
   });
 
+  /* Màrqueting (escriptori): una «W» uneix les cinc fases, 3 a dalt i 2 a baix */
+  const net = $('[data-mk-net]');
+  if (net) {
+    const svg = $('.mk-net', net);
+    const paths = $$('path', svg);
+    const icons = $$('.mk-icon-wrap', net);
+    const order = [0, 3, 1, 4, 2];   // dalt-esquerra, baix-esquerra, dalt-centre, baix-dreta, dalt-dreta
+    const draw = () => {
+      if (innerWidth < 1100 || icons.length < 5) return;
+      // posicions sense comptar les transformacions de les animacions d'entrada
+      const pts = icons.map((ic) => {
+        const card = ic.offsetParent;
+        return [card.offsetLeft + ic.offsetLeft + ic.offsetWidth / 2, card.offsetTop + ic.offsetTop + ic.offsetHeight / 2];
+      });
+      const d = order.map((i, k) => `${k ? 'L' : 'M'}${pts[i][0].toFixed(1)} ${pts[i][1].toFixed(1)}`).join(' ');
+      paths.forEach((p) => p.setAttribute('d', d));
+      svg.style.setProperty('--len', Math.ceil(paths[0].getTotalLength()));
+      order.forEach((i, k) => icons[i].style.setProperty('--n', k));
+    };
+    draw();
+    addEventListener('resize', draw);
+    if (document.fonts) document.fonts.ready.then(draw);
+  }
+
   /* Equip: en tocar o activar la foto amb el teclat, s'amplia i mostra la frase */
   const people = $$('.person');
   people.forEach((person) => {

@@ -47,7 +47,7 @@
     "eyebrow": "Inmobiliaria en Manresa desde 1977",
     "title": "Encontramos el hogar de tus sueños",
     "subtitle": "En Inllobsa no solo encontramos viviendas: creamos historias.",
-    "text": "Con más de 40 años de experiencia, somos el puente entre tú y el lugar donde empezarás una nueva etapa, con la tranquilidad de saber que estás en buenas manos y que siempre estamos a tu lado.",
+    "text": "Con 50 años de experiencia, somos el puente entre tú y el lugar donde empezarás una nueva etapa, con la tranquilidad de saber que estás en buenas manos y que siempre estamos a tu lado.",
     "ctaPrimary": "Solicita una valoración gratuita",
     "ctaSecondary": "Descubre los servicios",
     "slideAlts": [
@@ -58,8 +58,8 @@
   },
   "stats": [
     {
-      "prefix": "+",
-      "value": "40",
+      "prefix": "",
+      "value": "50",
       "suffix": "",
       "label": "Años de experiencia"
     },
@@ -77,7 +77,7 @@
     },
     {
       "prefix": "",
-      "value": "8",
+      "value": "10",
       "suffix": "",
       "label": "Profesionales a tu servicio"
     }
@@ -115,7 +115,7 @@
       },
       {
         "year": "Hoy",
-        "text": "Más de 40 años de experiencia al servicio de familias, propietarios y empresas."
+        "text": "50 años de experiencia al servicio de familias, propietarios y empresas."
       }
     ]
   },
@@ -126,7 +126,7 @@
     "more": "Solicita información",
     "items": [
       {
-        "icon": "key",
+        "icon": "svc-compravenda",
         "title": "Compraventa de inmuebles",
         "text": "Gestionamos la compra y la venta de pisos, casas, locales, plazas de parking, naves industriales y parcelas en Manresa y alrededores, con la máxima seguridad y agilidad.",
         "points": [
@@ -136,7 +136,7 @@
         ]
       },
       {
-        "icon": "home",
+        "icon": "svc-lloguer",
         "title": "Alquiler de inmuebles",
         "text": "Comercializamos y gestionamos alquileres residenciales y comerciales. Seleccionamos cuidadosamente inquilinos solventes para que estés tranquilo.",
         "points": [
@@ -146,7 +146,7 @@
         ]
       },
       {
-        "icon": "bank",
+        "icon": "svc-hipoteca",
         "title": "Asesoramiento hipotecario",
         "text": "Te orientamos para conseguir la mejor hipoteca y negociamos con las entidades bancarias unas condiciones adaptadas a tu capacidad y a tus objetivos.",
         "points": [
@@ -156,7 +156,7 @@
         ]
       },
       {
-        "icon": "doc",
+        "icon": "svc-legal",
         "title": "Orientación legal y jurídica",
         "text": "Asesoramiento jurídico en trámites y documentos inmobiliarios: herencias, cargas registrales, cambios de titularidad y cualquier incidencia legal.",
         "points": [
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "icon": "building",
+        "icon": "svc-finques",
         "title": "Administración de fincas",
         "text": "Cobro de recibos, gestión de incidencias, actualización de rentas según el IPC o la normativa, entrega de llaves y mantenimiento continuo de tu propiedad.",
         "points": [
@@ -176,7 +176,7 @@
         ]
       },
       {
-        "icon": "search",
+        "icon": "svc-shopper",
         "title": "Personal shopper inmobiliario",
         "text": "Buscamos el inmueble que se adapta a tus necesidades reales. Ahorra tiempo, visitas inútiles y dinero con un experto dedicado solo a ti.",
         "points": [
@@ -252,6 +252,13 @@
         "title": "Home staging",
         "text": "Despersonalización, decoración y presentación de los espacios para potenciar sus puntos fuertes, acelerar la venta y reducir el margen de negociación.",
         "tag": "Revalorización inmediata"
+      },
+      {
+        "icon": "sparkles",
+        "kicker": "Innovación",
+        "title": "Expertos en inteligencia artificial",
+        "text": "Somos expertos en IA y la aplicamos en el día a día para presentar mejor cada inmueble y llegar de forma más eficaz a las personas interesadas.",
+        "tag": "Somos expertos en IA"
       }
     ]
   },

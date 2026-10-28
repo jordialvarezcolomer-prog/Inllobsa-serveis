@@ -1,6 +1,6 @@
 // Genera les versions en català (/) i castellà (/es/) a partir de src/template.html
 // i dels fitxers de dades de src/. Sense dependències: `node build.mjs`.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -18,6 +18,8 @@ const langs = { ca: json('src/i18n/ca.json'), es: json('src/i18n/es.json') };
 const escape = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const digits = (s) => String(s).replace(/\D/g, '');
+// Icona en mapa de bits que s'acoloreix amb CSS (color actual)
+const maskStyle = (url) => `-webkit-mask-image:url(${url});mask-image:url(${url})`;
 const waLink = (number, text) => `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 
 function lookup(path, scopes, optional = false) {
@@ -78,7 +80,13 @@ for (const [code, dict] of Object.entries(langs)) {
     // Il·lustracions animades dels valors (src/art/*.svg), inserides dins l'HTML
     values: {
       ...dict.values,
-      items: dict.values.items.map((it) => ({ ...it, artSvg: read(`src/art/${it.art}.svg`).trim() })),
+      // Icona del catàleg (public/assets/img/icons/val-*.png) si n'hi ha; si no, la il·lustració SVG de src/art
+      items: dict.values.items.map((it) => ({
+        ...it,
+        artHtml: existsSync(join(out, `assets/img/icons/val-${it.art}.png`))
+          ? `<span class="mask-icon" style="${maskStyle(`${isDefault ? '' : '../'}assets/img/icons/val-${it.art}.png`)}" aria-hidden="true"></span>`
+          : read(`src/art/${it.art}.svg`).trim(),
+      })),
     },
     services: {
       ...dict.services,

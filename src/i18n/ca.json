@@ -47,7 +47,7 @@
     "eyebrow": "Immobiliària a Manresa des de 1977",
     "title": "Trobem la llar dels teus somnis",
     "subtitle": "A Inllobsa no només trobem habitatges, sinó que creem històries.",
-    "text": "Amb més de 40 anys d'experiència, som el pont entre tu i el lloc on començaràs una nova etapa, amb la confiança de saber que estàs en bones mans i que sempre som al teu costat.",
+    "text": "Amb 50 anys d'experiència, som el pont entre tu i el lloc on començaràs una nova etapa, amb la confiança de saber que estàs en bones mans i que sempre som al teu costat.",
     "ctaPrimary": "Demana una valoració gratuïta",
     "ctaSecondary": "Descobreix els serveis",
     "slideAlts": [
@@ -58,8 +58,8 @@
   },
   "stats": [
     {
-      "prefix": "+",
-      "value": "40",
+      "prefix": "",
+      "value": "50",
       "suffix": "",
       "label": "Anys d'experiència"
     },
@@ -77,7 +77,7 @@
     },
     {
       "prefix": "",
-      "value": "8",
+      "value": "10",
       "suffix": "",
       "label": "Professionals al teu servei"
     }
@@ -115,7 +115,7 @@
       },
       {
         "year": "Avui",
-        "text": "Més de 40 anys d'experiència al servei de famílies, propietaris i empreses."
+        "text": "50 anys d'experiència al servei de famílies, propietaris i empreses."
       }
     ]
   },
@@ -126,7 +126,7 @@
     "more": "Demana informació",
     "items": [
       {
-        "icon": "key",
+        "icon": "svc-compravenda",
         "title": "Compravenda d'immobles",
         "text": "Gestionem la compra i la venda de pisos, cases, locals, pàrquings, naus industrials i parcel·les a Manresa i rodalies, amb la màxima seguretat i agilitat.",
         "points": [
@@ -136,7 +136,7 @@
         ]
       },
       {
-        "icon": "home",
+        "icon": "svc-lloguer",
         "title": "Lloguer d'immobles",
         "text": "Comercialitzem i gestionem lloguers residencials i comercials. Seleccionem acuradament llogaters solvents perquè estiguis tranquil.",
         "points": [
@@ -146,7 +146,7 @@
         ]
       },
       {
-        "icon": "bank",
+        "icon": "svc-hipoteca",
         "title": "Assessorament hipotecari",
         "text": "T'orientem per aconseguir la millor hipoteca i negociem amb les entitats bancàries unes condicions adaptades a la teva capacitat i als teus objectius.",
         "points": [
@@ -156,7 +156,7 @@
         ]
       },
       {
-        "icon": "doc",
+        "icon": "svc-legal",
         "title": "Orientació legal i jurídica",
         "text": "Assessorament jurídic en tràmits i documents immobiliaris: herències, càrregues registrals, canvis de titularitat i qualsevol incidència legal.",
         "points": [
@@ -166,7 +166,7 @@
         ]
       },
       {
-        "icon": "building",
+        "icon": "svc-finques",
         "title": "Administració de finques",
         "text": "Cobrament de rebuts, gestió d'incidències, actualització de rendes segons l'IPC o la normativa, lliurament de claus i manteniment continu de la teva propietat.",
         "points": [
@@ -176,7 +176,7 @@
         ]
       },
       {
-        "icon": "search",
+        "icon": "svc-shopper",
         "title": "Personal shopper immobiliari",
         "text": "Busquem l'immoble que s'adapta a les teves necessitats reals. Estalvia temps, visites inútils i diners amb un expert dedicat només a tu.",
         "points": [
@@ -252,6 +252,13 @@
         "title": "Home staging",
         "text": "Despersonalització, decoració i presentació dels espais per potenciar-ne els punts forts, accelerar la venda i reduir el marge de negociació.",
         "tag": "Revaloració immediata"
+      },
+      {
+        "icon": "sparkles",
+        "kicker": "Innovació",
+        "title": "Experts en intel·ligència artificial",
+        "text": "Som experts en IA i l'apliquem a la feina de cada dia per presentar millor cada immoble i arribar de manera més eficaç a les persones interessades.",
+        "tag": "Som experts en IA"
       }
     ]
   },

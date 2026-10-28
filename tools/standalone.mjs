@@ -49,6 +49,7 @@ for (const [lang, src] of [['ca', 'index.html'], ['es', 'es/index.html']]) {
     .replace(/\s(srcset|sizes)="[^"]*"/g, '')
     // imatges com a data URI
     .replace(/(src|href)="(?:\.\.\/)?(assets\/img\/[^"]+)"/g, (_, attr, rel) => `${attr}="${dataUri(pick(rel))}"`)
+    .replace(/url\((?:\.\.\/)?(assets\/img\/[^)]+)\)/g, (_, rel) => `url(${dataUri(rel)})`)
     // el canvi d'idioma apunta a l'altre fitxer
     .replace(/href="(?:es\/|\.\.\/)index\.html"/g, `href="${files[other]}"`);
 
