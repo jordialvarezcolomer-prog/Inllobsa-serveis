@@ -74,6 +74,7 @@ for (const [code, dict] of Object.entries(langs)) {
   const ctx = {
     ...dict,
     hoopSvg: read('src/art/hoop.svg').trim(),
+    routeSvg: read('src/art/route.svg').trim(),
     // Il·lustracions animades dels valors (src/art/*.svg), inserides dins l'HTML
     values: {
       ...dict.values,

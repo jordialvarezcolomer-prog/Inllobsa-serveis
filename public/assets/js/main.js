@@ -180,8 +180,8 @@
     });
   }
 
-  /* Llançament a cistella (SVG animat): només es mou quan és a la pantalla i si no es demana reduir el moviment */
-  $$('.band-hoop').forEach((svg) => {
+  /* Animacions SVG (llançament a cistella i ruta Manresa–Vic): només es mou quan és a la pantalla i si no es demana reduir el moviment */
+  $$('.band-hoop, .solvia-route svg').forEach((svg) => {
     if (!svg.pauseAnimations) return;
     svg.pauseAnimations();
     if (reduceMotion || !hasIO) return;

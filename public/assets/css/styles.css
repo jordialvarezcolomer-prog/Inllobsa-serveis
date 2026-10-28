@@ -558,15 +558,64 @@ figure { margin: 0; }
 .solvia-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
 .solvia-phone { font-size: .9375rem; color: var(--muted); }
 .solvia-phone a { font-weight: 800; color: var(--navy); text-decoration: none; }
+/* La icona del telèfon vibra de tant en tant, com si sonés */
+.solvia-cta .btn .icon { animation: phone-ring 3.2s ease-in-out 1.5s infinite; transform-origin: 50% 60%; }
+@keyframes phone-ring { 0%, 70%, 100% { transform: rotate(0); } 74% { transform: rotate(-18deg); } 78% { transform: rotate(16deg); } 82% { transform: rotate(-14deg); } 86% { transform: rotate(10deg); } 90% { transform: rotate(-6deg); } 94% { transform: rotate(0); } }
+
+/* Ruta Manresa → Vic */
+.solvia-route { margin-top: 36px; padding: 22px 24px 18px; border-radius: var(--radius); background: var(--tint); }
+.solvia-route-title { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); }
+.solvia-route-title .icon { width: 16px; height: 16px; }
+.solvia-route > svg { display: block; width: 100%; max-width: 420px; height: auto; margin-inline: auto; overflow: visible; }
+.route-base { fill: none; stroke: var(--tint-2); stroke-width: 6; stroke-linecap: round; }
+.route-line { fill: none; stroke: var(--blue); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 9; }
+.js .route-line { clip-path: inset(0 100% 0 0); transition: clip-path 1.8s cubic-bezier(.6,0,.2,1) .4s; }
+.js .solvia-route.is-visible .route-line { clip-path: inset(0 0 0 0); }
+.route-line { animation: route-flow 1.2s linear infinite; }
+@keyframes route-flow { to { stroke-dashoffset: -17; } }
+.route-point { fill: #fff; stroke: var(--navy); stroke-width: 3; }
+.route-point--to { stroke: var(--orange); }
+.route-pulse { fill: none; stroke: var(--orange); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: route-pulse 2s ease-out infinite; }
+@keyframes route-pulse { from { transform: scale(.8); opacity: .8; } to { transform: scale(2.4); opacity: 0; } }
+.route-dot { fill: var(--orange); }
+.route-label { font: 800 12px var(--font); letter-spacing: .06em; fill: var(--navy); text-transform: uppercase; }
+.route-label--to { fill: var(--orange); }
+.solvia-route-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 10px; font-size: .8125rem; font-weight: 700; color: var(--muted); }
+.solvia-route-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.solvia-route-legend .dot { width: 10px; height: 10px; border-radius: 50%; border: 2.5px solid var(--navy); background: #fff; }
+.solvia-route-legend .dot--to { border-color: var(--orange); }
+
+/* Foto: la botiga «obre la persiana» */
 .solvia-side { display: grid; gap: 14px; }
 .solvia-photo { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
 .solvia-photo img { width: 100%; height: auto; transition: transform .8s ease; }
-.solvia-photo:hover img { transform: scale(1.03); }
-.solvia-photo figcaption { position: absolute; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 8px; background: rgb(20 29 46 / .8); color: #fff; font-size: .8125rem; font-weight: 700; }
+.js .solvia-photo img { transform: scale(1.1); transition: transform 2.4s cubic-bezier(.2,.8,.2,1) .6s; }
+.js .solvia-photo.is-in img { transform: scale(1); }
+.solvia-photo:hover img, .js .solvia-photo.is-in:hover img { transform: scale(1.03); transition-duration: .8s; transition-delay: 0s; }
+.solvia-shutter { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: repeating-linear-gradient(180deg, #dfe5ee 0 13px, #c3ccd9 13px 15px, #eef2f7 15px 16px);
+  box-shadow: inset 0 -10px 0 #9aa7b8; transform: translateY(0); transition: transform 1.7s cubic-bezier(.75,0,.25,1) .25s; }
+.solvia-shutter::after { content: ""; position: absolute; left: 50%; bottom: 18px; width: 56px; height: 8px; margin-left: -28px; border-radius: 4px; background: #7d8a9c; }
+.js .solvia-photo.is-in .solvia-shutter { transform: translateY(-101%); }
+.no-js .solvia-shutter { display: none; }
+.solvia-photo figcaption { position: absolute; z-index: 3; left: 14px; bottom: 14px; display: flex; gap: 8px; align-items: center; padding: 6px 12px; border-radius: 8px; background: rgb(20 29 46 / .8); color: #fff; font-size: .8125rem; font-weight: 700; }
 .solvia-photo figcaption .icon { width: 16px; height: 16px; }
+.js .solvia-photo figcaption { opacity: 0; transform: translateY(12px); transition: opacity .6s ease 1.8s, transform .6s ease 1.8s; }
+.js .solvia-photo.is-in figcaption { opacity: 1; transform: none; }
+
+/* Targetes: entren des del costat i les icones es dibuixen */
 .solvia-cards { display: grid; gap: 14px; }
-.solvia-cards li { display: flex; gap: 16px; padding: 22px; border-radius: var(--radius); background: var(--tint); }
-.solvia-cards .icon { width: 30px; height: 30px; color: var(--blue); }
+.solvia-cards li { position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 22px; border-radius: var(--radius); background: var(--tint); overflow: hidden; transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s, opacity .7s ease; }
+.solvia-cards li::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--blue), var(--orange)); transform: scaleY(0); transform-origin: top; transition: transform .45s ease; }
+.js .solvia-cards li[data-reveal] { transform: translateX(40px); transition: transform .7s cubic-bezier(.2,.8,.2,1), box-shadow .4s, opacity .7s ease; }
+.js .solvia-cards li[data-reveal].is-visible { transform: none; }
+.solvia-cards li:hover, .js .solvia-cards li[data-reveal].is-visible:hover { transform: translateX(-6px); box-shadow: 0 18px 36px -24px rgb(27 38 56 / .45); }
+.solvia-cards li:hover::before { transform: scaleY(1); }
+.solvia-card-icon { display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 14px; background: #fff; color: var(--blue); transition: background-color .3s, color .3s, transform .5s cubic-bezier(.3,1.6,.5,1); }
+.solvia-card-icon .icon { width: 26px; height: 26px; }
+.js .solvia-card-icon .icon { stroke-dasharray: 120; stroke-dashoffset: 120; transition: stroke-dashoffset 1.6s ease .5s; }
+.js .solvia-cards li.is-visible .solvia-card-icon .icon { stroke-dashoffset: 0; }
+.solvia-cards li:hover .solvia-card-icon { background: var(--orange); color: #fff; transform: rotate(-8deg) scale(1.08); }
 .solvia-cards h3 { font-size: 1.0625rem; font-weight: 800; margin-bottom: 4px; }
 .solvia-cards p { font-size: .9375rem; color: var(--muted); }
 
