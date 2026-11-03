@@ -15,6 +15,8 @@ no mostra pisos, preus ni cercadors.
   i la branca. El fitxer `netlify.toml` ja indica l'ordre de build (`node build.mjs`) i la carpeta que es publica (`public`).
 - **En local:** `node build.mjs && cd public && python3 -m http.server`, i obriu http://localhost:8000.
 
+Per replicar la web (igual o per a una altra empresa), vegeu `docs/REPLICAR.md`.
+
 ## Versió en un sol fitxer
 
 Per enganxar o pujar la web on no es poden afegir fitxers a part:
