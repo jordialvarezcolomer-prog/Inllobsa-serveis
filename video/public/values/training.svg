@@ -1,0 +1,9 @@
+<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <g class="art-cap">
+    <path class="art-main" d="M4 25 32 13l28 12-28 12z"/>
+    <path class="art-line" d="M16 31v10c0 4.4 7.2 8 16 8s16-3.6 16-8V31"/>
+    <g class="art-tassel"><path class="art-line" d="M55 27v14"/><circle class="art-tassel-end" cx="55" cy="44" r="3"/></g>
+  </g>
+  <path class="art-spark art-spark--1" d="M8 46v5M5.5 48.5h5"/>
+  <path class="art-spark art-spark--2" d="M58 8v4M56 10h4"/>
+</svg>

@@ -1,5 +1,18 @@
 # Vídeo corporatiu Inllobsa — projecte de motion graphics
 
+## Versió 2 (actual): sense locució, ~90 s, al ritme de la música
+
+* Guió i missatges en pantalla: `src/data/story.ts` (escenes en compassos, textos, persones per servei).
+* Música: `src/data/music.json` (fitxer, BPM i desplaçament del primer temps). Totes les animacions
+  cauen sobre els temps musicals; si canvia el tempo, el vídeo es reajusta sol.
+* Fotos reals de la promoció (fitxa ref. 5028 d'inllobsa.com): `public/listing/`.
+* Previsualització amb música provisional: `dist/previa/`.
+* Per posar la música definitiva d'ElevenLabs: deseu-la a `public/audio/music.mp3`, poseu-ne el BPM real
+  i l'`offset` (segons fins al primer temps fort) a `music.json` i torneu a renderitzar.
+
+La documentació de sota correspon a la versió 1 (amb locució), que es manté a l'historial.
+
+
 Projecte editable i reproduïble (Remotion + React + Python) que genera el vídeo corporatiu d'Inllobsa Immobiliària
 a partir dels recursos reals de la landing (logotip, colors, tipografia, serveis, equip i contacte).
 

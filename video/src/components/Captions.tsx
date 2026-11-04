@@ -2,69 +2,70 @@ import React from "react";
 import { useCurrentFrame } from "remotion";
 import { C, FONT } from "../lib/brand";
 import { useLayout } from "../lib/layout";
-import { EO, FPS, k, TL } from "../lib/time";
-
-type Cue = { start: number; end: number; words: { w: string; hl: boolean; t: number }[] };
-const CUES: Cue[] = TL.lines.flatMap((l) => l.cues as Cue[]);
+import { BACK, EO, FPS, k, TL } from "../lib/time";
 
 /**
- * Subtítols integrats: blanc, paraules clau en taronja, màxim dues línies.
- * Cada paraula s'il·lumina subtilment quan la locutora la pronuncia.
+ * Missatges en pantalla sense requadre: tipografia gran i neta, paraula a paraula.
+ * Sobre fons fosc: blanc amb ombra suau; sobre fons clar: navy. Paraules clau en taronja.
  */
 export const Captions: React.FC = () => {
-  const f = useCurrentFrame();
-  const t = f / FPS;
+  const t = useCurrentFrame() / FPS;
   const { v, W, H } = useLayout();
-  const cue = CUES.find((c) => t >= c.start - 0.05 && t < c.end + 0.12);
+  const cue = TL.captions.find((c) => t >= c.start - 0.05 && t < c.end + 0.3);
   if (!cue) return null;
-  const inA = k(t, cue.start - 0.05, cue.start + 0.22, 0, 1, EO);
-  const outA = k(t, cue.end - 0.05, cue.end + 0.12, 0, 1, EO);
-  const a = inA * (1 - outA);
-  const size = v ? 50 : 42;
+  const sc = TL.scenes.find((s) => s.id === cue.scene)!;
+  const dark = sc.theme === "dark";
+  const words: { w: string; hl: boolean }[] = [];
+  let on = false;
+  for (const raw of cue.text.split(" ")) {
+    if (raw.startsWith("*")) on = true;
+    words.push({ w: raw.replace(/\*/g, ""), hl: on });
+    if (raw.replace(/[.,:;?!]+$/, "").endsWith("*")) on = false;
+  }
+  const out = k(t, cue.end - 0.05, cue.end + 0.25, 0, 1, EO);
+  const size = v ? 58 : 50;
   return (
     <div
       style={{
         position: "absolute",
         left: 0,
         right: 0,
-        // 16:9: a baix; 9:16: per sobre de la zona d'interfície de Reels/TikTok
-        bottom: v ? H * 0.235 : 64,
+        bottom: v ? H * 0.2 : 70,
         display: "flex",
         justifyContent: "center",
         pointerEvents: "none",
+        opacity: 1 - out,
+        translate: `0 ${-out * 18}px`,
       }}
     >
       <div
         style={{
-          maxWidth: v ? W - 120 : 1380,
-          padding: v ? "16px 30px 18px" : "12px 30px 14px",
-          borderRadius: 18,
-          background: "rgba(16,24,40,.72)",
-          boxShadow: "0 10px 40px rgba(0,0,0,.25)",
+          maxWidth: v ? W - 110 : 1500,
           textAlign: "center",
           fontFamily: FONT,
-          fontWeight: 700,
+          fontWeight: 900,
           fontSize: size,
-          lineHeight: 1.25,
-          letterSpacing: "-0.005em",
-          color: C.white,
-          opacity: a,
-          translate: `0 ${(1 - inA) * 14}px`,
+          lineHeight: 1.12,
+          letterSpacing: "-0.015em",
+          color: dark ? C.white : C.navy,
+          textShadow: dark ? "0 2px 4px rgba(10,16,28,.55), 0 6px 28px rgba(10,16,28,.65)" : "0 2px 16px rgba(255,255,255,.9)",
         }}
       >
-        {cue.words.map((w, i) => {
-          const lit = k(t, w.t - 0.06, w.t + 0.12, 0, 1);
+        {words.map((w, i) => {
+          const a = k(t, cue.start + i * 0.045, cue.start + i * 0.045 + 0.42, 0, 1, BACK);
           return (
             <span
               key={i}
               style={{
-                color: w.hl ? C.orangeLight : C.white,
-                opacity: 0.62 + 0.38 * lit,
-                fontWeight: w.hl ? 800 : 700,
+                display: "inline-block",
+                marginRight: "0.24em",
+                color: w.hl ? (dark ? C.orangeLight : C.orange) : undefined,
+                opacity: Math.min(1, a * 1.4),
+                translate: `0 ${(1 - a) * 26}px`,
+                filter: `blur(${(1 - Math.min(1, a)) * 6}px)`,
               }}
             >
               {w.w}
-              {i < cue.words.length - 1 ? " " : ""}
             </span>
           );
         })}

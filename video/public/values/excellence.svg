@@ -1,0 +1,6 @@
+<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <path class="art-main art-star" d="M32 9l6.6 14.2 15.4 1.6-11.6 10.4 3.4 15.3L32 42.6l-13.8 7.9 3.4-15.3L10 24.8l15.4-1.6z"/>
+  <path class="art-spark art-spark--1" d="M54 6v6M51 9h6"/>
+  <path class="art-spark art-spark--2" d="M9 44v5M6.5 46.5h5"/>
+  <path class="art-spark art-spark--3" d="M55 46v4M53 48h4"/>
+</svg>

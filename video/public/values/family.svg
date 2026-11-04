@@ -1,0 +1,7 @@
+<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <path class="art-line" d="M8 31 32 11l24 20"/>
+  <path class="art-line" d="M14 26v28h36V26"/>
+  <path class="art-heart" d="M32 47s-9-5.4-9-11a4.8 4.8 0 0 1 9-2.4A4.8 4.8 0 0 1 41 36c0 5.6-9 11-9 11z"/>
+  <path class="art-float art-float--1" d="M50 14s-3.5-2.1-3.5-4.3a1.9 1.9 0 0 1 3.5-.9 1.9 1.9 0 0 1 3.5.9c0 2.2-3.5 4.3-3.5 4.3z"/>
+  <path class="art-float art-float--2" d="M14 12s-2.8-1.7-2.8-3.4a1.5 1.5 0 0 1 2.8-.7 1.5 1.5 0 0 1 2.8.7c0 1.7-2.8 3.4-2.8 3.4z"/>
+</svg>

@@ -6,12 +6,14 @@ import { Logo } from "./Logo";
 
 // Logotip discret a la cantonada durant les escenes de serveis i equip.
 const VARIANT: Record<string, "color" | "white" | null> = {
-  opening: null,
+  hook: null,
+  numbers: "white",
   sale: "color",
   rent: "white",
   legal: "color",
   shopper: "color",
   marketing: "white",
+  values: null,
   team: "white",
   closing: null,
 };
