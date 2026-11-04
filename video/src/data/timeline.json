@@ -1,0 +1,1564 @@
+{
+ "fps": 30,
+ "bpm": 120,
+ "scenes": [
+  {
+   "id": "opening",
+   "start": 0.0,
+   "end": 10.0,
+   "from": 0,
+   "frames": 300
+  },
+  {
+   "id": "sale",
+   "start": 10.0,
+   "end": 25.0,
+   "from": 300,
+   "frames": 450
+  },
+  {
+   "id": "rent",
+   "start": 25.0,
+   "end": 41.0,
+   "from": 750,
+   "frames": 480
+  },
+  {
+   "id": "legal",
+   "start": 41.0,
+   "end": 54.0,
+   "from": 1230,
+   "frames": 390
+  },
+  {
+   "id": "shopper",
+   "start": 54.0,
+   "end": 63.5,
+   "from": 1620,
+   "frames": 285
+  },
+  {
+   "id": "marketing",
+   "start": 63.5,
+   "end": 85.5,
+   "from": 1905,
+   "frames": 660
+  },
+  {
+   "id": "team",
+   "start": 85.5,
+   "end": 97.0,
+   "from": 2565,
+   "frames": 345
+  },
+  {
+   "id": "closing",
+   "start": 97.0,
+   "end": 110.5,
+   "from": 2910,
+   "frames": 405
+  }
+ ],
+ "lines": [
+  {
+   "id": "L01",
+   "scene": "opening",
+   "start": 2.4,
+   "dur": 6.351,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Des",
+       "hl": false,
+       "t": 2.45
+      },
+      {
+       "w": "de",
+       "hl": false,
+       "t": 2.708
+      },
+      {
+       "w": "1977,",
+       "hl": true,
+       "t": 2.909
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 3.447
+      },
+      {
+       "w": "Inllobsa",
+       "hl": false,
+       "t": 3.592
+      },
+      {
+       "w": "connectem",
+       "hl": false,
+       "t": 4.13
+      },
+      {
+       "w": "persones,",
+       "hl": true,
+       "t": 4.723
+      }
+     ],
+     "start": 2.37,
+     "end": 5.385
+    },
+    {
+     "words": [
+      {
+       "w": "oportunitats",
+       "hl": true,
+       "t": 5.485
+      },
+      {
+       "w": "i",
+       "hl": false,
+       "t": 6.513
+      },
+      {
+       "w": "nous",
+       "hl": false,
+       "t": 6.71
+      },
+      {
+       "w": "projectes",
+       "hl": false,
+       "t": 7.133
+      },
+      {
+       "w": "de",
+       "hl": false,
+       "t": 7.935
+      },
+      {
+       "w": "vida.",
+       "hl": false,
+       "t": 8.207
+      }
+     ],
+     "start": 5.405,
+     "end": 9.201
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "scene": "sale",
+   "start": 10.45,
+   "dur": 2.879,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Comprar",
+       "hl": false,
+       "t": 10.5
+      },
+      {
+       "w": "o",
+       "hl": false,
+       "t": 10.936
+      },
+      {
+       "w": "vendre",
+       "hl": false,
+       "t": 11.068
+      },
+      {
+       "w": "un",
+       "hl": false,
+       "t": 11.454
+      },
+      {
+       "w": "immoble",
+       "hl": false,
+       "t": 11.636
+      },
+      {
+       "w": "és",
+       "hl": false,
+       "t": 12.073
+      },
+      {
+       "w": "una",
+       "hl": false,
+       "t": 12.255
+      },
+      {
+       "w": "gran",
+       "hl": true,
+       "t": 12.489
+      },
+      {
+       "w": "decisió.",
+       "hl": true,
+       "t": 12.773
+      }
+     ],
+     "start": 10.42,
+     "end": 13.559
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "scene": "sale",
+   "start": 13.679,
+   "dur": 5.16,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Pisos,",
+       "hl": false,
+       "t": 13.729
+      },
+      {
+       "w": "cases,",
+       "hl": false,
+       "t": 14.439
+      },
+      {
+       "w": "locals,",
+       "hl": true,
+       "t": 15.079
+      },
+      {
+       "w": "pàrquings,",
+       "hl": true,
+       "t": 15.844
+      }
+     ],
+     "start": 13.649,
+     "end": 16.539
+    },
+    {
+     "words": [
+      {
+       "w": "naus",
+       "hl": true,
+       "t": 16.639
+      },
+      {
+       "w": "industrials",
+       "hl": true,
+       "t": 16.999
+      },
+      {
+       "w": "o",
+       "hl": false,
+       "t": 17.807
+      },
+      {
+       "w": "parcel·les:",
+       "hl": true,
+       "t": 17.974
+      }
+     ],
+     "start": 16.559,
+     "end": 18.969
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "scene": "sale",
+   "start": 19.089,
+   "dur": 4.981,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "t'hi",
+       "hl": false,
+       "t": 19.139
+      },
+      {
+       "w": "acompanyem",
+       "hl": false,
+       "t": 19.378
+      },
+      {
+       "w": "amb",
+       "hl": false,
+       "t": 19.982
+      },
+      {
+       "w": "assessorament",
+       "hl": true,
+       "t": 20.222
+      },
+      {
+       "w": "expert",
+       "hl": true,
+       "t": 20.982
+      }
+     ],
+     "start": 19.059,
+     "end": 21.278
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 21.378
+      },
+      {
+       "w": "una",
+       "hl": false,
+       "t": 21.513
+      },
+      {
+       "w": "estratègia",
+       "hl": false,
+       "t": 21.753
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 22.357
+      },
+      {
+       "w": "mida",
+       "hl": false,
+       "t": 22.492
+      },
+      {
+       "w": "per",
+       "hl": false,
+       "t": 22.783
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 23.023
+      },
+      {
+       "w": "cada",
+       "hl": false,
+       "t": 23.158
+      },
+      {
+       "w": "operació.",
+       "hl": false,
+       "t": 23.45
+      }
+     ],
+     "start": 21.298,
+     "end": 24.52
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "scene": "rent",
+   "start": 25.45,
+   "dur": 3.6,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Si",
+       "hl": false,
+       "t": 25.5
+      },
+      {
+       "w": "vols",
+       "hl": false,
+       "t": 25.686
+      },
+      {
+       "w": "llogar",
+       "hl": false,
+       "t": 25.975
+      },
+      {
+       "w": "la",
+       "hl": false,
+       "t": 26.367
+      },
+      {
+       "w": "teva",
+       "hl": false,
+       "t": 26.553
+      },
+      {
+       "w": "propietat,",
+       "hl": false,
+       "t": 26.842
+      },
+      {
+       "w": "ens",
+       "hl": true,
+       "t": 27.595
+      },
+      {
+       "w": "n'ocupem",
+       "hl": true,
+       "t": 27.882
+      },
+      {
+       "w": "de",
+       "hl": true,
+       "t": 28.418
+      },
+      {
+       "w": "tot:",
+       "hl": true,
+       "t": 28.643
+      }
+     ],
+     "start": 25.42,
+     "end": 29.18
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "scene": "rent",
+   "start": 29.3,
+   "dur": 4.795,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "la",
+       "hl": false,
+       "t": 29.35
+      },
+      {
+       "w": "comercialitzem,",
+       "hl": false,
+       "t": 29.534
+      },
+      {
+       "w": "seleccionem",
+       "hl": true,
+       "t": 30.535
+      },
+      {
+       "w": "llogaters",
+       "hl": true,
+       "t": 31.267
+      },
+      {
+       "w": "solvents",
+       "hl": true,
+       "t": 31.883
+      }
+     ],
+     "start": 29.27,
+     "end": 32.341
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 32.441
+      },
+      {
+       "w": "redactem",
+       "hl": false,
+       "t": 32.592
+      },
+      {
+       "w": "el",
+       "hl": false,
+       "t": 33.15
+      },
+      {
+       "w": "contracte.",
+       "hl": true,
+       "t": 33.359
+      }
+     ],
+     "start": 32.361,
+     "end": 34.325
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "scene": "rent",
+   "start": 34.445,
+   "dur": 5.631,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "I",
+       "hl": false,
+       "t": 34.495
+      },
+      {
+       "w": "amb",
+       "hl": false,
+       "t": 34.61
+      },
+      {
+       "w": "l'administració",
+       "hl": false,
+       "t": 34.813
+      },
+      {
+       "w": "de",
+       "hl": false,
+       "t": 35.503
+      },
+      {
+       "w": "finques,",
+       "hl": false,
+       "t": 35.663
+      },
+      {
+       "w": "rebuts,",
+       "hl": false,
+       "t": 36.22
+      },
+      {
+       "w": "incidències",
+       "hl": false,
+       "t": 36.9
+      }
+     ],
+     "start": 34.415,
+     "end": 37.552
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 37.652
+      },
+      {
+       "w": "manteniment",
+       "hl": false,
+       "t": 37.807
+      },
+      {
+       "w": "queden",
+       "hl": false,
+       "t": 38.559
+      },
+      {
+       "w": "en",
+       "hl": false,
+       "t": 39.013
+      },
+      {
+       "w": "bones",
+       "hl": true,
+       "t": 39.228
+      },
+      {
+       "w": "mans.",
+       "hl": true,
+       "t": 39.622
+      }
+     ],
+     "start": 37.572,
+     "end": 40.526
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "scene": "legal",
+   "start": 41.45,
+   "dur": 4.876,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "També",
+       "hl": false,
+       "t": 41.5
+      },
+      {
+       "w": "t'orientem",
+       "hl": false,
+       "t": 41.835
+      },
+      {
+       "w": "en",
+       "hl": false,
+       "t": 42.373
+      },
+      {
+       "w": "el",
+       "hl": false,
+       "t": 42.555
+      },
+      {
+       "w": "finançament,",
+       "hl": true,
+       "t": 42.738
+      },
+      {
+       "w": "per",
+       "hl": false,
+       "t": 43.58
+      },
+      {
+       "w": "aconseguir",
+       "hl": false,
+       "t": 43.794
+      }
+     ],
+     "start": 41.42,
+     "end": 44.234
+    },
+    {
+     "words": [
+      {
+       "w": "la",
+       "hl": false,
+       "t": 44.334
+      },
+      {
+       "w": "hipoteca",
+       "hl": true,
+       "t": 44.502
+      },
+      {
+       "w": "que",
+       "hl": false,
+       "t": 44.949
+      },
+      {
+       "w": "millor",
+       "hl": false,
+       "t": 45.163
+      },
+      {
+       "w": "s'adapta",
+       "hl": false,
+       "t": 45.517
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 45.917
+      },
+      {
+       "w": "tu.",
+       "hl": false,
+       "t": 46.039
+      }
+     ],
+     "start": 44.254,
+     "end": 46.556
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "scene": "legal",
+   "start": 46.676,
+   "dur": 6.759,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "I",
+       "hl": false,
+       "t": 46.726
+      },
+      {
+       "w": "et",
+       "hl": false,
+       "t": 46.851
+      },
+      {
+       "w": "donem",
+       "hl": false,
+       "t": 47.025
+      },
+      {
+       "w": "suport",
+       "hl": true,
+       "t": 47.343
+      },
+      {
+       "w": "jurídic",
+       "hl": true,
+       "t": 47.709
+      },
+      {
+       "w": "en",
+       "hl": false,
+       "t": 48.124
+      },
+      {
+       "w": "herències,",
+       "hl": false,
+       "t": 48.297
+      },
+      {
+       "w": "tràmits",
+       "hl": false,
+       "t": 49.001
+      },
+      {
+       "w": "registrals",
+       "hl": false,
+       "t": 49.505
+      }
+     ],
+     "start": 46.646,
+     "end": 50.085
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 50.185
+      },
+      {
+       "w": "contractes,",
+       "hl": false,
+       "t": 50.337
+      },
+      {
+       "w": "perquè",
+       "hl": false,
+       "t": 51.251
+      },
+      {
+       "w": "decideixis",
+       "hl": false,
+       "t": 51.634
+      },
+      {
+       "w": "amb",
+       "hl": false,
+       "t": 52.217
+      },
+      {
+       "w": "total",
+       "hl": true,
+       "t": 52.449
+      },
+      {
+       "w": "confiança.",
+       "hl": true,
+       "t": 52.781
+      }
+     ],
+     "start": 50.105,
+     "end": 53.885
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "scene": "shopper",
+   "start": 54.4,
+   "dur": 2.032,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Busques",
+       "hl": false,
+       "t": 54.45
+      },
+      {
+       "w": "un",
+       "hl": false,
+       "t": 54.895
+      },
+      {
+       "w": "immoble",
+       "hl": false,
+       "t": 55.081
+      },
+      {
+       "w": "molt",
+       "hl": true,
+       "t": 55.526
+      },
+      {
+       "w": "especial?",
+       "hl": true,
+       "t": 55.815
+      }
+     ],
+     "start": 54.37,
+     "end": 56.612
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "scene": "shopper",
+   "start": 56.732,
+   "dur": 6.2,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "El",
+       "hl": false,
+       "t": 56.782
+      },
+      {
+       "w": "nostre",
+       "hl": false,
+       "t": 56.961
+      },
+      {
+       "w": "personal",
+       "hl": true,
+       "t": 57.339
+      },
+      {
+       "w": "shopper",
+       "hl": true,
+       "t": 57.817
+      },
+      {
+       "w": "immobiliari",
+       "hl": true,
+       "t": 58.245
+      },
+      {
+       "w": "el",
+       "hl": false,
+       "t": 58.872
+      },
+      {
+       "w": "busca",
+       "hl": false,
+       "t": 59.051
+      },
+      {
+       "w": "per",
+       "hl": false,
+       "t": 59.38
+      },
+      {
+       "w": "tu,",
+       "hl": false,
+       "t": 59.609
+      }
+     ],
+     "start": 56.702,
+     "end": 59.887
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 59.987
+      },
+      {
+       "w": "t'ajuda",
+       "hl": false,
+       "t": 60.111
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 60.475
+      },
+      {
+       "w": "trobar",
+       "hl": false,
+       "t": 60.6
+      },
+      {
+       "w": "l'opció",
+       "hl": false,
+       "t": 60.964
+      },
+      {
+       "w": "que",
+       "hl": false,
+       "t": 61.328
+      },
+      {
+       "w": "realment",
+       "hl": true,
+       "t": 61.548
+      },
+      {
+       "w": "encaixa",
+       "hl": true,
+       "t": 62.007
+      },
+      {
+       "w": "amb",
+       "hl": false,
+       "t": 62.419
+      },
+      {
+       "w": "tu.",
+       "hl": false,
+       "t": 62.639
+      }
+     ],
+     "start": 59.907,
+     "end": 63.382
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "scene": "marketing",
+   "start": 63.85,
+   "dur": 4.075,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "I",
+       "hl": false,
+       "t": 63.9
+      },
+      {
+       "w": "quan",
+       "hl": false,
+       "t": 64.025
+      },
+      {
+       "w": "és",
+       "hl": false,
+       "t": 64.293
+      },
+      {
+       "w": "el",
+       "hl": false,
+       "t": 64.466
+      },
+      {
+       "w": "moment",
+       "hl": false,
+       "t": 64.638
+      },
+      {
+       "w": "de",
+       "hl": false,
+       "t": 65.002
+      },
+      {
+       "w": "vendre",
+       "hl": false,
+       "t": 65.175
+      },
+      {
+       "w": "o",
+       "hl": false,
+       "t": 65.539
+      },
+      {
+       "w": "llogar,",
+       "hl": false,
+       "t": 65.664
+      }
+     ],
+     "start": 63.82,
+     "end": 66.12
+    },
+    {
+     "words": [
+      {
+       "w": "fem",
+       "hl": false,
+       "t": 66.22
+      },
+      {
+       "w": "que",
+       "hl": false,
+       "t": 66.455
+      },
+      {
+       "w": "cada",
+       "hl": false,
+       "t": 66.69
+      },
+      {
+       "w": "immoble",
+       "hl": false,
+       "t": 66.977
+      },
+      {
+       "w": "brilli.",
+       "hl": true,
+       "t": 67.416
+      }
+     ],
+     "start": 66.14,
+     "end": 68.105
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "scene": "marketing",
+   "start": 68.225,
+   "dur": 5.63,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Fotografia",
+       "hl": true,
+       "t": 68.275
+      },
+      {
+       "w": "i",
+       "hl": false,
+       "t": 68.932
+      },
+      {
+       "w": "vídeo",
+       "hl": true,
+       "t": 69.079
+      },
+      {
+       "w": "professionals,",
+       "hl": false,
+       "t": 69.452
+      },
+      {
+       "w": "home",
+       "hl": true,
+       "t": 70.505
+      },
+      {
+       "w": "staging,",
+       "hl": true,
+       "t": 70.867
+      }
+     ],
+     "start": 68.195,
+     "end": 71.58
+    },
+    {
+     "words": [
+      {
+       "w": "un",
+       "hl": false,
+       "t": 71.68
+      },
+      {
+       "w": "pla",
+       "hl": true,
+       "t": 71.875
+      },
+      {
+       "w": "de",
+       "hl": true,
+       "t": 72.123
+      },
+      {
+       "w": "màrqueting",
+       "hl": true,
+       "t": 72.318
+      },
+      {
+       "w": "personalitzat...",
+       "hl": false,
+       "t": 72.945
+      }
+     ],
+     "start": 71.6,
+     "end": 73.885
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "scene": "marketing",
+   "start": 74.005,
+   "dur": 3.67,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 74.055
+      },
+      {
+       "w": "màxima",
+       "hl": false,
+       "t": 74.201
+      },
+      {
+       "w": "difusió",
+       "hl": false,
+       "t": 74.627
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 75.11
+      },
+      {
+       "w": "portals",
+       "hl": true,
+       "t": 75.255
+      },
+      {
+       "w": "immobiliaris",
+       "hl": true,
+       "t": 75.738
+      },
+      {
+       "w": "i",
+       "hl": false,
+       "t": 76.501
+      },
+      {
+       "w": "xarxes",
+       "hl": true,
+       "t": 76.647
+      },
+      {
+       "w": "socials.",
+       "hl": true,
+       "t": 77.073
+      }
+     ],
+     "start": 73.975,
+     "end": 77.905
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "scene": "marketing",
+   "start": 78.025,
+   "dur": 6.42,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "A",
+       "hl": false,
+       "t": 78.075
+      },
+      {
+       "w": "més,",
+       "hl": false,
+       "t": 78.207
+      },
+      {
+       "w": "som",
+       "hl": false,
+       "t": 78.643
+      },
+      {
+       "w": "experts",
+       "hl": true,
+       "t": 78.877
+      },
+      {
+       "w": "en",
+       "hl": true,
+       "t": 79.313
+      },
+      {
+       "w": "intel·ligència",
+       "hl": true,
+       "t": 79.496
+      },
+      {
+       "w": "artificial,",
+       "hl": true,
+       "t": 80.287
+      }
+     ],
+     "start": 77.995,
+     "end": 80.978
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 81.078
+      },
+      {
+       "w": "l'apliquem",
+       "hl": false,
+       "t": 81.21
+      },
+      {
+       "w": "cada",
+       "hl": false,
+       "t": 81.748
+      },
+      {
+       "w": "dia",
+       "hl": false,
+       "t": 82.032
+      },
+      {
+       "w": "per",
+       "hl": false,
+       "t": 82.266
+      },
+      {
+       "w": "arribar",
+       "hl": false,
+       "t": 82.499
+      },
+      {
+       "w": "a",
+       "hl": false,
+       "t": 82.935
+      },
+      {
+       "w": "les",
+       "hl": false,
+       "t": 83.067
+      },
+      {
+       "w": "persones",
+       "hl": false,
+       "t": 83.301
+      },
+      {
+       "w": "adequades.",
+       "hl": false,
+       "t": 83.788
+      }
+     ],
+     "start": 80.998,
+     "end": 84.895
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "scene": "team",
+   "start": 86.1,
+   "dur": 3.18,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "I",
+       "hl": false,
+       "t": 86.15
+      },
+      {
+       "w": "darrere",
+       "hl": false,
+       "t": 86.29
+      },
+      {
+       "w": "de",
+       "hl": false,
+       "t": 86.752
+      },
+      {
+       "w": "cada",
+       "hl": false,
+       "t": 86.946
+      },
+      {
+       "w": "operació",
+       "hl": false,
+       "t": 87.246
+      },
+      {
+       "w": "hi",
+       "hl": false,
+       "t": 87.762
+      },
+      {
+       "w": "ha",
+       "hl": false,
+       "t": 87.956
+      },
+      {
+       "w": "el",
+       "hl": true,
+       "t": 88.149
+      },
+      {
+       "w": "més",
+       "hl": true,
+       "t": 88.343
+      },
+      {
+       "w": "important:",
+       "hl": true,
+       "t": 88.59
+      }
+     ],
+     "start": 86.07,
+     "end": 89.36
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "scene": "team",
+   "start": 89.48,
+   "dur": 3.75,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "un",
+       "hl": false,
+       "t": 89.53
+      },
+      {
+       "w": "equip",
+       "hl": true,
+       "t": 89.694
+      },
+      {
+       "w": "de",
+       "hl": true,
+       "t": 89.995
+      },
+      {
+       "w": "professionals",
+       "hl": true,
+       "t": 90.159
+      },
+      {
+       "w": "que",
+       "hl": false,
+       "t": 90.825
+      },
+      {
+       "w": "t'escolta,",
+       "hl": false,
+       "t": 91.035
+      }
+     ],
+     "start": 89.45,
+     "end": 91.555
+    },
+    {
+     "words": [
+      {
+       "w": "t'assessora",
+       "hl": false,
+       "t": 91.655
+      },
+      {
+       "w": "i",
+       "hl": false,
+       "t": 92.309
+      },
+      {
+       "w": "t'acompanya.",
+       "hl": true,
+       "t": 92.456
+      }
+     ],
+     "start": 91.575,
+     "end": 93.61
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "scene": "team",
+   "start": 93.73,
+   "dur": 2.09,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Persones",
+       "hl": true,
+       "t": 93.78
+      },
+      {
+       "w": "compromeses",
+       "hl": false,
+       "t": 94.286
+      },
+      {
+       "w": "amb",
+       "hl": false,
+       "t": 94.951
+      },
+      {
+       "w": "persones.",
+       "hl": true,
+       "t": 95.193
+      }
+     ],
+     "start": 93.7,
+     "end": 96.27
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "scene": "closing",
+   "start": 97.5,
+   "dur": 4.911,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Inllobsa",
+       "hl": true,
+       "t": 97.55
+      },
+      {
+       "w": "Immobiliària.",
+       "hl": true,
+       "t": 98.072
+      },
+      {
+       "w": "Experiència,",
+       "hl": false,
+       "t": 99.028
+      },
+      {
+       "w": "innovació",
+       "hl": false,
+       "t": 99.93
+      }
+     ],
+     "start": 97.47,
+     "end": 100.478
+    },
+    {
+     "words": [
+      {
+       "w": "i",
+       "hl": false,
+       "t": 100.578
+      },
+      {
+       "w": "persones",
+       "hl": false,
+       "t": 100.737
+      },
+      {
+       "w": "al",
+       "hl": false,
+       "t": 101.325
+      },
+      {
+       "w": "teu",
+       "hl": false,
+       "t": 101.545
+      },
+      {
+       "w": "costat.",
+       "hl": false,
+       "t": 101.826
+      }
+     ],
+     "start": 100.498,
+     "end": 102.861
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "scene": "closing",
+   "start": 103.011,
+   "dur": 2.508,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "El",
+       "hl": false,
+       "t": 103.061
+      },
+      {
+       "w": "teu",
+       "hl": false,
+       "t": 103.25
+      },
+      {
+       "w": "projecte,",
+       "hl": false,
+       "t": 103.492
+      },
+      {
+       "w": "el",
+       "hl": true,
+       "t": 104.206
+      },
+      {
+       "w": "nostre",
+       "hl": true,
+       "t": 104.403
+      },
+      {
+       "w": "compromís.",
+       "hl": true,
+       "t": 104.819
+      }
+     ],
+     "start": 102.981,
+     "end": 105.969
+    }
+   ]
+  },
+  {
+   "id": "L21",
+   "scene": "closing",
+   "start": 106.119,
+   "dur": 1.776,
+   "cues": [
+    {
+     "words": [
+      {
+       "w": "Parlem",
+       "hl": false,
+       "t": 106.169
+      },
+      {
+       "w": "del",
+       "hl": false,
+       "t": 106.528
+      },
+      {
+       "w": "teu",
+       "hl": false,
+       "t": 106.745
+      },
+      {
+       "w": "pròxim",
+       "hl": true,
+       "t": 106.963
+      },
+      {
+       "w": "projecte?",
+       "hl": true,
+       "t": 107.322
+      }
+     ],
+     "start": 106.089,
+     "end": 108.345
+    }
+   ]
+  }
+ ],
+ "duration": 110.5,
+ "frames": 3315,
+ "events": {
+  "logoHit": 1.0,
+  "drop": 63.5,
+  "teamLift": 85.5,
+  "finalHit": 108.5
+ }
+}

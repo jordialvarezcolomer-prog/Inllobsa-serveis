@@ -1,0 +1,152 @@
+{
+  "_info": "Guió definitiu de locució. 'text' = subtítol (les *paraules* entre asteriscs surten en taronja; '|' separa blocs de subtítol). 'tts' = text que llegeix el motor de veu (números en lletres i anglicismes adaptats a la pronúncia). 'pause' = silenci (s) després de la frase.",
+  "lines": [
+    {
+      "id": "L01",
+      "scene": "opening",
+      "pause": 0.9,
+      "text": "Des de *1977*, a Inllobsa connectem *persones*,|*oportunitats* i nous projectes de vida.",
+      "tts": "Des de mil nou-cents setanta-set, a Inllobsa connectem persones, oportunitats, i nous projectes de vida."
+    },
+    {
+      "id": "L02",
+      "scene": "sale",
+      "pause": 0.35,
+      "text": "Comprar o vendre un immoble és una *gran decisió*.",
+      "tts": "Comprar o vendre un immoble és una gran decisió."
+    },
+    {
+      "id": "L03",
+      "scene": "sale",
+      "pause": 0.25,
+      "text": "Pisos, cases, *locals*, *pàrquings*,|*naus industrials* o *parcel·les*:",
+      "tts": "Pisos, cases, locals, pàrquings, naus industrials, o parcel·les:"
+    },
+    {
+      "id": "L04",
+      "scene": "sale",
+      "pause": 0.9,
+      "text": "t'hi acompanyem amb *assessorament expert*|i una estratègia a mida per a cada operació.",
+      "tts": "t'hi acompanyem amb assessorament expert, i una estratègia a mida per a cada operació."
+    },
+    {
+      "id": "L05",
+      "scene": "rent",
+      "pause": 0.25,
+      "text": "Si vols llogar la teva propietat, *ens n'ocupem de tot*:",
+      "tts": "Si vols llogar la teva propietat, ens n'ocupem de tot:"
+    },
+    {
+      "id": "L06",
+      "scene": "rent",
+      "pause": 0.35,
+      "text": "la comercialitzem, *seleccionem llogaters solvents*|i redactem el *contracte*.",
+      "tts": "la comercialitzem, seleccionem llogaters solvents, i redactem el contracte."
+    },
+    {
+      "id": "L07",
+      "scene": "rent",
+      "pause": 0.9,
+      "text": "I amb l'*administració de finques*, rebuts, incidències|i manteniment queden en *bones mans*.",
+      "tts": "I amb l'administració de finques, rebuts, incidències i manteniment, queden en bones mans."
+    },
+    {
+      "id": "L08",
+      "scene": "legal",
+      "pause": 0.35,
+      "text": "També t'orientem en el *finançament*, per aconseguir|la *hipoteca* que millor s'adapta a tu.",
+      "tts": "També t'orientem en el finançament, per aconseguir la hipoteca que millor s'adapta a tu."
+    },
+    {
+      "id": "L09",
+      "scene": "legal",
+      "pause": 0.9,
+      "text": "I et donem *suport jurídic* en herències, tràmits registrals|i contractes, perquè decideixis amb *total confiança*.",
+      "tts": "I et donem suport jurídic en herències, tràmits registrals i contractes, perquè decideixis amb total confiança."
+    },
+    {
+      "id": "L10",
+      "scene": "shopper",
+      "pause": 0.3,
+      "text": "Busques un immoble *molt especial*?",
+      "tts": "Busques un immoble molt especial?"
+    },
+    {
+      "id": "L11",
+      "scene": "shopper",
+      "pause": 0.9,
+      "text": "El nostre *personal shopper immobiliari* el busca per tu,|i t'ajuda a trobar l'opció que *realment encaixa* amb tu.",
+      "tts": "El nostre personal xóper immobiliari el busca per tu, i t'ajuda a trobar l'opció que realment encaixa amb tu."
+    },
+    {
+      "id": "L12",
+      "scene": "marketing",
+      "pause": 0.3,
+      "text": "I quan és el moment de vendre o llogar,|fem que cada immoble *brilli*.",
+      "tts": "I quan és el moment de vendre o llogar, fem que cada immoble brilli."
+    },
+    {
+      "id": "L13",
+      "scene": "marketing",
+      "pause": 0.15,
+      "text": "*Fotografia* i *vídeo* professionals, *home staging*,|un *pla de màrqueting* personalitzat...",
+      "tts": "Fotografia i vídeo professionals, jòum stéitxin, un pla de màrqueting personalitzat,"
+    },
+    {
+      "id": "L14",
+      "scene": "marketing",
+      "pause": 0.35,
+      "text": "i màxima difusió a *portals immobiliaris* i *xarxes socials*.",
+      "tts": "i màxima difusió a portals immobiliaris i xarxes socials."
+    },
+    {
+      "id": "L15",
+      "scene": "marketing",
+      "pause": 0.9,
+      "text": "A més, som *experts en intel·ligència artificial*,|i l'apliquem cada dia per arribar a les persones adequades.",
+      "tts": "A més, som experts en intel·ligència artificial, i l'apliquem cada dia per arribar a les persones adequades."
+    },
+    {
+      "id": "L16",
+      "scene": "team",
+      "pause": 0.2,
+      "text": "I darrere de cada operació hi ha *el més important*:",
+      "tts": "I darrere de cada operació, hi ha el més important:"
+    },
+    {
+      "id": "L17",
+      "scene": "team",
+      "pause": 0.5,
+      "text": "un *equip de professionals* que t'escolta,|t'assessora i *t'acompanya*.",
+      "tts": "un equip de professionals que t'escolta, t'assessora, i t'acompanya."
+    },
+    {
+      "id": "L18",
+      "scene": "team",
+      "pause": 0.9,
+      "text": "*Persones* compromeses amb *persones*.",
+      "tts": "Persones compromeses amb persones."
+    },
+    {
+      "id": "L19",
+      "scene": "closing",
+      "pause": 0.6,
+      "text": "*Inllobsa Immobiliària*. Experiència, innovació|i persones al teu costat.",
+      "tts": "Inllobsa Immobiliària. Experiència, innovació, i persones al teu costat."
+    },
+    {
+      "id": "L20",
+      "scene": "closing",
+      "pause": 0.6,
+      "text": "El teu projecte, *el nostre compromís*.",
+      "tts": "El teu projecte, el nostre compromís."
+    },
+    {
+      "id": "L21",
+      "scene": "closing",
+      "pause": 0.0,
+      "text": "Parlem del teu *pròxim projecte*?",
+      "tts": "Parlem del teu pròxim projecte?"
+    }
+  ]
+}

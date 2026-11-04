@@ -1,0 +1,11 @@
+node_modules
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+build
+
+# àudio intermedi regenerable (script/*.py)
+assets/audio/*.wav
+assets/voice/raw/*.take*.wav
