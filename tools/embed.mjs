@@ -3,7 +3,7 @@
 //  - Tots els estils queden encapsulats dins de #inllobsa, perquè no xoquin amb els de la plantilla
 //    amfitriona (.container, .btn, .icon, .section… existeixen a Bootstrap i similars).
 //  - Sense logotip a la capçalera (Inmovilla ja en té un) ni botó flotant de WhatsApp.
-//  - L'amplada s'adapta al contenidor on s'enganxa; la capçalera no és fixa.
+//  - Mesures originals de la web (contenidor de 1200 px); la capçalera no és fixa.
 // Ús: node build.mjs && node tools/embed.mjs [carpeta-de-sortida]
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join, extname } from 'node:path';
@@ -93,16 +93,10 @@ const embedCss = `
 #inllobsa { display: block; width: 100%; max-width: 100%; margin: 0; padding: 0; overflow-x: clip; position: relative; text-align: left; }
 #inllobsa, #inllobsa * { box-sizing: border-box; }
 #inllobsa img, #inllobsa svg { max-width: 100%; }
-#inllobsa { --container: 100%; --gutter: clamp(12px, 2.5vw, 24px); --header-h: 72px; }
 #inllobsa .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); float: none; }
-#inllobsa .container--wide { max-width: var(--container); }
+#inllobsa .container--wide { max-width: 1440px; }
 #inllobsa .site-header { position: relative; top: auto; backdrop-filter: none; background: #fff; border-bottom: 1px solid var(--line); }
 #inllobsa .header-inner { justify-content: flex-end; }
-#inllobsa .main-nav { gap: 22px; }
-#inllobsa .nav-list { gap: 18px; }
-#inllobsa .hero { padding-top: 12px; }
-#inllobsa .hero-stage { min-height: min(68vh, 640px); }
-#inllobsa .topbar-inner { padding-inline: var(--gutter); }
 @media (max-width: 1180px) {
   #inllobsa .header-inner { justify-content: flex-end; }
   #inllobsa .main-nav { position: absolute; inset: var(--header-h) 0 auto 0; max-height: none; }
