@@ -93,6 +93,18 @@ for (const [code, dict] of Object.entries(langs)) {
       items: dict.services.items.map((it) => ({ ...it, waHref: waLink(site.whatsapp, `${dict.wa.service} ${it.title}`) })),
     },
     site,
+    homeAbs: '',
+    immoblesUrl: isDefault ? '/immobles/' : '/es/immobles/',
+    typeOptions: [
+      ...Object.entries(dict.props.groups).map(([value, label]) => ({ value, label })),
+      ...Object.entries(dict.props.types).filter(([k]) => k !== 'altres').map(([value, label]) => ({ value, label })),
+    ],
+    ilData: JSON.stringify({
+      lang: code,
+      p: dict.props,
+      site: { whatsapp: site.whatsapp, phone: site.phone, phoneHref: site.phoneHref, email: site.email },
+      urls: { list: isDefault ? '/immobles/' : '/es/immobles/', detail: isDefault ? '/immoble/' : '/es/immoble/' },
+    }).replace(/</g, '\\u003c'),
     base: isDefault ? '' : '../',
     otherLang: isDefault ? 'es' : 'ca',
     otherHref: isDefault ? 'es/index.html' : '../index.html',
@@ -123,6 +135,33 @@ for (const [code, dict] of Object.entries(langs)) {
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), html);
   console.log(`✓ ${join(dir, 'index.html').replace(root + '/', '')}`);
+
+  // Pàgines dinàmiques d'immobles: reutilitzen capçalera i peu de la plantilla (/immobles/ i /immoble/?ref=…)
+  for (const slug of ['immobles', 'immoble']) {
+    const prefix = isDefault ? '' : '/es';
+    const pageCtx = {
+      ...ctx,
+      base: isDefault ? '../' : '../../',
+      homeAbs: isDefault ? '/' : '/es/',
+      path: `${prefix}/${slug}/`,
+      otherHref: `${isDefault ? '/es' : ''}/${slug}/`,
+      meta: { ...dict.meta, title: dict.props.metaTitle, description: dict.props.metaDescription },
+      pageTitle: dict.props.pageTitle,
+    };
+    const full = render(template, [pageCtx]);
+    const a = full.indexOf('<main id="main">');
+    const b = full.indexOf('</main>');
+    let page = full.slice(0, a) + '<main id="main">\n' + render(read(`src/pages/${slug}.html`), [pageCtx]) + '\n  ' + full.slice(b);
+    page = page
+      .replace(/\s*<link rel="preload" as="image"[^>]*>/, '')
+      .replace(/<link rel="alternate" hreflang="ca" href="[^"]*">/, `<link rel="alternate" hreflang="ca" href="${site.url}/${slug}/">`)
+      .replace(/<link rel="alternate" hreflang="es" href="[^"]*">/, `<link rel="alternate" hreflang="es" href="${site.url}/es/${slug}/">`)
+      .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*">/, `<link rel="alternate" hreflang="x-default" href="${site.url}/${slug}/">`);
+    const pdir = join(dir, slug);
+    mkdirSync(pdir, { recursive: true });
+    writeFileSync(join(pdir, 'index.html'), page);
+    console.log(`✓ ${join(pdir, 'index.html').replace(root + '/', '')}`);
+  }
 }
 
 // Comprovació: les dues llengües han de tenir exactament les mateixes claus.
@@ -138,11 +177,11 @@ if (missing.length) {
 const today = new Date().toISOString().slice(0, 10);
 writeFileSync(join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${['/', '/es/'].map((p) => `  <url>
+${['', 'immobles/'].flatMap((slug) => [`/${slug}`, `/es/${slug}`]).map((p) => `  <url>
     <loc>${site.url}${p}</loc>
     <lastmod>${today}</lastmod>
-    <xhtml:link rel="alternate" hreflang="ca" href="${site.url}/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="${site.url}/es/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="${site.url}${p.replace(/^\/es\//, '/')}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="${site.url}${p.startsWith('/es/') ? p : '/es' + p}"/>
   </url>`).join('\n')}
 </urlset>
 `);

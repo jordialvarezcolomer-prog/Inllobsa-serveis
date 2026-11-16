@@ -22,10 +22,12 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Cormorant+Garamond:wght@500;600;700&display=swap">
   <link rel="preload" as="image" href="../assets/img/photos/hero-01-1920.webp" imagesrcset="../assets/img/photos/hero-01-1100.webp 1100w, ../assets/img/photos/hero-01-1920.webp 1920w" imagesizes="100vw" type="image/webp">
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/immobles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/immobles.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -102,53 +104,88 @@
 
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Inllobsa%2C%20Passeig%20de%20Pere%20III%2051%2C%2008242%20Manresa" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Passeig de Pere III, 51, Manresa</a>
-      <span class="topbar-hours"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>L–V · 9:00–13:30 y 16:00–19:30</span>
-      <a href="tel:+34938362030"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>938 36 20 30</a>
-      <a href="mailto:inllobsa@inllobsa.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>inllobsa@inllobsa.com</a>
-    </div>
-  </div>
-
   <header class="site-header" data-header>
-    <div class="container header-inner">
+    <div class="header-bar">
+      <div class="header-left">
+        <a class="pill" href="/es/immobles/?tipus=habitatge">Viviendas</a>
+        <a class="pill" href="/es/immobles/?tipus=local-nau">Locales y naves</a>
+      </div>
+
       <a class="brand" href="#top" aria-label="Inllobsa, inicio">
         <img class="brand-logo" src="../assets/img/logo/inllobsa-logo.png" alt="Inllobsa Immobiliària" width="518" height="234">
       </a>
 
-      <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-nav>
-        <ul class="nav-list">
-          <li><a href="#serveis" data-nav-link>Servicios</a></li>
-          <li><a href="#marketing" data-nav-link>Marketing</a></li>
-          <li><a href="#valors" data-nav-link>Valores</a></li>
-          <li><a href="#equip" data-nav-link>Equipo</a></li>
-          <li><a href="#ressenyes" data-nav-link>Reseñas</a></li>
-          <li><a href="#contacte" data-nav-link>Contacto</a></li>
-        </ul>
-        <div class="nav-actions">
-          <div class="lang-switch" role="group" aria-label="Idioma">
-            <span class="lang-current" aria-current="true">ES</span>
-            <a class="lang-other" href="../index.html" hreflang="ca" lang="ca" data-lang-switch title="Versió en català">
-              <span aria-hidden="true">CA</span><span class="sr-only">Versió en català</span>
-            </a>
-          </div>
-          <a class="btn btn-wa btn-sm" href="https://wa.me/34630508702?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta%20a%20Inllobsa." target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
-          <a class="btn btn-primary btn-sm" href="#valoracio">Valoración gratuita</a>
-        </div>
-      </nav>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
-              data-menu-toggle data-label-open="Abrir el menú" data-label-close="Cerrar el menú">
-        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
-        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
-        <span class="sr-only" data-menu-label>Abrir el menú</span>
-      </button>
+      <div class="header-right">
+        <a class="btn btn-accent btn-sm header-cta" href="#valoracio">Quiero vender</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+                data-menu-toggle data-label-open="Abrir el menú" data-label-close="Cerrar el menú">
+          <span class="menu-text" aria-hidden="true">Menú</span>
+          <span class="menu-lines" aria-hidden="true"></span>
+          <span class="sr-only" data-menu-label>Abrir el menú</span>
+        </button>
+      </div>
     </div>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-nav>
+      <ul class="nav-list">
+        <li><a href="/es/immobles/">Inmuebles</a></li>
+        <li><a href="#serveis" data-nav-link>Servicios</a></li>
+        <li><a href="#nosaltres" data-nav-link>Nosotros</a></li>
+        <li><a href="#marketing" data-nav-link>Marketing</a></li>
+        <li><a href="#valors" data-nav-link>Valores</a></li>
+        <li><a href="#equip" data-nav-link>Equipo</a></li>
+        <li><a href="#ressenyes" data-nav-link>Reseñas</a></li>
+        <li><a href="#contacte" data-nav-link>Contacto</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <span class="lang-current" aria-current="true">ES</span>
+          <a class="lang-other" href="../index.html" hreflang="ca" lang="ca" data-lang-switch title="Versió en català">
+            <span aria-hidden="true">CA</span><span class="sr-only">Versió en català</span>
+          </a>
+        </div>
+        <a class="btn btn-wa btn-sm" href="https://wa.me/34630508702?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta%20a%20Inllobsa." target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+        <a class="btn btn-primary btn-sm" href="#valoracio">Valoración gratuita</a>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
+    <!-- CERCADOR -->
+    <section class="finder" aria-label="Buscar">
+      <div class="container container--wide">
+        <form class="finder-form" action="/es/immobles/" method="get" data-finder>
+          <div class="finder-top">
+            <div class="op-toggle" data-op-toggle>
+              <span class="op-label op-buy">Comprar</span>
+              <button class="op-switch" type="button" role="switch" aria-checked="false" aria-label="Comprar / Alquilar"></button>
+              <span class="op-label op-rent">Alquilar</span>
+              <input type="hidden" name="op" value="comprar">
+            </div>
+            <button class="btn btn-primary btn-sm finder-submit" type="submit">Buscar</button>
+          </div>
+          <div class="finder-fields">
+            <label class="field">
+              <span class="field-label">Estoy buscando</span>
+              <select name="tipus">
+                <option value="">Todos</option>
+                <option value="habitatge">Viviendas</option><option value="local-nau">Locales y naves</option><option value="pis">Pisos</option><option value="casa">Casas</option><option value="local">Locales comerciales</option><option value="nau">Naves industriales</option><option value="oficina">Oficinas</option><option value="terreny">Terrenos</option><option value="parking">Parkings</option><option value="edifici">Edificios</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field-label">En la población de</span>
+              <select name="poblacio" data-city-select><option value="">Todas</option></select>
+            </label>
+            <label class="field field--ref">
+              <span class="field-label">Referencia</span>
+              <input type="text" name="ref" placeholder="Núm. #" autocomplete="off">
+            </label>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container container--wide">
@@ -249,6 +286,20 @@
           </li>
           
         </ul>
+      </div>
+    </section>
+
+    <!-- DESTACATS -->
+    <section class="section featured" id="destacats" aria-labelledby="featured-title">
+      <div class="container container--wide">
+        <h2 class="serif featured-title" id="featured-title">Destacados</h2>
+        <p class="scroll-hint" aria-hidden="true"><span>←</span> Desplaza <span>→</span></p>
+        <div class="carousel" data-featured>
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Anterior" data-prev></button>
+          <ul class="carousel-track" data-track><li class="carousel-msg">Cargando inmuebles…</li></ul>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Siguiente" data-next></button>
+        </div>
+        <p class="featured-more"><a class="btn btn-light" href="/es/immobles/">Ver todos los inmuebles</a></p>
       </div>
     </section>
 
@@ -1623,5 +1674,6 @@
   <a class="wa-float" href="https://wa.me/34630508702?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta%20a%20Inllobsa." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp (se abre en una pestaña nueva)">
     <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   </a>
+  <script type="application/json" id="il-data">{"lang":"es","p":{"buy":"Comprar","rent":"Alquilar","looking":"Estoy buscando","inCity":"En la población de","reference":"Referencia","refPlaceholder":"Núm. #","search":"Buscar","apply":"Aplicar filtros","all":"Todos","allCities":"Todas","surface":"Superficie m²","min":"Mín","rooms":"Habitaciones","baths":"Baños","features":"Características","resultsN":"{n} resultados","results1":"1 resultado","none":"No hemos encontrado ningún inmueble con estos filtros.","clear":"Borrar filtros","more":"Ver más","moreInfo":"Más información","featured":"Destacados","scroll":"Desplaza","seeAll":"Ver todos los inmuebles","loading":"Cargando inmuebles…","error":"Ahora mismo no podemos cargar los inmuebles. Vuelve a intentarlo en unos minutos o llámanos.","ref":"Ref.","m2":"M²","hab":"Hab.","wc":"WC","perMonth":"/mes","onRequest":"A consultar","prev":"Anterior","next":"Siguiente","pageTitle":"Inmuebles","pageLead":"Viviendas, locales, naves y terrenos en Manresa y el Bages.","metaTitle":"Inmuebles en venta y alquiler en Manresa | Inllobsa","metaDescription":"Todos los inmuebles de Inllobsa: pisos, casas, locales, naves y terrenos en venta y alquiler en Manresa y el Bages.","groups":{"habitatge":"Viviendas","local-nau":"Locales y naves"},"types":{"pis":"Pisos","casa":"Casas","local":"Locales comerciales","nau":"Naves industriales","oficina":"Oficinas","terreny":"Terrenos","parking":"Parkings","edifici":"Edificios","altres":"Otros"},"typeNames":{"Piso":"Piso","Apartamento":"Apartamento","Planta baja":"Planta baja","Dúplex":"Dúplex","Ático Dúplex":"Ático dúplex","Adosado":"Casa adosada","Casa":"Casa","Casa con terreno":"Casa con terreno","Chalet":"Chalet","Local comercial":"Local comercial","Nave industrial":"Nave industrial","Oficina":"Oficina","Parcela":"Parcela","Terreno urbano":"Terreno urbano","Parking":"Parking","Edificio":"Edificio"},"featureNames":{"ascensor":"Ascensor","balco":"Balcón","terrassa":"Terraza","jardi":"Jardín","aire":"Aire acondicionado","calefaccio":"Calefacción","garatge":"Garaje o parking","traster":"Trastero","moblat":"Amueblado","piscina":"Piscina","xemeneia":"Chimenea","solarium":"Solárium","lluminos":"Luminoso","cuina":"Cocina independiente","alarma":"Alarma","gas":"Gas ciudad","tancat":"Vallado"},"detail":{"back":"Volver a los inmuebles","description":"Descripción","data":"Datos del inmueble","location":"Ubicación","contactTitle":"¿Te interesa este inmueble?","contactText":"Escríbenos y te respondemos enseguida, o pásate por la oficina.","whatsapp":"Escríbenos por WhatsApp","call":"Llámanos","email":"Envíanos un correo","waMsg":"¡Hola! Me interesa el inmueble con referencia {ref} ({title}).","mailSubject":"Consulta del inmueble {ref}","notFound":"No hemos encontrado este inmueble. Quizá ya se ha vendido o alquilado.","other":"Ver otros inmuebles","built":"Superficie construida","usable":"Superficie útil","plot":"Parcela","year":"Año de construcción","floor":"Planta","state":"Estado","energy":"Certificado energético","photos":"fotos","openPhoto":"Ver la foto","map":"Ver en el mapa","salePrice":"Precio de venta","rentPrice":"Precio de alquiler"}},"site":{"whatsapp":"34630508702","phone":"938 36 20 30","phoneHref":"+34938362030","email":"inllobsa@inllobsa.com"},"urls":{"list":"/es/immobles/","detail":"/es/immoble/"}}</script>
 </body>
 </html>

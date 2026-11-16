@@ -117,3 +117,22 @@ node build.mjs && node tools/embed.mjs
 Genera `inllobsa-ca-inmovilla.html` i `inllobsa-es-inmovilla.html`: un fragment (sense `<html>`/`<body>`) amb els
 estils encapsulats dins de `#inllobsa` perquè no xoquin amb els de la plantilla, sense logotip a la capçalera ni botó
 flotant de WhatsApp, i amb l'amplada adaptada al contenidor on s'enganxa.
+
+## Immobles (connectats a Inmovilla)
+
+La web mostra els immobles reals del CRM i, quan un immoble es ven o es retira a Inmovilla, desapareix sol.
+
+- `netlify/functions/immobles.mjs` llegeix el XML d'Inmovilla i el serveix com a JSON a `/api/immobles` (memòria cau de 5 min;
+  si Inmovilla falla, es manté l'últim llistat correcte).
+- Pàgines: portada amb cercador i **Destacats**, `/immobles/` (filtres: comprar/llogar, tipus, població, referència,
+  superfície, habitacions, banys, característiques) i `/immoble/?ref=XXXX` (fitxa amb galeria). També en castellà (`/es/…`).
+- Estil: `public/assets/css/immobles.css`; lògica: `public/assets/js/immobles.js`; textos: clau `props` de `src/i18n/*.json`.
+- Variables d'entorn opcionals a Netlify (*Site configuration → Environment variables*):
+  - `INMOVILLA_XML_URL`: URL del XML (per defecte, la de la immobiliària).
+  - `INMOVILLA_HIDE_STATES`: estats de fitxa (`estadoficha`) que s'han d'amagar, separats per comes (p. ex. `7`).
+- Desplegament: a Netlify, *Import an existing project → GitHub*. Les funcions només es publiquen d'aquesta manera
+  (no arrossegant la carpeta `public/`).
+- Prova en local: `node build.mjs && node tools/dev.mjs` i obriu http://localhost:8080.
+
+Les versions d'un sol fitxer (`tools/standalone.mjs`) i per a Inmovilla (`tools/embed.mjs`) corresponen a la landing
+anterior i no inclouen la part d'immobles.

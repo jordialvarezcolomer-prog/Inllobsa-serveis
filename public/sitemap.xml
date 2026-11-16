@@ -12,4 +12,16 @@
     <xhtml:link rel="alternate" hreflang="ca" href="https://inllobsa.netlify.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://inllobsa.netlify.app/es/"/>
   </url>
+  <url>
+    <loc>https://inllobsa.netlify.app/immobles/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://inllobsa.netlify.app/immobles/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inllobsa.netlify.app/es/immobles/"/>
+  </url>
+  <url>
+    <loc>https://inllobsa.netlify.app/es/immobles/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://inllobsa.netlify.app/immobles/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://inllobsa.netlify.app/es/immobles/"/>
+  </url>
 </urlset>

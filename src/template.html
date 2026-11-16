@@ -22,10 +22,12 @@
   <link rel="icon" href="{{base}}assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=Cormorant+Garamond:wght@500;600;700&display=swap">
   <link rel="preload" as="image" href="{{base}}assets/img/photos/hero-01-1920.webp" imagesrcset="{{base}}assets/img/photos/hero-01-1100.webp 1100w, {{base}}assets/img/photos/hero-01-1920.webp 1920w" imagesizes="100vw" type="image/webp">
   <link rel="stylesheet" href="{{base}}assets/css/styles.css">
+  <link rel="stylesheet" href="{{base}}assets/css/immobles.css">
   <script src="{{base}}assets/js/main.js" defer></script>
+  <script src="{{base}}assets/js/immobles.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -102,53 +104,88 @@
 
   <a class="skip-link" href="#main">{{a11y.skip}}</a>
 
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <a href="{{site.mapsUrl}}" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>{{site.street}}, {{site.city}}</a>
-      <span class="topbar-hours"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>{{topbar.hours}}</span>
-      <a href="tel:{{site.phoneHref}}"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>{{site.phone}}</a>
-      <a href="mailto:{{site.email}}"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>{{site.email}}</a>
-    </div>
-  </div>
-
   <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="{{a11y.home}}">
+    <div class="header-bar">
+      <div class="header-left">
+        <a class="pill" href="{{immoblesUrl}}?tipus=habitatge">{{nav.housing}}</a>
+        <a class="pill" href="{{immoblesUrl}}?tipus=local-nau">{{nav.premises}}</a>
+      </div>
+
+      <a class="brand" href="{{homeAbs}}#top" aria-label="{{a11y.home}}">
         <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.png" alt="Inllobsa Immobiliària" width="518" height="234">
       </a>
 
-      <nav class="main-nav" id="main-nav" aria-label="{{a11y.mainNav}}" data-nav>
-        <ul class="nav-list">
-          <li><a href="#serveis" data-nav-link>{{nav.services}}</a></li>
-          <li><a href="#marketing" data-nav-link>{{nav.marketing}}</a></li>
-          <li><a href="#valors" data-nav-link>{{nav.values}}</a></li>
-          <li><a href="#equip" data-nav-link>{{nav.team}}</a></li>
-          <li><a href="#ressenyes" data-nav-link>{{nav.reviews}}</a></li>
-          <li><a href="#contacte" data-nav-link>{{nav.contact}}</a></li>
-        </ul>
-        <div class="nav-actions">
-          <div class="lang-switch" role="group" aria-label="{{a11y.language}}">
-            <span class="lang-current" aria-current="true">{{langSwitch.current}}</span>
-            <a class="lang-other" href="{{otherHref}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang-switch title="{{langSwitch.otherLabel}}">
-              <span aria-hidden="true">{{langSwitch.other}}</span><span class="sr-only">{{langSwitch.otherLabel}}</span>
-            </a>
-          </div>
-          <a class="btn btn-wa btn-sm" href="{{links.waGeneral}}" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>{{nav.whatsapp}}</a>
-          <a class="btn btn-primary btn-sm" href="#valoracio">{{nav.valuation}}</a>
-        </div>
-      </nav>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
-              data-menu-toggle data-label-open="{{a11y.menuOpen}}" data-label-close="{{a11y.menuClose}}">
-        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
-        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
-        <span class="sr-only" data-menu-label>{{a11y.menuOpen}}</span>
-      </button>
+      <div class="header-right">
+        <a class="btn btn-accent btn-sm header-cta" href="{{homeAbs}}#valoracio">{{nav.sell}}</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+                data-menu-toggle data-label-open="{{a11y.menuOpen}}" data-label-close="{{a11y.menuClose}}">
+          <span class="menu-text" aria-hidden="true">{{nav.menu}}</span>
+          <span class="menu-lines" aria-hidden="true"></span>
+          <span class="sr-only" data-menu-label>{{a11y.menuOpen}}</span>
+        </button>
+      </div>
     </div>
+
+    <nav class="main-nav" id="main-nav" aria-label="{{a11y.mainNav}}" data-nav>
+      <ul class="nav-list">
+        <li><a href="{{immoblesUrl}}">{{nav.properties}}</a></li>
+        <li><a href="{{homeAbs}}#serveis" data-nav-link>{{nav.services}}</a></li>
+        <li><a href="{{homeAbs}}#nosaltres" data-nav-link>{{nav.about}}</a></li>
+        <li><a href="{{homeAbs}}#marketing" data-nav-link>{{nav.marketing}}</a></li>
+        <li><a href="{{homeAbs}}#valors" data-nav-link>{{nav.values}}</a></li>
+        <li><a href="{{homeAbs}}#equip" data-nav-link>{{nav.team}}</a></li>
+        <li><a href="{{homeAbs}}#ressenyes" data-nav-link>{{nav.reviews}}</a></li>
+        <li><a href="{{homeAbs}}#contacte" data-nav-link>{{nav.contact}}</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="{{a11y.language}}">
+          <span class="lang-current" aria-current="true">{{langSwitch.current}}</span>
+          <a class="lang-other" href="{{otherHref}}" hreflang="{{otherLang}}" lang="{{otherLang}}" data-lang-switch title="{{langSwitch.otherLabel}}">
+            <span aria-hidden="true">{{langSwitch.other}}</span><span class="sr-only">{{langSwitch.otherLabel}}</span>
+          </a>
+        </div>
+        <a class="btn btn-wa btn-sm" href="{{links.waGeneral}}" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>{{nav.whatsapp}}</a>
+        <a class="btn btn-primary btn-sm" href="{{homeAbs}}#valoracio">{{nav.valuation}}</a>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
+    <!-- CERCADOR -->
+    <section class="finder" aria-label="{{props.search}}">
+      <div class="container container--wide">
+        <form class="finder-form" action="{{immoblesUrl}}" method="get" data-finder>
+          <div class="finder-top">
+            <div class="op-toggle" data-op-toggle>
+              <span class="op-label op-buy">{{props.buy}}</span>
+              <button class="op-switch" type="button" role="switch" aria-checked="false" aria-label="{{props.buy}} / {{props.rent}}"></button>
+              <span class="op-label op-rent">{{props.rent}}</span>
+              <input type="hidden" name="op" value="comprar">
+            </div>
+            <button class="btn btn-primary btn-sm finder-submit" type="submit">{{props.search}}</button>
+          </div>
+          <div class="finder-fields">
+            <label class="field">
+              <span class="field-label">{{props.looking}}</span>
+              <select name="tipus">
+                <option value="">{{props.all}}</option>
+                {{#each typeOptions}}<option value="{{this.value}}">{{this.label}}</option>{{/each}}
+              </select>
+            </label>
+            <label class="field">
+              <span class="field-label">{{props.inCity}}</span>
+              <select name="poblacio" data-city-select><option value="">{{props.allCities}}</option></select>
+            </label>
+            <label class="field field--ref">
+              <span class="field-label">{{props.reference}}</span>
+              <input type="text" name="ref" placeholder="{{props.refPlaceholder}}" autocomplete="off">
+            </label>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container container--wide">
@@ -200,6 +237,20 @@
           </li>
           {{/each}}
         </ul>
+      </div>
+    </section>
+
+    <!-- DESTACATS -->
+    <section class="section featured" id="destacats" aria-labelledby="featured-title">
+      <div class="container container--wide">
+        <h2 class="serif featured-title" id="featured-title">{{props.featured}}</h2>
+        <p class="scroll-hint" aria-hidden="true"><span>←</span> {{props.scroll}} <span>→</span></p>
+        <div class="carousel" data-featured>
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="{{props.prev}}" data-prev></button>
+          <ul class="carousel-track" data-track><li class="carousel-msg">{{props.loading}}</li></ul>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="{{props.next}}" data-next></button>
+        </div>
+        <p class="featured-more"><a class="btn btn-light" href="{{immoblesUrl}}">{{props.seeAll}}</a></p>
       </div>
     </section>
 
@@ -625,7 +676,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="{{a11y.home}}">
+        <a class="brand" href="{{homeAbs}}#top" aria-label="{{a11y.home}}">
           <img class="brand-logo" src="{{base}}assets/img/logo/inllobsa-logo.png" alt="Inllobsa Immobiliària" width="518" height="234" loading="lazy">
         </a>
         <p>{{footer.tagline}}</p>
@@ -635,20 +686,20 @@
         <h2 class="footer-title" id="f-services">{{footer.servicesTitle}}</h2>
         <ul class="footer-list">
           {{#each services.items}}
-          <li><a href="#serveis">{{this.title}}</a></li>
+          <li><a href="{{homeAbs}}#serveis">{{this.title}}</a></li>
           {{/each}}
         </ul>
       </nav>
       <nav aria-labelledby="f-company">
         <h2 class="footer-title" id="f-company">{{footer.companyTitle}}</h2>
         <ul class="footer-list">
-          <li><a href="#marketing">{{marketing.title}}</a></li>
-          <li><a href="#valors">{{values.title}}</a></li>
-          <li><a href="#equip">{{team.title}}</a></li>
-          <li><a href="#ressenyes">{{nav.reviews}}</a></li>
-          <li><a href="#territori">{{territory.title}}</a></li>
-          <li><a href="#solvia-vic">Solvia Store Vic</a></li>
-          <li><a href="#valoracio">{{nav.valuation}}</a></li>
+          <li><a href="{{homeAbs}}#marketing">{{marketing.title}}</a></li>
+          <li><a href="{{homeAbs}}#valors">{{values.title}}</a></li>
+          <li><a href="{{homeAbs}}#equip">{{team.title}}</a></li>
+          <li><a href="{{homeAbs}}#ressenyes">{{nav.reviews}}</a></li>
+          <li><a href="{{homeAbs}}#territori">{{territory.title}}</a></li>
+          <li><a href="{{homeAbs}}#solvia-vic">Solvia Store Vic</a></li>
+          <li><a href="{{homeAbs}}#valoracio">{{nav.valuation}}</a></li>
         </ul>
       </nav>
       <div>
@@ -674,5 +725,6 @@
   <a class="wa-float" href="{{links.waGeneral}}" target="_blank" rel="noopener" aria-label="{{a11y.whatsappFloat}} {{a11y.newTab}}">
     <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   </a>
+  <script type="application/json" id="il-data">{{{ilData}}}</script>
 </body>
 </html>

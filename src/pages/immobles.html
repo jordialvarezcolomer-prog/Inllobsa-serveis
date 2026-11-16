@@ -1,0 +1,71 @@
+    <h1 class="sr-only">{{pageTitle}}</h1>
+
+    <section class="finder finder--page" aria-label="{{props.search}}">
+      <div class="container container--wide">
+        <form class="finder-form" data-listing-form>
+          <div class="finder-top">
+            <div class="op-toggle" data-op-toggle>
+              <span class="op-label op-buy">{{props.buy}}</span>
+              <button class="op-switch" type="button" role="switch" aria-checked="false" aria-label="{{props.buy}} / {{props.rent}}"></button>
+              <span class="op-label op-rent">{{props.rent}}</span>
+              <input type="hidden" name="op" value="comprar">
+            </div>
+            <button class="btn btn-primary btn-sm finder-submit" type="submit">{{props.apply}}</button>
+          </div>
+
+          <div class="finder-grid">
+            <div class="finder-col">
+              <label class="field">
+                <span class="field-label">{{props.looking}}</span>
+                <select name="tipus">
+                  <option value="">{{props.all}}</option>
+                  {{#each typeOptions}}<option value="{{this.value}}">{{this.label}}</option>{{/each}}
+                </select>
+              </label>
+              <label class="field">
+                <span class="field-label">{{props.surface}}</span>
+                <input type="number" name="sup" min="0" inputmode="numeric" placeholder="{{props.min}}">
+              </label>
+              <details class="field field--features" data-features-box>
+                <summary><span class="field-label">{{props.features}}</span></summary>
+                <div class="feature-list" data-features></div>
+              </details>
+            </div>
+
+            <div class="finder-col">
+              <label class="field">
+                <span class="field-label">{{props.inCity}}</span>
+                <select name="poblacio" data-city-select><option value="">{{props.allCities}}</option></select>
+              </label>
+              <div class="field field--chips" data-chips="hab">
+                <span class="field-label">{{props.rooms}}</span>
+                <div class="chips"><button type="button" data-v="1">1+</button><button type="button" data-v="2">2+</button><button type="button" data-v="3">3+</button><button type="button" data-v="4">4+</button></div>
+              </div>
+            </div>
+
+            <div class="finder-col">
+              <label class="field field--ref">
+                <span class="field-label">{{props.reference}}</span>
+                <input type="text" name="ref" placeholder="{{props.refPlaceholder}}" autocomplete="off">
+              </label>
+              <div class="field field--chips" data-chips="banys">
+                <span class="field-label">{{props.baths}}</span>
+                <div class="chips"><button type="button" data-v="1">1+</button><button type="button" data-v="2">2+</button><button type="button" data-v="3">3+</button><button type="button" data-v="4">4+</button></div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="results" data-listing aria-live="polite">
+      <div class="container container--wide">
+        <p class="results-count serif" data-count>{{props.loading}}</p>
+        <ul class="prop-grid" data-grid></ul>
+        <div class="results-none" data-none hidden>
+          <p>{{props.none}}</p>
+          <button class="btn btn-primary btn-sm" type="button" data-clear>{{props.clear}}</button>
+        </div>
+        <p class="results-more"><button class="btn btn-primary" type="button" data-more hidden>{{props.more}}</button></p>
+      </div>
+    </section>

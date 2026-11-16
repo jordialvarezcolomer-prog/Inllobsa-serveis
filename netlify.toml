@@ -1,3 +1,9 @@
 [build]
   command = "node build.mjs"
   publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# /api/immobles es declara a la pròpia funció (config.path). Fitxa: /immoble/?ref=XXXX
