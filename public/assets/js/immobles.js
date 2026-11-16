@@ -89,6 +89,18 @@
     });
   }
 
+  /* ---- Banner de promoció: es mostra només si l'immoble continua a Inmovilla ------------------------- */
+  const promo = $('[data-promo]');
+  if (promo) {
+    load().then((items) => {
+      const p = items.find((x) => String(x.ref) === promo.dataset.ref);
+      if (!p) return;
+      const el = $('[data-promo-price]', promo);
+      el.innerHTML = price(p, p.sell ? 'comprar' : 'llogar');
+      promo.hidden = false;
+    }).catch(() => {});
+  }
+
   /* ---- Destacats (carrusel) -------------------------------------------------- */
   const featured = $('[data-featured]');
   if (featured) {

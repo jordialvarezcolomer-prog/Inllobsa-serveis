@@ -186,6 +186,24 @@
       </div>
     </section>
 
+    {{#if promo.enabled}}
+    <!-- PROMOCIÓ (banner principal; configurable a src/promo.json; s'amaga sola si l'immoble surt d'Inmovilla) -->
+    <section class="promo" aria-label="{{promo.kicker}}" data-promo data-ref="{{promo.ref}}" hidden>
+      <div class="container container--wide">
+        <a class="promo-banner" href="{{promo.href}}">
+          <img src="{{promo.image}}" alt="{{promo.alt}}" width="1920" height="1440" fetchpriority="high">
+          <span class="promo-shade" aria-hidden="true"></span>
+          <span class="promo-text">
+            <span class="promo-kicker">{{promo.kicker}}</span>
+            <span class="promo-title serif">{{promo.title}}</span>
+            <span class="promo-price serif" data-promo-price></span>
+          </span>
+          <span class="promo-cta">{{promo.cta}}</span>
+        </a>
+      </div>
+    </section>
+
+    {{/if}}
     <!-- HERO -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container container--wide">

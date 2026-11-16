@@ -13,6 +13,7 @@ const template = read('src/template.html');
 const site = json('src/site.json');
 const team = json('src/team.json');
 const reviews = json('src/reviews.json');
+const promo = json('src/promo.json');
 const langs = { ca: json('src/i18n/ca.json'), es: json('src/i18n/es.json') };
 
 const escape = (s) =>
@@ -94,6 +95,7 @@ for (const [code, dict] of Object.entries(langs)) {
     },
     site,
     homeAbs: '',
+    promo: { ...promo, ...promo[code], href: `${isDefault ? '' : '/es'}/immoble/?ref=${encodeURIComponent(promo.ref)}` },
     immoblesUrl: isDefault ? '/immobles/' : '/es/immobles/',
     typeOptions: [
       ...Object.entries(dict.props.groups).map(([value, label]) => ({ value, label })),
