@@ -107,3 +107,13 @@ Des de l'entorn de desenvolupament no s'ha pogut accedir directament a cap d'aqu
 8. **Instagram:** no hi ha cap URL verificada. Només s'enllaça Facebook.
 9. **WhatsApp de Solvia Store Vic:** només es coneix el telèfon (621 234 741), així que només hi ha botó de trucada.
 10. **URL definitiva** del web: actualitzeu `url` a `src/site.json` (canonical, hreflang i sitemap).
+
+## Versió per integrar a Inmovilla
+
+```bash
+node build.mjs && node tools/embed.mjs
+```
+
+Genera `inllobsa-ca-inmovilla.html` i `inllobsa-es-inmovilla.html`: un fragment (sense `<html>`/`<body>`) amb els
+estils encapsulats dins de `#inllobsa` perquè no xoquin amb els de la plantilla, sense logotip a la capçalera ni botó
+flotant de WhatsApp, i amb l'amplada adaptada al contenidor on s'enganxa.
