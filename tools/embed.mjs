@@ -145,6 +145,10 @@ for (const [lang, src] of [['ca', 'index.html'], ['es', 'es/index.html']]) {
     .replace(/\s(srcset|sizes)="[^"]*"/g, '')
     .replace(/\s*<source type="image\/webp"[^>]*>/g, '')
     .replace(/(src|href)="(?:\.\.\/)?(assets\/img\/[^"]+)"/g, (_, a, rel) => `${a}="${dataUri(pick(rel))}"`)
+    // el titular es deixa com a text normal (sense l'animació paraula per paraula, que pot xocar amb els estils de la pàgina amfitriona)
+    .replace(/\sdata-split(?=[\s>])/g, '')
+    // tot el titular dins d'un sol element: si la pàgina amfitriona fa servir flex als titols, els espais al voltant de <em> no es perden
+    .replace(/(<h2 class="owner-title"[^>]*>)([\s\S]*?)(<\/h2>)/, '$1<span>$2</span>$3')
     // sense selector d'idioma: cada versió és independent
     .replace(/\s*<div class="lang-switch"[\s\S]*?<\/a>\s*<\/div>/, '')
     .replace(/\s*<a href="[^"]*" hreflang="[^"]*" lang="[^"]*" data-lang-switch>[^<]*<\/a>/, '')
