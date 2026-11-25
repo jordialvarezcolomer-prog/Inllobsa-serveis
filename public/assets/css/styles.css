@@ -753,6 +753,7 @@ figure { margin: 0; }
 .js .owner-title em { background-size: 0 4px; transition: background-size .8s cubic-bezier(.7,0,.2,1) 1.3s; }
 .js .owner.is-in .owner-title em { background-size: 100% 4px; }
 .owner-title .w { display: inline-block; }
+.owner-title .w.gap { margin-right: .27em; }
 .js .owner-title .w { opacity: 0; transform: translateY(.6em) rotate(3deg); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); transition-delay: calc(.25s + var(--w) * 70ms); }
 .js .owner.is-in .owner-title .w { opacity: 1; transform: none; }
 .js .owner .owner-text, .js .owner .eyebrow { opacity: 0; transform: translateY(14px); transition: opacity .7s ease .6s, transform .7s ease .6s; }

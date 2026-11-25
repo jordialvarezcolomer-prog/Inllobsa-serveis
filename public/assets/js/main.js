@@ -125,16 +125,20 @@
   /* Titulars que entren paraula per paraula (data-split): es respecten les etiquetes internes com <em> */
   $$('[data-split]').forEach((el) => {
     let n = 0;
+    let last = null;
     const split = (node) => [...node.childNodes].forEach((child) => {
       if (child.nodeType === Node.TEXT_NODE) {
         const frag = document.createDocumentFragment();
         child.textContent.split(/(\s+)/).forEach((part) => {
           if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+          // L'espai entre paraules és un marge de la paraula anterior (no un espai de text) perquè no es perdi
+          // si la pàgina que l'allotja (p. ex. Inmovilla) canvia com es mostra el text
+          if (/^\s+$/.test(part)) { if (last) last.classList.add('gap'); return; }
           const w = document.createElement('span');
           w.className = 'w';
           w.style.setProperty('--w', n++);
           w.textContent = part;
+          last = w;
           frag.appendChild(w);
         });
         child.replaceWith(frag);

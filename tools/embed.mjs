@@ -145,7 +145,11 @@ for (const [lang, src] of [['ca', 'index.html'], ['es', 'es/index.html']]) {
     .replace(/\s(srcset|sizes)="[^"]*"/g, '')
     .replace(/\s*<source type="image\/webp"[^>]*>/g, '')
     .replace(/(src|href)="(?:\.\.\/)?(assets\/img\/[^"]+)"/g, (_, a, rel) => `${a}="${dataUri(pick(rel))}"`)
-    .replace(/href="(?:es\/|\.\.\/)index\.html"/g, `href="${files[other]}"`);
+    // sense selector d'idioma: cada versió és independent
+    .replace(/\s*<div class="lang-switch"[\s\S]*?<\/a>\s*<\/div>/, '')
+    .replace(/\s*<a href="[^"]*" hreflang="[^"]*" lang="[^"]*" data-lang-switch>[^<]*<\/a>/, '')
+    // icones del catàleg (màscares PNG) dins dels estils en línia
+    .replace(/url\((?:\.\.\/)?(assets\/img\/[^)]+)\)/g, (_, rel) => `url(${dataUri(rel)})`);
 
   const cssFinal = css.replace(/url\((?:\.\.\/)?(assets\/img\/[^)]+)\)/g, (_, rel) => `url(${dataUri(rel)})`);
   const fragment = `<!-- Inllobsa · versió per integrar a Inmovilla (${lang.toUpperCase()}) -->
