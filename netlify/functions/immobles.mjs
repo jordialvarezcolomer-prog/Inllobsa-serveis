@@ -28,7 +28,8 @@ function parse(xml) {
   const out = [];
   for (const m of xml.matchAll(/<propiedad>([\s\S]*?)<\/propiedad>/g)) {
     const f = {};
-    for (const t of m[1].matchAll(/<([a-z0-9_]+)>([\s\S]*?)<\/\1>/gi)) f[t[1]] = decode(t[2]);
+    // Algunes etiquetes porten atributs (p. ex. <foto3 eti="cuina">): s'accepten igualment
+    for (const t of m[1].matchAll(/<([a-z0-9_]+)(?:\s[^>]*)?>([\s\S]*?)<\/\1>/gi)) f[t[1]] = decode(t[2]);
     out.push(f);
   }
   return out;
